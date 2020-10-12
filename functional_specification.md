@@ -17,7 +17,31 @@ Regisztráció esetén a megadott adatok helyességéről szerver oldalon gondos
 # 4. Jelenlegi üzleti folyamatok modellje
 -
 # 5. Igényelt üzleti folyamatok modellje
--
+### 5.1 Regisztráció/Belépés  
+Egyedi felhasználónév, létező és megfelelő email cím, megfelelő hosszúságú és elég erős jelszó megadása.
+Felhasználó tájékoztatása a mem megfelelő adatok megadásáról. 
+A jelszó megerősítése szükséges újra megadásával. Regisztráció megerősítő kód küldése a megadott email címre.
+Belépés felhasználónév és jelszóval történik.
+
+### 5.2 Felhasználókezelés  
+- #### 5.2.1 Nem regisztrált felhasználó  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Olvashatja az oldalon a témákat és hozzászólásokat.  
+- #### 5.2.2 Regisztrált felhasználó   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Belépés után olvashatja az oldalon a témákat és hozzászólásokat, továbbá új hozzászólásokat tud írni.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lehetősége van más felhasználóknak privát üzenetek küldésére és fogadására.  
+-  #### 5.2.3 Céges dolgozó
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Belépés után olvashatja az oldalon a témákat és hozzászólásokat, továbbá új hozzászólásokat tud írni.   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lehetősége van más felhasználóknak privát üzenetek küldésére és fogadására.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nyithat új témákat, törölhet hozzászólásokat, témákat, felhasználókat.
+
+### 5.3 Felhasználói adatok megjelenítése/kezelése  
+Felhasználói adatlapon teljes név, publikus email cím, város, egyéni profilkép megadása és megváltoztatása.(Nem kötelező megadni.)
+Jelszó megváltoztatása, új jelszó beállítása. Az adatlapon továbbá megjelenik a felhasználó regisztrálásának 
+időpontja, utolsó belépési időpontja.
+
+### 5.4  Privát üzenetek  
+Egy másik felhasználó adatlapját megnyitva egy gombra kattintva privát üzenet küldése. 
+Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek száma az adott felhasználóval.
 # 6. Követelménylista
 -
 # 7. Használati esetek

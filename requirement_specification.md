@@ -2,6 +2,7 @@
 
 &nbsp;&nbsp;&nbsp;Manapság az internetes vásárlás, webshopok használata fénykorát éli.
 Azonban sok esetben nem biztosít az adott cég, webshop fórumot a vásárlói élmények, vélemények közlésére, megvitatására, megosztására.
+
 &nbsp;&nbsp;&nbsp;Vállalkozásunk abban hisz, hogy a vásárlóktól kapott visszajelzések alapján kell formálnunk szolgáltatásainkat, így népszerűségre, illetve elégedett vásárlótáborra tehetünk szert, amely elengedhetetlen ahhoz, hogy a vállalkozás jól működjön, hosszú életű legyen.
 
 

@@ -49,7 +49,23 @@ Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek s
 # 8. Megfeleltetés, hogyan fedik le a használati esetek a követelményeket
 -
 # 9. Képernyő tervek
--
+A képernyő tervek a Figma webes szerkesztővel készültek.
+
+### Főoldal:  
+<img src="./screen_plans/home.jpg" width="700px">  
+
+### Témák egy forum kategórián belül:  
+<img src="./screen_plans/topics.jpg" width="700px">  
+
+### Egy téma hozzászólásai:  
+<img src="./screen_plans/topic_comments.jpg" width="700px">  
+
+### Csevegő partnerek listázása:  
+<img src="./screen_plans/private_message_list.jpg" width="700px">  
+ 
+### Regisztrációs űrlap:  
+<img src="./screen_plans/registration.jpg" width="700px">  
+
 # 10. Forgatókönyvek
 -
 # 11. Funkció – követelmény megfeleltetés

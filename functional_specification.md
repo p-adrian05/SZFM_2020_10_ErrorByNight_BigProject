@@ -45,9 +45,9 @@ Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek s
 # 6. Követelménylista
 -
 # 7. Használati esetek
--
-# 8. Megfeleltetés, hogyan fedik le a használati esetek a követelményeket
 <img src="./diagrams/usecases.png" width="1000px">  
+
+# 8. Megfeleltetés, hogyan fedik le a használati esetek a követelményeket
 
 # 9. Képernyő tervek
 A képernyő tervek a Figma webes szerkesztővel készültek.

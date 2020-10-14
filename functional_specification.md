@@ -67,6 +67,21 @@ A képernyő tervek a Figma webes szerkesztővel készültek.
 <img src="./screen_plans/registration.jpg" width="700px">  
 
 # 10. Forgatókönyvek
--
+A felhasználó miután sikeresen elérte az oldalt, lehetősége van:
+
+- ### Regisztrálni 
+  - Egyedi felhasználónév, létező és megfelelő email cím, megfelelő hosszúságú és elég erős jelszó megadásával.
+  - A megadott emailre küldött megerősítő kóddal aktiválni a regisztrációt.
+- ### Belépni az oldara
+   - Felhasználónév és jelszó megadásával.
+- ### Belépés után 
+    - Privát üzeteneket küldeni, fogadni, olvasni.
+    - Témákat és hozzászólásokat olvasni és hozzászólni.
+    - Új témákat létrehozni. (Csak céges dolgozóknak)
+    - Felhasználói adatlapon teljes név, publikus email cím, város, egyéni profilkép megadása és megváltoztatása.
+    - Jelszó megváltoztatása, új jelszó beállítása.
+    - Kilépés az oldalról.
+- ### Belépés előtt
+   - Témákat és hozzászólásokat olvasni.
 # 11. Funkció – követelmény megfeleltetés
 -

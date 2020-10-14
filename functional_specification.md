@@ -45,9 +45,26 @@ Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek s
 # 6. Követelménylista
 -
 # 7. Használati esetek
--
+<img src="./diagrams/usecases.png" width="1000px">  
+
 # 8. Megfeleltetés, hogyan fedik le a használati esetek a követelményeket
--
+A sorszámok a Követelmény specifikáció 4. bekezdésére hivatkoznak.
+
+- #### 4.1 Regisztráció/Belépés
+  - Felhasználónév, email cím, jelszó megadása regisztrációnál,
+  - Felhasználónév, jelszó megadása belépésnél
+- #### 4.2.1  Nem regisztrált felhasználó
+  - Témák olvasása
+- #### 4.2.2 Regisztrált felhasználó
+  - Témák olvasása és hozzászólás írása.
+- #### 4.2.3  Céges dolgozó
+  - Admin jogosultság
+  - Új témák létrehozása
+  - Adatok törlése
+- #### 4.3 Felhasználói adatok megjelenítése/kezelése
+  - Felhasználói adatlap módosítás
+- #### 4.4 Privát üzenetek
+  - Privát üzetenet küldése, fogadása, olvasása
 # 9. Képernyő tervek
 A képernyő tervek a Figma webes szerkesztővel készültek.
 
@@ -67,6 +84,21 @@ A képernyő tervek a Figma webes szerkesztővel készültek.
 <img src="./screen_plans/registration.jpg" width="700px">  
 
 # 10. Forgatókönyvek
--
+A felhasználó miután sikeresen elérte az oldalt, lehetősége van:
+
+- ### Regisztrálni 
+  - Egyedi felhasználónév, létező és megfelelő email cím, megfelelő hosszúságú és elég erős jelszó megadásával.
+  - A megadott emailre küldött megerősítő kóddal aktiválni a regisztrációt.
+- ### Belépni az oldara
+   - Felhasználónév és jelszó megadásával.
+- ### Belépés után 
+    - Privát üzeteneket küldeni, fogadni, olvasni.
+    - Témákat és hozzászólásokat olvasni és hozzászólni.
+    - Új témákat létrehozni. (Csak céges dolgozóknak)
+    - Felhasználói adatlapon teljes név, publikus email cím, város, egyéni profilkép megadása és megváltoztatása.
+    - Jelszó megváltoztatása, új jelszó beállítása.
+    - Kilépés az oldalról.
+- ### Belépés előtt
+   - Témákat és hozzászólásokat olvasni.
 # 11. Funkció – követelmény megfeleltetés
 -

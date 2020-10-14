@@ -48,7 +48,23 @@ Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek s
 <img src="./diagrams/usecases.png" width="1000px">  
 
 # 8. Megfeleltetés, hogyan fedik le a használati esetek a követelményeket
+A sorszámok a Követelmény specifikáció 4. bekezdésére hivatkoznak.
 
+- #### 4.1 Regisztráció/Belépés
+  - Felhasználónév, email cím, jelszó megadása regisztrációnál,
+  - Felhasználónév, jelszó megadása belépésnél
+- #### 4.2.1  Nem regisztrált felhasználó
+  - Témák olvasása
+- #### 4.2.2 Regisztrált felhasználó
+  - Témák olvasása és hozzászólás írása.
+- #### 4.2.3  Céges dolgozó
+  - Admin jogosultság
+  - Új témák létrehozása
+  - Adatok törlése
+- #### 4.3 Felhasználói adatok megjelenítése/kezelése
+  - Felhasználói adatlap módosítás
+- #### 4.4 Privát üzenetek
+  - Privát üzetenet küldése, fogadása, olvasása
 # 9. Képernyő tervek
 A képernyő tervek a Figma webes szerkesztővel készültek.
 

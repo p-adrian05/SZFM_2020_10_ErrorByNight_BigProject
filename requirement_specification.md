@@ -40,6 +40,7 @@ időpontja, utolsó belépési időpontja.
 Egy másik felhasználó adatlapját megnyitva egy gombra kattintva privát üzenet küldése. 
 Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek száma az adott felhasználóval.
 # 5. A rendszerre vonatkozó szabályok
--
+ ### Adatvédelem
+  - A felhasználók személyes adatainak védelmére vonatkozó szabályok betartása az EU [GDPR](https://eur-lex.europa.eu/legal-content/HU/TXT/PDF/?uri=CELEX:32016R0679&from=LV) általános adatvédelmi rendelete szerint.
 # 6. Követelménylista
 -

@@ -1,12 +1,7 @@
 # 1. Jelenlegi helyzet
-
-&nbsp;&nbsp;&nbsp;Manapság az internetes vásárlás, webshopok használata fénykorát éli.
-Azonban sok esetben nem biztosít az adott cég, webshop fórumot a vásárlói élmények, vélemények közlésére, megvitatására, megosztására.
-
-&nbsp;&nbsp;&nbsp;Vállalkozásunk abban hisz, hogy a vásárlóktól kapott visszajelzések alapján kell formálnunk szolgáltatásainkat, így népszerűségre, illetve elégedett vásárlótáborra tehetünk szert, amely elengedhetetlen ahhoz, hogy a vállalkozás jól működjön, hosszú életű legyen.
-
-
-
+&nbsp;&nbsp;&nbsp;Cégünk hosszú és sikeres múltra tekint vissza a webáruházak világában, amely annak köszönhető, hogy folyamatosan a megújulás és szolgáltatásaink bővítése, javítására, fejlesztésére törekedünk.  
+&nbsp;&nbsp;&nbsp;Webáruházunk több kapcsolatfelvételi módot is kínál felhasználóinknak. A telefonos ügyfélszolgálatunk a nap bármely szakaszában elérhető, általában 
+rövid várakozási idővel. Továbbá lehetőség van email címünkre történő panasz/hiba bejelentés és kérdések feltevésére, azonban vállalkozásunk abban hisz, hogy a vásárlóktól kapott visszajelzések alapján kell formálnunk szolgáltatásainkat, így népszerűségre, illetve elégedett vásárlótáborra tehetünk szert, amely elengedhetetlen ahhoz, hogy a vállalkozás jól működjön, hosszú életű legyen, ezért szükséges egy még hatékonyabb, gyorsabb és sokoldalúbb kommunikációs platform vállakozásunk számára, amellyel kitűnhet cégünk a webáruházak aranykorában.
 
 # 2. Vágyálom rendszer
 &nbsp;&nbsp;&nbsp;Vállalkozásunk webáruházát egy web fórummal szeretnénk bővíteni, amely egy platformot biztosít már meglévő vagy potenciális 

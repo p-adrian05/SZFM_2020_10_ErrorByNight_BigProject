@@ -101,4 +101,17 @@ A felhasználó miután sikeresen elérte az oldalt, lehetősége van:
 - ### Belépés előtt
    - Témákat és hozzászólásokat olvasni.
 # 11. Funkció – követelmény megfeleltetés
--
+A sorszámok a Követelmény specifikáció 4. bekezdésére hivatkoznak.
+
+- ### 4.1 Regisztráció/Belépés
+   - A 4.1 pontban foglaltaknak megfelelően az oldal regisztrációs/belépési felülettel rendelkezik, amely felhasználónév és jelszó alapú lesz, email címmel történő megerősítéssel.
+- ### 4.2 Felhasználókezelés
+  - A 4.2 pontban foglaltaknak megfelelően, egy nem regisztrált felhasználó csak olvasni lesz képes az oldalon,
+   regisztrált felhasználó előtt pedig megnyílnak a lehetőségek témákhoz való hozzászólásra, privát üzenetek küldésére.
+   Továbbá céges munkatársaknak lehetőség nyílik moderátori feladatok elvégzésére.
+- ### 4.3 Felhasználói adatok megjelenítése/kezelése
+  - A 4.3-as pontnak megfelelően a regisztrált felhasználó modosíthat és megadhat adatokat az adatlapján.
+- ### 4.4 Privát üzenetek
+  - A 4.4-es pontban foglaltak szerint a regisztrált felhasználó képes új üzeneteket küldeni és fogadni más felhasználóknak és 
+  és ezeket átláthatóan megtekinteni.
+

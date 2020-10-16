@@ -19,7 +19,7 @@ Minden platformon ugyanazt a funkcionalitást kell biztosítani és a legelterje
 # 4. Igényelt üzleti folyamatok
 ### 4.1 Regisztráció/Belépés  
 Egyedi felhasználónév, létező és megfelelő email cím, megfelelő hosszúságú és elég erős jelszó megadása.
-Felhasználó tájékoztatása a mem megfelelő adatok megadásáról. 
+Felhasználó tájékoztatása a nem megfelelő adatok megadásáról. 
 A jelszó megerősítése szükséges újra megadásával. Regisztráció megerősítő kód küldése a megadott email címre.
 Belépés felhasználónév és jelszóval történik.
 

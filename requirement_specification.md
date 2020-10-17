@@ -46,4 +46,4 @@ Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek s
  ### Adatvédelem
   - A felhasználók személyes adatainak védelmére vonatkozó szabályok betartása az EU [GDPR](https://eur-lex.europa.eu/legal-content/HU/TXT/PDF/?uri=CELEX:32016R0679&from=LV) általános adatvédelmi rendelete szerint.
 # 6. Követelménylista
--
+Megtekintheti a [funkcionális specifikáció](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/functional_specification.md) 6. bekezdésénél.

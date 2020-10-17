@@ -1,7 +1,7 @@
 # 1. A rendszer céljai és nem céljai
 -
 # 2. Jelenlegi helyzet leírása
--
+ Megtekintheti a [követelmány specifiákció](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/requirement_specification.md) 1. bekezdésénél.
 # 3. Vágyálom rendszer leírása
 &nbsp;&nbsp;&nbsp;Ügyfelünk egy webáruház, amely egy fórummal szeretné bővíteni szolgáltatását, egy platformot biztosítani már meglévő vagy potenciális vásárlóinak a hatékonyabb kommunikáció érdekében.  
 &nbsp;&nbsp;&nbsp;Vásárlási tapasztalatok, vélemények megosztása, továbbá a webáruházban található termékekkel
@@ -43,7 +43,15 @@ időpontja, utolsó belépési időpontja.
 Egy másik felhasználó adatlapját megnyitva egy gombra kattintva privát üzenet küldése. 
 Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek száma az adott felhasználóval.
 # 6. Követelménylista
--
+- Egyszerű, egyértelmű, reszponzív weboldal.
+- Megbízhatóság:
+  - Hibás emberi bevitel esetén hibaüzenet és a bevitel megismétlése.
+  - Amennyiben bármely adat megsérül, vagy a program használata nélkül módosul, adatvesztés léphet fel, amely érintheti az összes
+    addigi adatot (de a funkciók használatát nem).
+  - Sérült adatok esetén is legyenek elérhetőek a funkciók.
+- Hatékonyság:
+  - Gyors válaszidő egy alsóbb kategóriás számítógépen a legtöbb funkcióra.
+- Tárolt adatok biztonsága. 
 # 7. Használati esetek
 <img src="./diagrams/usecases.png" width="1000px">  
 

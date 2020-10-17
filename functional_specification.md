@@ -1,7 +1,7 @@
 # 1. A rendszer céljai és nem céljai
 -
 # 2. Jelenlegi helyzet leírása
--
+ Megtekintheti a [követelmány specifiákció](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/requirement_specification.md) 1. bekezdésénél.
 # 3. Vágyálom rendszer leírása
 &nbsp;&nbsp;&nbsp;Ügyfelünk egy webáruház, amely egy fórummal szeretné bővíteni szolgáltatását, egy platformot biztosítani már meglévő vagy potenciális vásárlóinak a hatékonyabb kommunikáció érdekében.  
 &nbsp;&nbsp;&nbsp;Vásárlási tapasztalatok, vélemények megosztása, továbbá a webáruházban található termékekkel

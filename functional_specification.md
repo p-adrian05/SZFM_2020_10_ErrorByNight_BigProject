@@ -43,7 +43,15 @@ időpontja, utolsó belépési időpontja.
 Egy másik felhasználó adatlapját megnyitva egy gombra kattintva privát üzenet küldése. 
 Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek száma az adott felhasználóval.
 # 6. Követelménylista
--
+- Egyszerű, egyértelmű, reszponzív weboldal.
+- Megbízhatóság:
+  - Hibás emberi bevitel esetén hibaüzenet és a bevitel megismétlése.
+  - Amennyiben bármely adat megsérül, vagy a program használata nélkül módosul, adatvesztés léphet fel, amely érintheti az összes
+    addigi adatot (de a funkciók használatát nem).
+  - Sérült adatok esetén is legyenek elérhetőek a funkciók.
+- Hatékonyság:
+  - Gyors válaszidő egy alsóbb kategóriás számítógépen a legtöbb funkcióra.
+- Tárolt adatok biztonsága. 
 # 7. Használati esetek
 <img src="./diagrams/usecases.png" width="1000px">  
 

@@ -46,4 +46,12 @@ Saját üzenetek időrendi sorrendbe listázva, megjelenítve az új üzenetek s
  ### Adatvédelem
   - A felhasználók személyes adatainak védelmére vonatkozó szabályok betartása az EU [GDPR](https://eur-lex.europa.eu/legal-content/HU/TXT/PDF/?uri=CELEX:32016R0679&from=LV) általános adatvédelmi rendelete szerint.
 # 6. Követelménylista
-Megtekintheti a [funkcionális specifikáció](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/functional_specification.md) 6. bekezdésénél.
+- Egyszerű, egyértelmű, reszponzív weboldal.
+- Megbízhatóság:
+  - Hibás emberi bevitel esetén hibaüzenet és a bevitel megismétlése.
+  - Amennyiben bármely adat megsérül, vagy a program használata nélkül módosul, adatvesztés léphet fel, amely érintheti az összes
+    addigi adatot (de a funkciók használatát nem).
+  - Sérült adatok esetén is legyenek elérhetőek a funkciók.
+- Hatékonyság:
+  - Gyors válaszidő egy alsóbb kategóriás számítógépen.
+- Tárolt adatok biztonsága. 

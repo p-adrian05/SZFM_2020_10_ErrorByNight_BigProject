@@ -15,7 +15,9 @@
 # 9. Architekturális terv
 -
 # 10. Adatbázis terv
--
+<img src="./diagrams/db_design.png">
+
+ [Adatmodellt legeneráló SQL szkript](./db_script.txt)
 # 11. Implementációs terv
 <img src="https://raw.githubusercontent.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/master/diagrams/implementation_plan.png" alt="UML diagram" width="1000px">
 

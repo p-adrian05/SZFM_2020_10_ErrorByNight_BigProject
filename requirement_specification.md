@@ -15,7 +15,13 @@ hozzászólások, témák törlésére, adott felhasználó tiltására az oldal
 &nbsp;&nbsp;&nbsp;A felhasználói felületnek letisztult, felhasználó barát és informatívnak kell lennie, továbbá mobil, tablet vagy asztali nézettel kell rendelkeznie.
 Minden platformon ugyanazt a funkcionalitást kell biztosítani és a legelterjedtebb böngészők ugyanúgy jelenítésék meg a felülelet.
 # 3. Jelenlegi üzleti folyamatok
--
+Vállalkozásunk jelenleg egy olyan webáruházzal rendelkezik, melyen a következő funkciók érhetőek el:
+-Kínálat böngészése: Az oldalon megtekinthető az összes jelenleg rendelhető termék, részletes információkkal azok tulajdonságairól, adatairól. A termékeket többféle szempont alapján lehet szűrni és rendezni, rájuk lehet keresni.
+-Rendelés leadása: A kiválaszott termék(ek) iránti igény továbbítása a személyzetünk felé, a fizetési mód kiválasztása és lebonyolítása.
+-Csomag állapotának nyomonkövetése: A vásárló e funkció segítségével nyomon követheti hogy milyen állapotban van korábban leadott rendelése. Rákereshet tetszőleges csomagra a csomagazonosító tudatában.
+-Ügyfélszolgálat: A webáruházzal és áruinkkal kapcsolatos bővebb információ igényében az ügyfélszolgálatunkhoz lehet fordulni, melyet e-mail vagy telefon segítségével lehet elérni.
+-Visszaküldési lehetőség: Egyes termékeknél lehetőség van visszaküldeni azt csere vagy pénzvisszafizetés céljából a visszaküldési szabályzatunk keretein belül.
+
 # 4. Igényelt üzleti folyamatok
 ### 4.1 Regisztráció/Belépés  
 Egyedi felhasználónév, létező és megfelelő email cím, megfelelő hosszúságú és elég erős jelszó megadása.

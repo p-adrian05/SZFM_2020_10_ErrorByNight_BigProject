@@ -24,6 +24,8 @@ A rendszer tervezési mintája a MVC (Model-View-Controller) a Spring keretrends
 - A View komponensek jelenítik meg az információkat a felhasználónak.
 - A Controller fogadja a bemenetet, melyet szolgáltatáskérésekké alakít a Model vagy a View felé.
 
+<img src="./diagrams/mvc.png">
+
 #### Változások kezelése
 
 - Egyszerűen kezelhető változások hajthatóak végre, mivel interfészektől vagy absztrakt osztályoktól történik az objektumok függése, nem konkrét implementációktól, ezáltal az implementációk anélkül változtathatóak, hogy hatással lennének más objektumokra.

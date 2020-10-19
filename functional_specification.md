@@ -1,16 +1,16 @@
 # 1. A rendszer céljai és nem céljai
 A rendszer céljai:
--A felhasználók hozzá tudjanak szólni a meglévő témákhoz, nyilvános beszélgetést folytatva
--A céges dolgozók új témákat tudjanak nyitni, és legyen módjuk moderálni a meglévőket egy tiszteletteljes beszélgetés folytatásának megtartása érdekében
--Privát üzenet funkciójával olyan beszélgetést biztosítani amelyet csak a két résztvevő felhasználó láthat
--A témákhoz való hozzászólások esetén minden hozzászólás azonosítható legyen egy felhasználóval.
+- A felhasználók hozzá tudjanak szólni a meglévő témákhoz, nyilvános beszélgetést folytatva
+- A céges dolgozók új témákat tudjanak nyitni, és legyen módjuk moderálni a meglévőket egy tiszteletteljes beszélgetés folytatásának megtartása érdekében
+- Privát üzenet funkciójával olyan beszélgetést biztosítani amelyet csak a két résztvevő felhasználó láthat
+- A témákhoz való hozzászólások esetén minden hozzászólás azonosítható legyen egy felhasználóval.
 
 A rendszernek NEM célja:
--Körlevelek küldésének lehetősége
--"Like/Dislike" alapú szavazási rendszer kialakítása a hozzászólások megbízhatóságának megszavazása érdekében
--Csoportos privát beszélgetések létrehozása
--Saját felhasználói fiók törlése céges felhasználó közreműködése nélkül
--A felhasználó hozzászólásainak utólagos módosítása
+- Körlevelek küldésének lehetősége
+- "Like/Dislike" alapú szavazási rendszer kialakítása a hozzászólások megbízhatóságának megszavazása érdekében
+- Csoportos privát beszélgetések létrehozása
+- Saját felhasználói fiók törlése céges felhasználó közreműködése nélkül
+- A felhasználó hozzászólásainak utólagos módosítása
 
 # 2. Jelenlegi helyzet leírása
 &nbsp;&nbsp;&nbsp;Ügyfelünk egy webáruház, amely több kapcsolatfelvételi módot is kínál felhasználóinknak. A telefonos ügyfélszolgálatunk a nap bármely szakaszában elérhető, általában 

@@ -46,7 +46,14 @@ A rendszer tervezési mintája a MVC (Model-View-Controller) a Spring keretrends
 <img src="./diagrams/implementation_plan.png" alt="UML diagram" width="1000px">
 
 # 12. Tesztterv
--
+- Az alkalmazás backend részének tesztelése automatizálva lesz megoldva a JUnit 5 keretrendszer segítségével. A teszthez tesztelési jegyzőkönyv készül.   
+- Frontenden a felhasználói felület manuálisan lesz tesztelve, a jegyzőkönyvben leírva a tesztelt funkció részletes leírása, az elvárt helyes működés, a kapott működés és az elfogadásról szóló döntési hozatal.
+- Tesztelendő modulok:
+    - Adatbázis modell és DAO osztályok.
+    - Service osztályok.
+    - Controller osztályok.
+    - Felhasználó űrlapok helyes működése bejelentkezés, regisztráció és adatok megváltoztatás esetén, hibás adat megadása esetén elvárt működés.
+    - Felhasználói felület, megjelenés.
 # 13. Telepítési terv
 -
 # 14. Karbantartási terv

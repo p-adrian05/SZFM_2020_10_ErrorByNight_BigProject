@@ -29,7 +29,8 @@ Az alkalmazás backend része java nyelven a Spring keretrendszerben kell elkés
 Az adatbázis relációs kell legyen és a JPA keretrendszert kell használni.
 Regisztráció esetén a megadott adatok helyességéről szerver oldalon gondoskodunk és alapos visszajelzést kell küldeni hibás adat megadásakor.
 # 4. Jelenlegi üzleti folyamatok modellje
--
+[Követelmény specifikáció 4. bekezdés](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/requirement_specification.md)
+
 # 5. Igényelt üzleti folyamatok modellje
 ### 5.1 Regisztráció/Belépés  
 Egyedi felhasználónév, létező és megfelelő email cím, megfelelő hosszúságú és elég erős jelszó megadása.

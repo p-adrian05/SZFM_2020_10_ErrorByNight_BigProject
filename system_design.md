@@ -4,7 +4,7 @@
 - Privát üzenet funkciójával olyan beszélgetést biztosítani amelyet csak a két résztvevő felhasználó láthat (ennek megvalósítása az adott felhasználó adatlapján, az erre megfelelő gomb használatával eszközölhető)
 - A témákhoz való hozzászólások esetén minden hozzászólás azonosítható legyen egy felhasználóval.
 - A nem regisztrált felhasználók korlátozása (a fórumon kizárólag bejegyzések olvasásának lehetősége)
-- A felhasználó tájékoztatása nem megfelelő adatok megadásáról
+- A felhasználó tájékoztatása nem megfelelő adatok megadásáról a regisztráció során
 - Egyéni profilkép feltöltésének lehetősége a felhasználói adatlapra
 - A felhasználói adatok biztonságos tárolása
 

@@ -6,7 +6,15 @@
 
 
 # 2. A rendszer nem céljai
--
+
+
+- Körlevelek küldésének lehetősége
+- "Like/Dislike" alapú szavazási rendszer kialakítása a hozzászólások megbízhatóságának megszavazása érdekében
+- Csoportos privát beszélgetések létrehozása
+- Saját felhasználói fiók törlése céges felhasználó közreműködése nélkül
+- A felhasználó hozzászólásainak utólagos módosítása
+
+
 # 3. Projektterv
 -
 # 4. Üzleti folyamatok modellje

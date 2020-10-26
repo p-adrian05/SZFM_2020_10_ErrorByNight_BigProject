@@ -16,6 +16,7 @@
 - Csoportos privát beszélgetések létrehozása
 - Saját felhasználói fiók törlése céges felhasználó közreműködése nélkül
 - A felhasználó hozzászólásainak utólagos módosítása
+- Kötelezni a felhasználót további adatok (például : teljes név, e-mail cím) megadására
 
 
 # 3. Projektterv

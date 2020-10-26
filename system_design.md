@@ -1,13 +1,13 @@
 # 1. A rendszer céljai
 - A felhasználók hozzá tudjanak szólni a meglévő témákhoz, nyilvános beszélgetést folytatva
 - A céges dolgozók új témákat tudjanak nyitni, és legyen módjuk moderálni a meglévőket egy tiszteletteljes beszélgetés folytatásának megtartása érdekében
-- Privát üzenet funkciójával olyan beszélgetést biztosítani amelyet csak a két résztvevő felhasználó láthat
+- Privát üzenet funkciójával olyan beszélgetést biztosítani amelyet csak a két résztvevő felhasználó láthat (ennek megvalósítása az adott felhasználó adatlapján, az erre megfelelő gomb használatával eszközölhető)
 - A témákhoz való hozzászólások esetén minden hozzászólás azonosítható legyen egy felhasználóval.
-
+- A nem regisztrált felhasználók korlátozása (a fórumon kizárólag bejegyzések olvasásának lehetősége)
 
 # 2. A rendszer nem céljai
 
-
+- Teljeskörű hozzáférés biztosítása nem regisztrált felhasználók számára
 - Körlevelek küldésének lehetősége
 - "Like/Dislike" alapú szavazási rendszer kialakítása a hozzászólások megbízhatóságának megszavazása érdekében
 - Csoportos privát beszélgetések létrehozása

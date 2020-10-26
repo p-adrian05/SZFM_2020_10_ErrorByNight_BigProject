@@ -56,7 +56,7 @@
 # 5. Követelmények
 -
 # 6. Funkcionális terv
--
+ [Funkcionális specifikációban](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/functional_specification.md) megtalálható.
 # 7. Fizikai környezet
 -
 # 9. Architekturális terv

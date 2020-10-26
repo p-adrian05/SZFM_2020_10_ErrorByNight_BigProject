@@ -21,13 +21,60 @@
 
 
 # 3. Projektterv
--
+
+## Projekt bemutatása
+  Egy már meglévő webshop szolgáltatásait bővítjük egy fórummal, ami egy olyan platformot biztosít a meglévő, illetve új vásárlók számára, ahol hatékonyan kommunikálhatnak.
+  
+## Költség- és erőforrás-szükségletek
+  Az erőforrásigényünk kb. 10 személynap.
+  A rendelkezésünkre álló 5 pont.
+  
+## Szervezeti felépítés és felelősségmegosztás
+  A projekt megrendelője a webáruház tulajdonosa. A projektet  a projektcsapat fogja megtervezni, implementálni, végrehajtani.
+  
+## Rizikómenedzsment
+  Az összeszedett és felkészült projektcsapat miatt, csupán a kialakult járványügyi helyzet lassíthatja a projekt befejezését.
+  
+## Csoportgyűlések
+  A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problémáit, ill. megbeszéljék a következő hét feladatait. A megbeszélésről minden esetben MEMO készül, mely tartalmazza a következőket:
+  * jelenlévők listája
+  * megbeszélés helye, ideje
+  * megbeszélt tevékenységek
+  * felmerült kérdések, igények
+
+## Minőségbiztosítás
+  Az elkészült terveket a terveken nem dolgozó csapattársak közül átnézik, hogy megfelel-e a specifikációnak és az egyes diagramtípusok összhangban vannak-e egymással. A meglévő rendszerünk helyes működését a prototípusok bemutatása előtt a tesztelési dokumentumban leírtak végrehajtása alapján ellenőrizzük és összevetjük a specifikációval, hogy az elvárt eredményt kapjuk-e. További tesztelési lehetőségek: unit tesztek írása az egyes modulokhoz vagy a kód közös átnézése (code review) egy, a vizsgált modul programozásában nem résztvevő csapattaggal. Szoftverünk minőségét a végső leadás előtt javítani kell a rendszerünkre lefuttatott kódelemzés során kapott metrikaértékek és szabálysértések figyelembevételével.
+  Az alábbi lehetőségek vannak a szoftver megfelelő minőségének biztosítására:
+    * Specifikáció és tervek átnézése
+    * Teszttervek végrehajtása
+    * Unit tesztek írása
+    * Kód átnézése
+    
+## Státuszjelentés
+  Minden leadásnál a projektmenedzser jelentést tesz a projekt haladásáról, és ha szükséges változásokat indítványoz a projektterven. Ezen kívül a megrendelő felszólítására a menedzser 3 munkanapon belül köteles leadni a jelentést. A gyakorlatvezetővel folytatott csapatmegbeszéléseken a megadott sablon alapján emlékeztetőt készít a csapat, amit a következő megbeszélésen áttekintenek és felmérik az eredményeket és teendőket. Továbbá gazdálkodnak az erőforrásokkal és szükség esetén a megrendelővel egyeztetnek a projektterv módosításáról.
+
+
 # 4. Üzleti folyamatok modellje
--
+
+ A felhasználókat a fórumba lépve azonnal a már létrehozott témák fogják várni. Ezután a felhasználónak módjában áll: 
+  * Témákat olvasni
+  * Regisztrálni: felhasználónév, email cím és jelszó megadásával történik
+  * Bejelentkezni: felhasználónév, jelszó megadásával
+ 
+ Bejelentkezés után a felhasználó képes:
+  * A megnyitott témákhoz hozzászólást írni
+  * Privát üzeneteket küldeni és fogadni
+  * Felhasználói adatok módosítására
+  * Kilépésre
+  
+ Az admin képes a fórumon: 
+  * Új témákat létrehozni
+  * Adatok törlésére: hozzászólások, témák törlése
+
 # 5. Követelmények
 -
 # 6. Funkcionális terv
--
+ [Funkcionális specifikációban](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/functional_specification.md) megtalálható.
 # 7. Fizikai környezet
 -
 # 9. Architekturális terv

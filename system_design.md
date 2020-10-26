@@ -6,6 +6,7 @@
 - A nem regisztrált felhasználók korlátozása (a fórumon kizárólag bejegyzések olvasásának lehetősége)
 - A felhasználó tájékoztatása nem megfelelő adatok megadásáról
 - Egyéni profilkép feltöltésének lehetősége a felhasználói adatlapra
+- A tárolt felhasználói adatok biztonsága
 
 # 2. A rendszer nem céljai
 

@@ -17,6 +17,7 @@
 - Saját felhasználói fiók törlése céges felhasználó közreműködése nélkül
 - A felhasználó hozzászólásainak utólagos módosítása
 - Kötelezni a felhasználót további adatok (például : teljes név, e-mail cím) megadására
+- Biztosítani nem adminisztrátori hatáskörrel rendelkező felhasználó számára az adattörlés lehetőségét
 
 
 # 3. Projektterv

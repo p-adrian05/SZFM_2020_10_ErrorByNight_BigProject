@@ -1,5 +1,10 @@
 # 1. A rendszer céljai
--
+- A felhasználók hozzá tudjanak szólni a meglévő témákhoz, nyilvános beszélgetést folytatva
+- A céges dolgozók új témákat tudjanak nyitni, és legyen módjuk moderálni a meglévőket egy tiszteletteljes beszélgetés folytatásának megtartása érdekében
+- Privát üzenet funkciójával olyan beszélgetést biztosítani amelyet csak a két résztvevő felhasználó láthat
+- A témákhoz való hozzászólások esetén minden hozzászólás azonosítható legyen egy felhasználóval.
+
+
 # 2. A rendszer nem céljai
 -
 # 3. Projektterv

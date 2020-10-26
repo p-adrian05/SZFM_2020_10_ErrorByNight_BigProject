@@ -37,7 +37,22 @@
 
 
 # 4. Üzleti folyamatok modellje
--
+
+ A felhasználókat a fórumba lépve azonnal a már létrehozott témák fogják várni. Ezután a felhasználónak módjában áll: 
+  * Témákat olvasni
+  * Regisztrálni: felhasználónév, email cím és jelszó megadásával történik
+  * Bejelentkezni: felhasználónév, jelszó megadásával
+ 
+ Bejelentkezés után a felhasználó képes:
+  * A megnyitott témákhoz hozzászólást írni
+  * Privát üzeneteket küldeni és fogadni
+  * Felhasználói adatok módosítására
+  * Kilépésre
+  
+ Az admin képes a fórumon: 
+  * Új témákat létrehozni
+  * Adatok törlésére: hozzászólások, témák törlése
+
 # 5. Követelmények
 -
 # 6. Funkcionális terv

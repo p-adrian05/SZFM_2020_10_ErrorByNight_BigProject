@@ -55,7 +55,7 @@ A rendszer tervezési mintája a MVC (Model-View-Controller) a Spring keretrends
     - Felhasználó űrlapok helyes működése bejelentkezés, regisztráció és adatok megváltoztatás esetén, hibás adat megadása esetén elvárt működés.
     - Felhasználói felület, megjelenés.
 # 13. Telepítési terv
--
+A telepítést ügyfelünk végzi saját webszervereire és saját adatbázisukhoz kapcsolva.
 # 14. Karbantartási terv
 &nbsp;&nbsp;&nbsp;Az alkalmazáshoz jelenlegi és jövőbeli problémamentes használata érdekében folyamatos
 frissítést biztosítunk az átadás utáni fél évben ingyenesen.   

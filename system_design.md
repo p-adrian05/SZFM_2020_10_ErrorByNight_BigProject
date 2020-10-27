@@ -57,4 +57,6 @@ A rendszer tervezési mintája a MVC (Model-View-Controller) a Spring keretrends
 # 13. Telepítési terv
 -
 # 14. Karbantartási terv
--
+&nbsp;&nbsp;&nbsp;Az alkalmazáshoz jelenlegi és jövőbeli problémamentes használata érdekében folyamatos
+frissítést biztosítunk az átadás utáni fél évben ingyenesen.   
+&nbsp;&nbsp;&nbsp;Az új verziók két hetente kerülnek kiadásra, ide tartoznak az egyszerű hibák javítása, optimalizáció, új funkciók bevezetése vagy javítása felhasználói visszajelzések alapján. Kritikus, optimális működést befolyásoló hibák esetén azonnali, mielőbbi működőképes verzió kiadása történik.

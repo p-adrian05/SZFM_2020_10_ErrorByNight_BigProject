@@ -22,36 +22,12 @@
 
 # 3. Projektterv
 
-## Projekt bemutatása
-  Egy már meglévő webshop szolgáltatásait bővítjük egy fórummal, ami egy olyan platformot biztosít a meglévő, illetve új vásárlók számára, ahol hatékonyan kommunikálhatnak.
-  
-## Költség- és erőforrás-szükségletek
-  Az erőforrásigényünk kb. 10 személynap.
-  A rendelkezésünkre álló 5 pont.
-  
-## Szervezeti felépítés és felelősségmegosztás
-  A projekt megrendelője a webáruház tulajdonosa. A projektet  a projektcsapat fogja megtervezni, implementálni, végrehajtani.
-  
-## Rizikómenedzsment
-  Az összeszedett és felkészült projektcsapat miatt, csupán a kialakult járványügyi helyzet lassíthatja a projekt befejezését.
-  
-## Csoportgyűlések
-  A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problémáit, ill. megbeszéljék a következő hét feladatait. A megbeszélésről minden esetben MEMO készül, mely tartalmazza a következőket:
-  * jelenlévők listája
-  * megbeszélés helye, ideje
-  * megbeszélt tevékenységek
-  * felmerült kérdések, igények
-
-## Minőségbiztosítás
-  Az elkészült terveket a terveken nem dolgozó csapattársak közül átnézik, hogy megfelel-e a specifikációnak és az egyes diagramtípusok összhangban vannak-e egymással. A meglévő rendszerünk helyes működését a prototípusok bemutatása előtt a tesztelési dokumentumban leírtak végrehajtása alapján ellenőrizzük és összevetjük a specifikációval, hogy az elvárt eredményt kapjuk-e. További tesztelési lehetőségek: unit tesztek írása az egyes modulokhoz vagy a kód közös átnézése (code review) egy, a vizsgált modul programozásában nem résztvevő csapattaggal. Szoftverünk minőségét a végső leadás előtt javítani kell a rendszerünkre lefuttatott kódelemzés során kapott metrikaértékek és szabálysértések figyelembevételével.
-  Az alábbi lehetőségek vannak a szoftver megfelelő minőségének biztosítására:
-    * Specifikáció és tervek átnézése
-    * Teszttervek végrehajtása
-    * Unit tesztek írása
-    * Kód átnézése
-    
-## Státuszjelentés
-  Minden leadásnál a projektmenedzser jelentést tesz a projekt haladásáról, és ha szükséges változásokat indítványoz a projektterven. Ezen kívül a megrendelő felszólítására a menedzser 3 munkanapon belül köteles leadni a jelentést. A gyakorlatvezetővel folytatott csapatmegbeszéléseken a megadott sablon alapján emlékeztetőt készít a csapat, amit a következő megbeszélésen áttekintenek és felmérik az eredményeket és teendőket. Továbbá gazdálkodnak az erőforrásokkal és szükség esetén a megrendelővel egyeztetnek a projektterv módosításáról.
+&nbsp;&nbsp;&nbsp;Egy már meglévő webshop szolgáltatásait bővítjük egy fórummal, ami egy olyan platformot biztosít a meglévő, illetve új vásárlók számára, ahol hatékonyan kommunikálhatnak. A projekten négy fő dolgozik, megosztva a munkát. Az alkalmazás frontend és a backend részén is 2-2 fő dolgozik.  
+&nbsp;&nbsp;&nbsp;A projekttagok minden héten megbeszélik a heti feladatokat és a hét végén történik a közös kód átnézése, felmerült kérdések, problémák, igények megbeszélése.  
+&nbsp;&nbsp;&nbsp;A projekt nagyobb részfeladatokra kerül bontásra. Minden nagyobb részfeladatra 1 hét áll rendelkezésre, egyszerre mindenki csak 1 kis feladatot vállalhat el. A cél hogy a hét végére minden kitűzött feladat elvégzésre kerüljön.
+&nbsp;&nbsp;&nbsp;Az elkészült terveket a terveken nem dolgozó csapattársak közül átnézik, hogy megfelel-e a specifikációnak és az egyes diagramtípusok összhangban vannak-e egymással. A meglévő rendszerünk helyes működését a prototípusok bemutatása előtt a tesztelési dokumentumban leírtak végrehajtása alapján ellenőrizzük és összevetjük a specifikációval, hogy az elvárt eredményt kapjuk-e. További tesztelési lehetőségek: unit tesztek írása az egyes modulokhoz vagy a kód közös átnézése (code review) egy, a vizsgált modul programozásában nem résztvevő csapattaggal. Szoftverünk minőségét a végső leadás előtt javítani kell a rendszerünkre lefuttatott kódelemzés során kapott metrikaértékek és szabálysértések figyelembevételével. Az alábbi lehetőségek vannak a szoftver megfelelő minőségének biztosítására: * Specifikáció és tervek átnézése * Teszttervek végrehajtása * Unit tesztek írása * Kód átnézése.  
+&nbsp;&nbsp;&nbsp;Nagyobb részfeladatok: Adatbázis létrehozása, Felhasználói felület létrehozása, Funkcionalitás implementálása, Tesztelés, Hibák javítása.  
+A projekt leadási határideje 2020.12.07.
 
 
 # 4. Üzleti folyamatok modellje

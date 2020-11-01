@@ -62,7 +62,7 @@ A projekt leadási határideje 2020.12.07.
 # 7. Fizikai környezet
 A projekt elkészítéséhez IntelliJ IDEA szoftvert használunk.
 - **Backend:** Java, Spring keretrendszer. Relációs adatbázis használata JPA keretrendszerrel.
-- **Frontend:**
+- **Frontend:** HTML, CSS
 # 9. Architekturális terv
 #### Architekturális tervezési minta
 

@@ -60,7 +60,9 @@ A projekt leadási határideje 2020.12.07.
 # 6. Funkcionális terv
  [Funkcionális specifikációban](https://github.com/p-adrian05/SZFM_2020_10_ErrorByNight_BigProject/blob/main/functional_specification.md) megtalálható.
 # 7. Fizikai környezet
--
+A projekt elkészítéséhez IntelliJ IDEA szoftvert használunk.
+- **Backend:** Java, Spring keretrendszer. Relációs adatbázis használata JPA keretrendszerrel.
+- **Frontend:**
 # 9. Architekturális terv
 #### Architekturális tervezési minta
 

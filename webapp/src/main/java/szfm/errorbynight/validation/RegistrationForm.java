@@ -21,6 +21,15 @@ public class RegistrationForm {
   private String username;
 
   @Email(message = "Email is invalid")
-    @NotEmpty(message = "Email cannot be empty")
-    private String email;
+  @NotEmpty(message = "Email cannot be empty")
+  private String email;
+
+  @NotEmpty(message = "Cannot be empty")
+  @Size(min = 8,message = "min 8 characters required")
+  @Pattern(regexp = "(?=.*[0-9]).{8,}",message = "a digit must occur at least once")
+  @Pattern(regexp = "(?=.*[a-z]).{8,}",message = "a lower case letter must occur at least once")
+  @Pattern(regexp = "(?=.*[A-Z]).{8,}",message = "an upper case letter must occur at least once")
+  @Pattern(regexp = "(?=.*[@#$%^&+=]).{8,}",message = "a special character must occur at least once")
+  @Pattern(regexp = "(?=\\S+$).{8,}",message = "no whitespace allowed")
+  private String password;
 }

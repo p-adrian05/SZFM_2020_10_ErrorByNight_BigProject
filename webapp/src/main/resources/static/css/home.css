@@ -2,3 +2,6 @@
   display: flex;
   justify-content: center;
 }
+.forum-name{
+  color: var(--dark-color);
+}

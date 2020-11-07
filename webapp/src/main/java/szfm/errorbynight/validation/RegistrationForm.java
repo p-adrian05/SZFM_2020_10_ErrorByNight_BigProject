@@ -32,4 +32,6 @@ public class RegistrationForm {
   @Pattern(regexp = "(?=.*[@#$%^&+=]).{8,}",message = "a special character must occur at least once")
   @Pattern(regexp = "(?=\\S+$).{8,}",message = "no whitespace allowed")
   private String password;
+
+  private String verifyPassword;
 }

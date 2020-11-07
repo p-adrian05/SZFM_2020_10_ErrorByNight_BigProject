@@ -35,3 +35,6 @@
   color: var(--dark-color);
   transition: all 0.5s ease-in;
 }
+#nav-name {
+  font-weight: bolder;
+}

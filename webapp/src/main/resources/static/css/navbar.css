@@ -58,3 +58,8 @@
   color: var(--background-color);
   cursor: pointer;
 }
+#main-nav li:hover ul li a {
+  margin: 0rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}

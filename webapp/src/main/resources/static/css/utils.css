@@ -1,0 +1,161 @@
+:root {
+  --error-color: #c72727;
+  --background2-color: #CFD8DC;
+  --background-color: #B0BEC5;
+  --dark-color: #455A64;
+  --green-color: #3b3b3b;
+  --max-width: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  background: var(--background-color);
+}
+ a {
+  color: var(--background2-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Staatliches", cursive;
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+}
+p {
+  margin: 0.5rem 0;
+}
+.profileImage {
+  width: 60px;
+  border-radius: 1rem;
+}
+.btn {
+  display: inline-block;
+  color: #fff;
+  background: var(--dark-color);
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+.btn:hover {
+  background: var(--dark-color);;
+}
+
+.list {
+  margin: 0.5rem 0;
+  list-style: none;
+}
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: #444 dotted 1px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 0 2rem;
+}
+.btn-light {
+  background: var(--background-color);
+}
+.btn-primary {
+  background: var(--error-color);
+}
+.btn-secondary {
+  background: var(--background2-color);
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in;
+}
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+.bg-primary {
+  background: var(--error-color);
+  color: #fff;
+}
+.bg-secondary {
+  background: var(--background2-color);
+  color: #fff;
+}
+.py-1 {
+  padding: 1.5rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.p-1 {
+  padding: 1.5rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: #555 dotted 1px;
+  width: 90%;
+}
+
+.list li a:hover {
+  color: var(--error-color) !important;
+}
+.alert {
+  padding: 0.5rem;
+  background-color: red;
+  border-radius: .5rem;
+  color: var(--background-color);
+}
+
+.alert-danger {
+  background: #c62828;
+}
+.alert-success {
+  background: #4caf50;
+}

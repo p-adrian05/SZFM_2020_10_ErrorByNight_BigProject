@@ -26,3 +26,7 @@
   border-radius: 0.4rem;
   cursor: pointer;
 }
+#main-nav ul li a.current {
+  background: var(--error-color);
+  color: var(--background-color);
+}

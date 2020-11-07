@@ -66,3 +66,12 @@
 #logout {
   color: red;
 }
+
+/* popop messsages */
+#logoutDiv {
+  background-color: #4caf50;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--background-color);
+  text-align: center;
+}

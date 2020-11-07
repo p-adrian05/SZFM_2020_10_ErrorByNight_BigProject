@@ -1,0 +1,77 @@
+@import "utils.css";
+/*Navbar*/
+#main-nav {
+  background: var(--dark-color);
+   position: sticky;
+  top: 0;
+  z-index: 2;
+}
+#main-nav .container {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 5fr;
+  padding: 1rem;
+  align-items: center;
+}
+#nav-list-right {
+  justify-self: end;
+  display: flex;
+}
+#nav-list-left {
+  justify-self: start;
+  display: flex;
+}
+#main-nav ul li a {
+  padding: 0.75rem;
+  margin-right: 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+#main-nav ul li a.current {
+  background: var(--error-color);
+  color: var(--background-color);
+}
+#main-nav ul li a:hover {
+  background: var(--background-color);
+  color: var(--dark-color);
+  transition: all 0.5s ease-in;
+}
+#nav-name {
+  font-weight: bolder;
+}
+#main-nav .logo {
+  width: 50px;
+}
+#main-nav ul ul {
+  display: none;
+  background-color: var(--dark-color);
+}
+#main-nav ul li:hover ul {
+  display: block;
+  position: absolute;
+  padding: 1rem;
+}
+#main-nav li:hover ul li {
+  margin: 0rem;
+  padding-top: 1rem;
+}
+.dropdown span {
+  color: var(--background-color);
+  cursor: pointer;
+}
+#main-nav li:hover ul li a {
+  margin: 0rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+#logout {
+  color: red;
+}
+
+/* popop messsages */
+#logoutDiv {
+  background-color: #4caf50;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--background-color);
+  text-align: center;
+}

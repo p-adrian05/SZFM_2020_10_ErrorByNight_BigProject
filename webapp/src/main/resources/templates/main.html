@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../../static/css/home.css" />
+    <link id="stylesheetUtils" type="text/css" rel="stylesheet" href="../../static/css/utils.css" />
+    <link id="stylesheetNavbar" type="text/css" rel="stylesheet" href="../../static/css/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Staatliches"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="main-nav">
+      <div class="container">
+        <img src="./resources/img/logo.webp" alt="logo" class="logo" />
+        <ul id="nav-list-left">
+          <li class="nav-item">
+            <a id="home" class="nav-link" href="#">Home</a>
+          </li>
+        </ul>
+        <ul id="nav-list-right">
+            <li sec:authorize="isAuthenticated()" class="nav-item">
+                <a id="name" class="nav-link" href="#" sec:authentication="name">Name</a>
+                <ul>
+                    <li><a id="profile" href="#">Profile</a></li>
+                    <li><a id="settings" href="#">Settings</a></li>
+                    <li><a class="messages" href="#">Private Messages</a></li>
+                </ul>
+            </li>
+            <li sec:authorize="isAuthenticated()" class="nav-item active">
+                <a class="messages nav-link" href="#">Messages</a>
+            </li>
+            <li sec:authorize="isAnonymous()" class="nav-item">
+                <a id="login" class="nav-link">Login</a>
+            </li>
+            <li sec:authorize="isAnonymous()" class="nav-item">
+                <a id="registration" class="nav-link">Sign Up</a>
+            </li>
+            <li>
+            <form sec:authorize="isAuthenticated()" id="frmlogout" method="post">
+                <a id="logout" href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Logout</a>
+            </form>
+            </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="logoutDiv" class="alert-success">
+        Logged out!
+      </div>
+      <div id="errorDiv" style="text-align: center" class="alert alert-danger">
+        Failed to add favourite topic!
+      </div>
+      <div id="successDiv" style="text-align: center" class="alert alert-success">Successfully add favourite topic!</div>
+    </div>
+    <div layout:fragment="content">
+    </div>
+  </body>
+</html>

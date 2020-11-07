@@ -38,3 +38,6 @@
 #nav-name {
   font-weight: bolder;
 }
+#main-nav .logo {
+  width: 50px;
+}

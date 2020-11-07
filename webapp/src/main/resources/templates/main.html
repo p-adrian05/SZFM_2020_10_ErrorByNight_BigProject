@@ -32,6 +32,30 @@
             <a id="home" class="nav-link" href="#">Home</a>
           </li>
         </ul>
+        <ul id="nav-list-right">
+            <li sec:authorize="isAuthenticated()" class="nav-item">
+                <a id="name" class="nav-link" href="#" sec:authentication="name">Name</a>
+                <ul>
+                    <li><a id="profile" href="#">Profile</a></li>
+                    <li><a id="settings" href="#">Settings</a></li>
+                    <li><a class="messages" href="#">Private Messages</a></li>
+                </ul>
+            </li>
+            <li sec:authorize="isAuthenticated()" class="nav-item active">
+                <a class="messages nav-link" href="#">Messages</a>
+            </li>
+            <li sec:authorize="isAnonymous()" class="nav-item">
+                <a id="login" class="nav-link">Login</a>
+            </li>
+            <li sec:authorize="isAnonymous()" class="nav-item">
+                <a id="registration" class="nav-link">Sign Up</a>
+            </li>
+            <li>
+            <form sec:authorize="isAuthenticated()" id="frmlogout" method="post">
+                <a id="logout" href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Logout</a>
+            </form>
+            </li>
+        </ul>
       </div>
     </nav>
   </body>

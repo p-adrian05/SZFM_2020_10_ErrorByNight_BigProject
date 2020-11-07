@@ -41,3 +41,12 @@
   border: 1px solid var(--dark-color);
   border-radius: 0.5rem;
 }
+
+@media (max-width: 500px) {
+  #forum-table {
+    width: 400px;
+  }
+  .forum-item td * {
+    margin-right: 1rem;
+  }
+}

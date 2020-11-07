@@ -1,1 +1,8 @@
 @import "utils.css";
+/*Navbar*/
+#main-nav {
+  background: var(--dark-color);
+   position: sticky;
+  top: 0;
+  z-index: 2;
+}

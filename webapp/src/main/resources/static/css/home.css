@@ -17,3 +17,10 @@
   display: flex;
   justify-content: space-between;
 }
+.forum-num {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  grid-gap: 5rem;
+  margin-right: 2rem;
+}

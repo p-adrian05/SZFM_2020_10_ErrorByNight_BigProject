@@ -12,3 +12,7 @@
   padding: 1rem;
   align-items: center;
 }
+#nav-list-right {
+  justify-self: end;
+  display: flex;
+}

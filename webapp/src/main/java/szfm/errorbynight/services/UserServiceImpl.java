@@ -25,8 +25,9 @@ public class UserServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> user = userDao.findByUsername(username);
+        Optional<User> user = findByUsername(username);
         if (user.isPresent()) {
+            session.setAttribute("currentUser",user.get());
             return new UserDetailsImpl(user.get());
         }
         throw new UsernameNotFoundException(username);

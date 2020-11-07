@@ -30,13 +30,12 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
                                         Authentication authentication) throws IOException, ServletException {
-        Optional<User> user = userDao.findByUsername(authentication.getName());
-        if(user.isPresent()){
-            user.get().setLastLogin(new Date());
-            userDao.save(user.get());
-            session.setAttribute("currentUser", user.get());
+        User user = ((User)session.getAttribute("currentUser"));
+        try {
+            user.setLastLogin(new Date());
+            userDao.save(user);
             response.setStatus(HttpServletResponse.SC_OK);
-        }else{
+        }catch (Exception e){
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
 

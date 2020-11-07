@@ -30,3 +30,8 @@
   background: var(--error-color);
   color: var(--background-color);
 }
+#main-nav ul li a:hover {
+  background: var(--background-color);
+  color: var(--dark-color);
+  transition: all 0.5s ease-in;
+}

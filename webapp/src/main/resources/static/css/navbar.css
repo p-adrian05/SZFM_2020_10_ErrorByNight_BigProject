@@ -45,3 +45,8 @@
   display: none;
   background-color: var(--dark-color);
 }
+#main-nav ul li:hover ul {
+  display: block;
+  position: absolute;
+  padding: 1rem;
+}

@@ -27,3 +27,11 @@
 .forums-text {
   text-align: center;
 }
+.forum-header {
+  display: grid;
+  grid-template-columns: 7fr 1fr 1fr;
+  grid-gap: 0.5rem;
+  border-bottom: 2px solid var(--dark-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}

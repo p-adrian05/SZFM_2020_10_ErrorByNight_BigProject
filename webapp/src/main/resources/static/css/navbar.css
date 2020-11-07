@@ -16,3 +16,7 @@
   justify-self: end;
   display: flex;
 }
+#nav-list-left {
+  justify-self: start;
+  display: flex;
+}

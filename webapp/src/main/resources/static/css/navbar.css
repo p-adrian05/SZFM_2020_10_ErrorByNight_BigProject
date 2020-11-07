@@ -54,3 +54,7 @@
   margin: 0rem;
   padding-top: 1rem;
 }
+.dropdown span {
+  color: var(--background-color);
+  cursor: pointer;
+}

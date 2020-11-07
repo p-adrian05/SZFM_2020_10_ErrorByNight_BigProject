@@ -50,3 +50,7 @@
   position: absolute;
   padding: 1rem;
 }
+#main-nav li:hover ul li {
+  margin: 0rem;
+  padding-top: 1rem;
+}

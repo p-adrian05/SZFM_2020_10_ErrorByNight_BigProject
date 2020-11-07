@@ -5,3 +5,6 @@
 .forum-name{
   color: var(--dark-color);
 }
+#category-list{
+  width: 800px;
+}

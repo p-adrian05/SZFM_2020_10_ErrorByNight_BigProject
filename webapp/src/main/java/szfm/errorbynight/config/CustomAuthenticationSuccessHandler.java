@@ -6,6 +6,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import szfm.errorbynight.model.User;
+import szfm.errorbynight.repository.UserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

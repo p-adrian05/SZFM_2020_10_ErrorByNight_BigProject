@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import szfm.errorbynight.model.User;
+import szfm.errorbynight.repository.RoleDao;
+import szfm.errorbynight.repository.UserDao;
 
 import java.util.Optional;
 

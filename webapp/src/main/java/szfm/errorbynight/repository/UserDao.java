@@ -1,8 +1,5 @@
 package szfm.errorbynight.repository;
 
-
-import szfm.errorbynight.model.Message;
-import szfm.errorbynight.model.Topic;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
 
@@ -20,7 +17,7 @@ public interface UserDao extends GenericDao<User> {
 
     void saveUserData(UserData entity);
 
-    void sendMessage(Message message);
+    //void sendMessage(Message message);
 
     Optional<Long> getIdByUsername(String username);
 
@@ -30,11 +27,11 @@ public interface UserDao extends GenericDao<User> {
 
     Integer getMessagesCount(Long senderUserId, Long receiverUserId);
 
-    List<Message> getNewMessages(Long senderUserId, Long receiverUserIde);
+    //List<Message> getNewMessages(Long senderUserId, Long receiverUserIde);
 
-    List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit);
+    //List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit);
 
     Optional<Long> getIdByEmail(String email);
 
-    boolean madeReadedMessages(List<Message> messages);
+    //boolean madeReadedMessages(List<Message> messages);
 }

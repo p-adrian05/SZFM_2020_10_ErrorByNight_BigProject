@@ -1,0 +1,116 @@
+<html lang="en"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main">
+  <head>
+
+    <link id="stylesheetRegistration" type="text/css" rel="stylesheet" href="../static/css/registration.css" />
+    <title>Registration</title>
+  </head>
+  <body>
+  <div layout:fragment="content">
+    <div class="container">
+      <div id="form_container">
+        <form id="registrationForm" action="#" method="post">
+          <h1>Registration</h1>
+          <div class="registrationSuccess alert alert-success">
+            Successful registration!
+          </div>
+          <div class="registrationSuccess alert alert-success">
+            Activation link sent to your email!
+          </div>
+          <table>
+            <tr>
+              <td></td>
+              <td>
+                <div id="sqlErrorSpan" class="alert alert-danger"></div>
+              </td>
+            </tr>
+            <tr class="form-group">
+              <td><label for="username">Username</label></td>
+              <td>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Enter username"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <div id="usernameError" class="alert alert-danger"></div>
+              </td>
+            </tr>
+            <tr class="form-group">
+              <td>
+                <label for="email">Email</label>
+              </td>
+              <td>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <div id="emailError" class="alert alert-danger"></div>
+              </td>
+            </tr>
+            <tr class="form-group">
+              <td>
+                <label for="password">Password</label>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Enter password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <div id="passwordError" class="alert alert-danger"></div>
+              </td>
+            </tr>
+            <tr class="form-group">
+              <td>
+                <label for="verifyPassword">Verify Password</label>
+              </td>
+              <td>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="verifyPassword"
+                  placeholder="Confirm Password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <div
+                  id="passwordVerifyError"
+                  class="alert alert-danger"
+                ></div>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" value="Submit" class="btn" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

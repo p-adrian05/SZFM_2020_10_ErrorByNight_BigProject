@@ -5,11 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.repository.RoleDao;
 import szfm.errorbynight.repository.UserDao;
 
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -17,14 +19,28 @@ import java.util.Optional;
 @Slf4j
 public class UserServiceImpl implements UserDetailsService, UserService{
 
-    private final UserDao userDao;
-    private final RoleDao roleDao;
+    private UserDao userDao;
+    private RoleDao roleDao;
+    private EmailService emailService;
+    public static final String USER_ROLE = "USER";
+    private PasswordEncoder passwordEncoder;
+    private HttpSession session;
 
 
     @Autowired
-    public UserServiceImpl(UserDao userDao, RoleDao roleDao) {
+    public UserServiceImpl(UserDao userDao, RoleDao roleDao, EmailService emailService) {
         this.userDao = userDao;
         this.roleDao = roleDao;
+        this.emailService = emailService;
+    }
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+    @Autowired
+    public void setSession(HttpSession session) {
+        this.session = session;
     }
 
     @Override

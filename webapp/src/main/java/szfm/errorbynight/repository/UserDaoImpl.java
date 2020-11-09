@@ -96,17 +96,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void sendMessage(Message message) {
-        entityManager.persist(message);
-    }
-
-    @Override
     public List<String> getConversationUsernames(User user, int lowerLimit, int range) {
-        return new LinkedList<>();
-    }
-
-    @Override
-    public List<Message> getNewMessages(Long senderUserId, Long receiverUserIde) {
         return new LinkedList<>();
     }
 
@@ -118,10 +108,5 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Integer getMessagesCount(Long senderId, Long receiverId) {
         return 0;
-    }
-
-    @Override
-    public boolean madeReadedMessages(List<Message> messages) {
-        return true;
     }
 }

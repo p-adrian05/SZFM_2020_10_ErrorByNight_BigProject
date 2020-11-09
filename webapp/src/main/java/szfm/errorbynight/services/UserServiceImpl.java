@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import szfm.errorbynight.model.Role;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
 import szfm.errorbynight.repository.RoleDao;
@@ -55,8 +56,27 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     }
 
     @Override
-    public void registerUser(User user) throws SQLException {
-
+    public void registerUser(User userToRegister) throws SQLException {
+        Optional<Long> userIdByUsername = userDao.getIdByUsername(userToRegister.getUsername());
+        Optional<Long> userIdByEmail = userDao.getIdByEmail(userToRegister.getEmail());
+        if (userIdByUsername.isPresent()) {
+            throw new SQLException("Username is taken.");
+        }
+        if (userIdByEmail.isPresent()) {
+            throw new SQLException("Email is taken.");
+        }
+        Optional<Role> userRole = roleDao.findByRole(USER_ROLE);
+        if (userRole.isPresent()) {
+            userToRegister.addRole(userRole.get());
+        } else {
+            userToRegister.addRole(new Role(USER_ROLE));
+        }
+        String key = UtilService.generateKey();
+        userToRegister.setEnabled(false);
+        userToRegister.setActivation(key);
+        userToRegister.setPassword(passwordEncoder.encode(userToRegister.getPassword()));
+        userDao.add(userToRegister);
+        emailService.sendMessage(userToRegister.getEmail(), userToRegister.getUsername(), key);
     }
 
     @Override

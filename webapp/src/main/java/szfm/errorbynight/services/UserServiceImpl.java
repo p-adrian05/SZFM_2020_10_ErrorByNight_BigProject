@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import szfm.errorbynight.model.User;
+import szfm.errorbynight.model.UserData;
 import szfm.errorbynight.repository.RoleDao;
 import szfm.errorbynight.repository.UserDao;
 
@@ -60,11 +61,21 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public Optional<User> findByUsername(String username) {
-        return Optional.empty();
+        return userDao.findByUsername(username);
     }
 
     @Override
     public boolean userActivation(String code) {
+        Optional<User> user = userDao.findByActivation(code);
+        if (user.isPresent()) {
+            user.get().setEnabled(true);
+            user.get().setActivation("");
+            UserData userData = new UserData();
+            userData.setUser(user.get());
+            user.get().setUserData(userData);
+            userDao.save(user.get());
+            return true;
+        }
         return false;
     }
 }

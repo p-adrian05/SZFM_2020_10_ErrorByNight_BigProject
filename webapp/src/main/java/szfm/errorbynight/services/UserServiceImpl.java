@@ -12,6 +12,7 @@ import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
 import szfm.errorbynight.repository.RoleDao;
 import szfm.errorbynight.repository.UserDao;
+import szfm.errorbynight.util.UtilService;
 
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;

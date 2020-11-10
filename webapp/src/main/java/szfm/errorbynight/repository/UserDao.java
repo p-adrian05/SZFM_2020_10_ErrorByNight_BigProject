@@ -15,15 +15,15 @@ public interface UserDao extends GenericDao<User> {
 
     Optional<User> findByActivation(String code);
 
-    void saveUserData(UserData entity);
-
-    //void sendMessage(Message message);
+    Optional<Long> getIdByEmail(String email);
 
     Optional<Long> getIdByUsername(String username);
 
     List<String> getConversationUsernames(User user, int lowerLimit, int range);
 
-     int countNewMessagesForUser(String username1, String username2);
+    void saveUserData(UserData entity);
+
+    int countNewMessagesForUser(String username1, String username2);
 
     Integer getMessagesCount(Long senderUserId, Long receiverUserId);
 
@@ -31,7 +31,7 @@ public interface UserDao extends GenericDao<User> {
 
     //List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit);
 
-    Optional<Long> getIdByEmail(String email);
+    //void sendMessage(Message message);
 
-    //boolean madeReadedMessages(List<Message> messages);
+    //boolean saveMessages(List<Message> messages);
 }

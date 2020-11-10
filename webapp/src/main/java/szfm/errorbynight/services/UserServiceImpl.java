@@ -73,6 +73,9 @@ public class UserServiceImpl implements UserDetailsService, UserService{
             userToRegister.addRole(new Role(USER_ROLE));
         }
         String key = UtilService.generateKey();
+        UserData userData = new UserData();
+        userData.setUser(userToRegister);
+        userToRegister.setUserData(userData);
         userToRegister.setEnabled(false);
         userToRegister.setActivation(key);
         userToRegister.setPassword(passwordEncoder.encode(userToRegister.getPassword()));
@@ -91,9 +94,6 @@ public class UserServiceImpl implements UserDetailsService, UserService{
         if (user.isPresent()) {
             user.get().setEnabled(true);
             user.get().setActivation("");
-            UserData userData = new UserData();
-            userData.setUser(user.get());
-            user.get().setUserData(userData);
             userDao.save(user.get());
             return true;
         }

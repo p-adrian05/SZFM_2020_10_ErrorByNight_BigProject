@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.thymeleaf.engine.AttributeNames;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.services.UserService;
+import szfm.errorbynight.util.AttributeNames;
+import szfm.errorbynight.util.Mappings;
+import szfm.errorbynight.util.ViewNames;
 import szfm.errorbynight.validation.RegistrationForm;
 
 import javax.validation.Valid;

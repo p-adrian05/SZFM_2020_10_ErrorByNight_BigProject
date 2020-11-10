@@ -1,0 +1,15 @@
+<thlogic>
+    <attr sel="#sqlErrorSpan" th:if="${sqlError != null}" th:text="${sqlError}"/>
+    <attr sel=".registrationSuccess" th:if="${registrationSuccess!=''} and ${registrationSuccess != null} and ${registrationSuccess}"/>
+    <attr sel="#registrationForm" th:action="@{__${T(szfm.errorbynight.util.Mappings).REGISTRATION}__}"
+          th:object="${registrationForm}"/>
+    <attr sel = "#username" th:field="*{username}"/>
+    <attr sel ="#usernameError" th:if="${#fields.hasErrors('username')}" th:errors = "*{username}"/>
+    <attr sel = "#email" th:field="*{email}"/>
+    <attr sel ="#emailError" th:if="${#fields.hasErrors('email')}" th:errors = "*{email}"/>
+    <attr sel="#password" th:field="*{password}"/>
+    <attr sel="#passwordError" th:if="${#fields.hasErrors('password')}" th:errors = "*{password}"/>
+    <attr sel="#verifyPassword" th:field="*{verifyPassword}"/>
+    <attr sel="#passwordVerifyError" th:if="${#fields.hasErrors('global')}" th:errors="*{global}"/>
+    <attr sel="#stylesheetRegistration" th:href="@{/css/registration.css}"/>
+</thlogic>

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import org.thymeleaf.engine.AttributeNames;
 import szfm.errorbynight.model.User;
+import szfm.errorbynight.util.Mappings;
+import szfm.errorbynight.util.ViewNames;
 
 import javax.servlet.http.HttpSession;
 

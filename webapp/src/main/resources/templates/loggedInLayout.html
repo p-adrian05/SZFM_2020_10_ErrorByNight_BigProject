@@ -1,0 +1,46 @@
+<!DOCTYPE html >
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+        layout:decorate="layouts/main"
+>
+<head>
+    <link
+            id="stylesheetLoggedIn"
+            type="text/css"
+            rel="stylesheet"
+            href="../../static/css/loggedIn.css"
+    />
+    <head>
+        <link id="stylesheetHome" type="text/css" rel="stylesheet" href="../../static/css/utils.css" />
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div class="baseContainer">
+            <div layout:fragment="loggedIn-content">
+            </div>
+            <div sec:authorize="isAuthenticated()" class="loggedInContainer">
+                <div layout:fragment="loggedIn-content-column">
+                </div>
+
+                <div  class="fav-themes-container">
+                    <ul>
+                        <li>
+                            <h3>Favourite topics</h3>
+                        </li>
+                        <li class="fav-topic">
+                            <a href="#" class="fav-themes-name">Tesla Model 3</a>
+                            <a href="#" class="delete-fav"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

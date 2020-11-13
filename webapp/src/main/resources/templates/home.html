@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+        layout:decorate="layouts/main">
+<head>
+    <link id="stylesheetHome" type="text/css" rel="stylesheet" href="../static/css/home.css" />
+    <link id="stylesheetLoggedIn" type="text/css" rel="stylesheet" href="../static/css/loggedIn.css" />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/navbar.css" />
+    <title>Home</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+    <div class="baseContainer">
+        <div class="forum-container">
+            <div id="category-list">
+                <div class ="forum-header">
+                    <div class="forums-text"><span>Forums</span></div>
+                    <span>Themes</span>
+                </div>
+                <ul id="forum-themes">
+                    <li class="forum-item">
+                        <div class="forum-heading">
+                            <h4><a href="#" class="forum-name">Test</a></h4>
+                                <p class="forum-description">
+                                    Lorem ipsum dolor sit,
+                                </p>
+                        </div>
+                        <div class="forum-num">
+                            <span class="themes" >234</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div sec:authorize="isAuthenticated()" class="loggedInContainer">
+            <div  class="fav-themes-container">
+                <ul>
+                    <li>
+                        <h3>Favourite topics</h3>
+                    </li>
+                    <li class="fav-topic">
+                        <a href="#" class="fav-themes-name">Test</a>
+                        <a href="#" class="delete-fav"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<thlogic>
+
+    <attr sel="#frmlogout" th:action = "@{__${T(szfm.errorbynight.util.Mappings).LOGOUT}__}"/>
+    <attr sel="#login" th:href="@{__${T(szfm.errorbynight.util.Mappings).LOGIN}__}"/>
+    <attr sel="#logoutDiv" th:if="${param.logout}"/>
+    <attr sel="#stylesheetMain" th:href="@{/css/navbar.css}"/>
+    <attr sel="#stylesheetHome" th:href="@{/css/home.css}"/>
+    <attr sel="#stylesheetLoggedIn" th:href="@{/css/loggedIn.css}"/>
+    <attr sel=".logo" th:src="@{/img/logo.webp}"/>
+    <attr sel=".forum-item" th:each="entry:${categoriesAndTopicsCount}">
+        <attr sel=".forum-name" th:text="${entry.key.title}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEMES}__/{category}(category =${entry.key.title})}"/>
+        <attr sel=".forum-description" th:text="${entry.key.description}"/>
+        <attr sel=".themes" th:text="${entry.value}"/>
+    </attr>
+    <attr sel=".fav-topic" th:each="topicName:${favTopics}">
+        <attr sel=".delete-fav"  th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME_DELETE_FAV}__/{category}(category =${topicName})}"/>
+        <attr sel=".fav-themes-name" th:text="${topicName}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{category}(category =${topicName})}"/>
+    </attr>
+</thlogic>

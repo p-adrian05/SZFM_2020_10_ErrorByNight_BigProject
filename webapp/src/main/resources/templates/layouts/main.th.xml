@@ -1,0 +1,16 @@
+<thlogic>
+    <attr sel="#frmlogout" th:action = "@{~/__${T(szfm.errorbynight.util.Mappings).LOGOUT}__}"/>
+    <attr sel="#login" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).LOGIN}__}"/>
+    <attr sel="#logoutDiv" th:if="${param.logout}"/>
+    <attr sel="#stylesheetMain" th:href="@{/css/navbar.css}"/>
+    <attr sel="#stylesheetUtils" th:href="@{/css/utils.css}"/>
+    <attr sel=".logo" th:src="@{/img/logo.webp}"/>
+    <attr sel="#registration" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).REGISTRATION}__}"/>
+
+    <attr sel="#profile" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{user}(user=${#authentication.getPrincipal().getUsername()})}"/>
+    <attr sel="#settings" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_SETTINGS}__}"/>
+    <attr sel="#home" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).HOME}__}"/>
+    <attr sel=".messages" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_MESSAGES}__}"/>
+    <attr sel="#errorDiv" th:if="${addFavTopicResult!=''} and ${addFavTopicResult != null} and !${addFavTopicResult}"/>
+    <attr sel="#successDiv" th:if="${addFavTopicResult!=''} and ${addFavTopicResult != null} and ${addFavTopicResult}"/>
+</thlogic>

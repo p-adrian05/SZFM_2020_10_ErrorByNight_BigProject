@@ -1,0 +1,37 @@
+.fav-themes-container a {
+    color: var(--dark-color);
+}
+.fav-themes-container li {
+    border-bottom: 1px dotted var(--dark-color);
+    margin-bottom: 0.4rem;
+}
+.fav-themes-container li:first-child {
+    border-bottom: 2px solid var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+.baseContainer{
+    display: flex;
+}
+.loggedInContainer{
+    margin-top: 1rem;
+}
+.fav-themes-container {
+    width: 11rem;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    background-color: var(--background2-color);
+    border: 1px solid var(--dark-color);
+    border-radius: 0.5rem;
+}
+.fav-themes-container li{
+    display: flex;
+    justify-content: space-between;
+}
+
+#madeNewTopic {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border: 1px solid var(--dark-color);
+    border-radius: 0.5rem;
+}

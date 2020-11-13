@@ -1,0 +1,8 @@
+<thlogic>
+    <attr sel="#loginForm" th:action="@{__${T(szfm.errorbynight.util.Mappings).LOGIN}__}"/>
+    <attr sel="#registration" th:href="@{__${T(szfm.errorbynight.util.Mappings).REGISTRATION}__}"/>
+    <attr sel="#errorDiv" th:if="${param.error}"/>
+    <attr sel="#activationResultTrue" th:if="${activationResult!=''} and ${activationResult}"/>
+    <attr sel="#activationResultFalse" th:if="!${activationResult}"/>
+    <attr sel="#stylesheetLogin" th:href="@{/css/login.css}"/>
+</thlogic>

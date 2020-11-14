@@ -31,4 +31,22 @@ public class ForumDaoImpl implements ForumDao {
         }
 
     }
+
+     public Map<ForumCategory, Integer> getCategoriesAndTopicsCount() {
+        Map<ForumCategory, Integer> categoriesAndTopicsCount = new LinkedHashMap<>();
+        try {
+            entityManager
+                    .createQuery("SELECT c as Category, count(t.id) as counts FROM ForumCategory c left join Topic t on c.id = t.forumCategory.id " +
+                            "group by c.title,c.id, c.description order by counts desc", Tuple.class)
+                    .getResultStream().forEachOrdered(tuple -> {
+                        categoriesAndTopicsCount.put(((ForumCategory) tuple.get("Category")),
+                                ((Number) tuple.get("counts")).intValue());
+                    }
+            );
+        } catch (Exception e) {
+            return categoriesAndTopicsCount;
+        }
+        return categoriesAndTopicsCount;
+
+    }
 }

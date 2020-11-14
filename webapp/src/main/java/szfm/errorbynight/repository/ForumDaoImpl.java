@@ -173,13 +173,20 @@ public class ForumDaoImpl implements ForumDao {
 
 
 
-
-
-
-
-
-
-
+     public List<String> getFavouriteTopicNames(Long userId) {
+        List<String> topicNames = new LinkedList<>();
+        try {
+            List<Tuple> data = entityManager.createNativeQuery("select t.TITLE from TOPICS t where " +
+                    "t.id in (select TOPIC_ID from USERS_FAVTOPICS where USER_ID =:userId)", Tuple.class)
+                    .setParameter("userId", userId).getResultList();
+            data.forEach((obj) -> topicNames.add((String) obj.get(0)));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return topicNames;
+        }
+        return topicNames;
+    }
+   
 
 
 

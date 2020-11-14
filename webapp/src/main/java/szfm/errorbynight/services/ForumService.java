@@ -16,7 +16,7 @@ public interface ForumService {
 
     int getTopicPostsCount(String topicName);
 
-    List<Post> getPostsByCategoryName(String topicName, int offset, int range);
+    List<Post> getPostsByTopicName(String topicName, int offset, int range);
 
     boolean savePost(String topicName, Post post, User senderUser);
 

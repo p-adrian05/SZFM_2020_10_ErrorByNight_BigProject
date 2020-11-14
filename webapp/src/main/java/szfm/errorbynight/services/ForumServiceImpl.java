@@ -69,7 +69,7 @@ public class ForumServiceImpl implements ForumService {
     }
 
     @Override
-    public List<Post> getPostsByCategoryName(String topicName, int offset, int range) {
+    public List<Post> getPostsByTopicName(String topicName, int offset, int range) {
         return forumDao.getPostsByTopicName(topicName, lowerLimit - 1, range);
     }
 

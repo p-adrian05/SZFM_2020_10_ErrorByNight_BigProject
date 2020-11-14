@@ -70,7 +70,7 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public List<Post> getPostsByCategoryName(String topicName, int offset, int range) {
-        return null;
+        return forumDao.getPostsByTopicName(topicName, lowerLimit - 1, range);
     }
 
     @Override
@@ -90,7 +90,7 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public List<String> getFavouriteTopicNames(Long userId) {
-        return null;
+        return forumDao.getFavouriteTopicNames(userId);
     }
 
     public boolean addNewFavouriteTopic(String topicName, User currentUser) {

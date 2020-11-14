@@ -142,6 +142,23 @@ public class ForumDaoImpl implements ForumDao {
     }
 
 
+     @Override
+    public Optional<Long> getTopicIdByName(String topicName) {
+        try {
+            return Optional.ofNullable(entityManager
+                    .createQuery("SELECT t.id FROM Topic t WHERE t.title =: topicName", Long.class)
+                    .setParameter("topicName", topicName).getSingleResult());
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
+
+
+
+
+
+
 
 
 

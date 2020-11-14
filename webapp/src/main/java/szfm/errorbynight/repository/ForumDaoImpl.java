@@ -130,6 +130,19 @@ public class ForumDaoImpl implements ForumDao {
     }
 
 
+     @Override
+    public Long countTopicPosts(Long topicId) {
+        try {
+            return entityManager.createQuery("SELECT COUNT(p.id) FROM Post p WHERE p.topic.id =: topicId", Long.class)
+                    .setParameter("topicId", topicId)
+                    .getSingleResult();
+        } catch (Exception e) {
+            return 0L;
+        }
+    }
+
+
+
 
 
 

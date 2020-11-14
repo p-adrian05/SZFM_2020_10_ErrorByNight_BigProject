@@ -96,6 +96,18 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public boolean deleteFavouriteTopic(String topicName, User currentUser) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        currentUser.setFavTopics(new HashSet<>(forumDao.getFavTopics(currentUser.getId())));
+        if(topic.isPresent()){
+            currentUser.removeFavTopic(topic.get());
+            try {
+                userDao.save(currentUser);
+                return true;
+            } catch (Exception e) {
+                log.info(e.getMessage());
+                return false;
+            }
+        }
         return false;
     }
 }

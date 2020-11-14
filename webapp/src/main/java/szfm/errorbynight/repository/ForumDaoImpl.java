@@ -186,6 +186,21 @@ public class ForumDaoImpl implements ForumDao {
         }
         return topicNames;
     }
+
+
+     @Override
+    public List<Topic> getFavTopics(Long userid) {
+        List<Topic> topics = new LinkedList<>();
+        try {
+            topics = entityManager.createNativeQuery("select * from TOPICS t where t.ID in ( " +
+                    "select TOPIC_ID from USERS_FAVTOPICS where USER_ID =:userid)",Topic.class)
+                    .setParameter("userid",userid).getResultList();
+        } catch (Exception e) {
+            return topics;
+        }
+        return topics;
+    }
+
    
 
 

@@ -75,6 +75,15 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public boolean savePost(String topicName, Post post, User senderUser) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        if (topic.isPresent()) {
+            post.setUser(senderUser);
+            topic.get().setLastActiveTimestamp(post.getTimestamp());
+            post.setTopic(topic.get());
+            forumDao.updateTopic(topic.get());
+            forumDao.addPost(post);
+            return true;
+        }
         return false;
     }
 

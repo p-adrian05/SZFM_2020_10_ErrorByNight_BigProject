@@ -201,6 +201,14 @@ public class ForumDaoImpl implements ForumDao {
         return topics;
     }
 
+
+
+     @Override
+    public void updateTopic(Topic topic) {
+        entityManager.merge(topic);
+    }
+
+
    
 
 

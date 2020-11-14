@@ -1,0 +1,138 @@
+package szfm.errorbynight.services;
+
+import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Criteria;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import szfm.errorbynight.model.*;
+import szfm.errorbynight.repository.ForumDao;
+import szfm.errorbynight.repository.UserDao;
+import szfm.errorbynight.util.ThemeStat;
+
+import javax.servlet.http.HttpSession;
+import java.util.*;
+
+@Service
+@Slf4j
+public class ForumServiceImpl implements ForumService {
+    @Autowired
+    private ForumDao forumDao;
+
+    @Autowired
+    private UserDao userDao;
+
+
+    public boolean addNewTopic(String categoryName, Topic newTopic, User currentUser) {
+        Optional<ForumCategory> category = forumDao.getCategoryByName(categoryName);
+        if (category.isPresent()) {
+            newTopic.setFounderUser(currentUser);
+            newTopic.setForumCategory(category.get());
+            try {
+                forumDao.addTopic(newTopic);
+                return true;
+            } catch (Exception e) {
+                log.info(e.getMessage());
+                return false;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int getTopicsCount(String themeName) {
+        Optional<Long> forumCategoryId = forumDao.getCategoryIdByName(categoryName);
+        return forumCategoryId.map(aLong -> forumDao.countTopics(aLong).intValue()).orElse(0);
+    }
+
+    @Override
+    public boolean addNewPostToTopic(User currentUser, String topicName, String postMessage) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        try {
+            if (topic.isPresent()) {
+                Post post = new Post(postMessage);
+                post.setTopic(topic.get());
+                post.setUser(currentUser);
+                forumDao.addPost(post);
+                return true;
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return false;
+        }
+        return false;
+    }
+
+    @Override
+    public int getTopicPostsCount(String topicName) {
+        Optional<Long> forumTopicId = forumDao.getTopicIdByName(topicName);
+        return forumTopicId.map(aLong -> forumDao.countTopicPosts(aLong).intValue()).orElse(0);
+    }
+
+    @Override
+    public List<Post> getPostsByTopicName(String topicName, int offset, int range) {
+        return forumDao.getPostsByTopicName(topicName, lowerLimit - 1, range);
+    }
+
+    @Override
+    public boolean savePost(String topicName, Post post, User senderUser) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        if (topic.isPresent()) {
+            post.setUser(senderUser);
+            topic.get().setLastActiveTimestamp(post.getTimestamp());
+            post.setTopic(topic.get());
+            forumDao.updateTopic(topic.get());
+            forumDao.addPost(post);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<ThemeStat> getTopicsAndPostsCount(String categoryName, int offset, int range) {
+        Optional<Long> forumTopicId = forumDao.getTopicIdByName(topicName);
+        return forumTopicId.map(aLong -> forumDao.countTopicPosts(aLong).intValue()).orElse(0);
+    }
+
+    @Override
+    public Map<ForumCategory, Integer> getAllForumCategoriesAndTopicsCount() {
+        return forumDao.getCategoriesAndTopicsCount();
+    }
+
+    @Override
+    public List<String> getFavouriteTopicNames(Long userId) {
+        return forumDao.getFavouriteTopicNames(userId);
+    }
+
+    public boolean addNewFavouriteTopic(String topicName, User currentUser) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        currentUser.setFavTopics(new HashSet<>(forumDao.getFavTopics(currentUser.getId())));
+        if(topic.isPresent()){
+            currentUser.addFavTopic(topic.get());
+            try {
+                userDao.save(currentUser);
+                return true;
+            } catch (Exception e) {
+                log.info(e.getMessage());
+                return false;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean deleteFavouriteTopic(String topicName, User currentUser) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        currentUser.setFavTopics(new HashSet<>(forumDao.getFavTopics(currentUser.getId())));
+        if(topic.isPresent()){
+            currentUser.removeFavTopic(topic.get());
+            try {
+                userDao.save(currentUser);
+                return true;
+            } catch (Exception e) {
+                log.info(e.getMessage());
+                return false;
+            }
+        }
+        return false;
+    }
+}

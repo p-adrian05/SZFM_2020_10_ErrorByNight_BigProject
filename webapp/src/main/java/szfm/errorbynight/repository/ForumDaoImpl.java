@@ -118,5 +118,19 @@ public class ForumDaoImpl implements ForumDao {
 
 
 
+     @Override
+    public Long countTopics(Long categoryId) {
+        try {
+            return entityManager.createQuery("SELECT COUNT(t.id) FROM Topic t WHERE t.forumCategory.id =: categoryId", Long.class)
+                    .setParameter("categoryId", categoryId)
+                    .getSingleResult();
+        } catch (Exception e) {
+            return 0L;
+        }
+    }
+
+
+
+
 
 }

@@ -80,12 +80,13 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public List<ThemeStat> getTopicsAndPostsCount(String categoryName, int offset, int range) {
-        return null;
+        Optional<Long> forumTopicId = forumDao.getTopicIdByName(topicName);
+        return forumTopicId.map(aLong -> forumDao.countTopicPosts(aLong).intValue()).orElse(0);
     }
 
     @Override
     public Map<ForumCategory, Integer> getAllForumCategoriesAndTopicsCount() {
-        return null;
+        return forumDao.getCategoriesAndTopicsCount();
     }
 
     @Override

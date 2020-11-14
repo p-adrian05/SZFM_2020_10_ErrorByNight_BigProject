@@ -40,7 +40,8 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public int getTopicsCount(String themeName) {
-        return 0;
+        Optional<Long> forumCategoryId = forumDao.getCategoryIdByName(categoryName);
+        return forumCategoryId.map(aLong -> forumDao.countTopics(aLong).intValue()).orElse(0);
     }
 
     @Override
@@ -63,7 +64,8 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public int getTopicPostsCount(String topicName) {
-        return 0;
+        Optional<Long> forumTopicId = forumDao.getTopicIdByName(topicName);
+        return forumTopicId.map(aLong -> forumDao.countTopicPosts(aLong).intValue()).orElse(0);
     }
 
     @Override

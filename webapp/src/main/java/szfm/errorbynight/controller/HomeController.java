@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import szfm.errorbynight.model.User;
+import szfm.errorbynight.services.ForumService;
 import szfm.errorbynight.util.AttributeNames;
 import szfm.errorbynight.util.Mappings;
 import szfm.errorbynight.util.ViewNames;

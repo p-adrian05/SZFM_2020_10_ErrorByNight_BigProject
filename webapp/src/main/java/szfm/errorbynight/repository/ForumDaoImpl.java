@@ -49,4 +49,42 @@ public class ForumDaoImpl implements ForumDao {
         return categoriesAndTopicsCount;
 
     }
+
+      public List<ThemeStat> getThemeStat(String themeName, int lowerLimit, int range) {
+        List<ThemeStat> themeStats = new LinkedList<>();
+        try {
+            List<Tuple> data = entityManager.createNativeQuery("select t.TITLE, count(p.id)," +
+                    " u.USERNAME," +
+                    " ud.profileImg, t.LASTACTIVETIMESTAMP, t.TIMESTAMP" +
+                    " from TOPICS t left join POSTS p " +
+                    "on t.ID = p.TOPIC_ID join FORUM_CATEGORIES fc " +
+                    "on fc.ID = t.CATEGORY_ID " +
+                    "join USERS u on t.FOUNDER_ID = u.ID " +
+                    "join USERDATA ud on t.FOUNDER_ID = ud.USERID " +
+                    "where fc.TITLE =:themeName " +
+                    "group by t.ID " +
+                    "order by t.LASTACTIVETIMESTAMP", Tuple.class)
+                    .setParameter("themeName", themeName)
+                    .setFirstResult(lowerLimit)
+                    .setMaxResults(range)
+                    .getResultList();
+            data.forEach((tuple) -> {
+                themeStats.add(
+                        ThemeStat.builder()
+                                .title(String.valueOf(tuple.get(0)))
+                                .topicCount(Integer.parseInt(String.valueOf(tuple.get(1))))
+                                .founderUsername(String.valueOf(tuple.get(2)))
+                                .founderUserProfileImageName(String.valueOf(tuple.get(3)))
+                                .lastActive(String.valueOf(tuple.get(4)))
+                                .timestamp(String.valueOf(tuple.get(5)))
+                                .build()
+                );
+            });
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return themeStats;
+        }
+        return themeStats;
+    }
+
 }

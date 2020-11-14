@@ -155,6 +155,27 @@ public class ForumDaoImpl implements ForumDao {
 
 
 
+        @Override
+    public List<Post> getPostsByTopicName(String topicName, int lowerLimit, int range) {
+        List<Post> posts = new LinkedList<>();
+        try {
+            posts = entityManager.createQuery("SELECT p FROM Post p join fetch p.user WHERE p.topic.title = :topicName ORDER BY p.timestamp", Post.class)
+                    .setParameter("topicName", topicName)
+                    .setFirstResult(lowerLimit)
+                    .setMaxResults(range)
+                    .getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return posts;
+        }
+        return posts;
+    }
+
+
+
+
+
+
 
 
 

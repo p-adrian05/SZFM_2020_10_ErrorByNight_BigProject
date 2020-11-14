@@ -45,6 +45,19 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public boolean addNewPostToTopic(User currentUser, String topicName, String postMessage) {
+        Optional<Topic> topic = forumDao.getTopicByName(topicName);
+        try {
+            if (topic.isPresent()) {
+                Post post = new Post(postMessage);
+                post.setTopic(topic.get());
+                post.setUser(currentUser);
+                forumDao.addPost(post);
+                return true;
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return false;
+        }
         return false;
     }
 

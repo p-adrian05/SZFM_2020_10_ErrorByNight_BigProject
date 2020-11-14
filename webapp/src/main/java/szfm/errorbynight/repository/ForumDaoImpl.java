@@ -108,6 +108,15 @@ public class ForumDaoImpl implements ForumDao {
         }
     }
 
+     public void addTopic(Topic topic) {
+        entityManager.persist(topic);
+    }
+
+    public void addPost(Post post) {
+        entityManager.persist(post);
+    }
+
+
 
 
 }

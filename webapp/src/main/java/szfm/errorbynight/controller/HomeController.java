@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import org.thymeleaf.engine.AttributeNames;
 import szfm.errorbynight.model.User;
+import szfm.errorbynight.util.AttributeNames;
 import szfm.errorbynight.util.Mappings;
 import szfm.errorbynight.util.ViewNames;
 
@@ -24,9 +24,6 @@ public class HomeController {
     private ForumService forumService;
     @Autowired
     private HttpSession session;
-
-    @Autowired
-    private StorageService storageService;
 
     @GetMapping(Mappings.LOGIN)
     public String login(@ModelAttribute(AttributeNames.ACTIVATION_RESULT) String activationResult) {

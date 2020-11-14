@@ -87,4 +87,16 @@ public class ForumDaoImpl implements ForumDao {
         return themeStats;
     }
 
+     public Optional<Topic> getTopicByName(String topicName) {
+        try {
+            return Optional.of(entityManager
+                    .createQuery("SELECT t FROM Topic t WHERE t.title =: topicName", Topic.class)
+                    .setParameter("topicName", topicName)
+                    .getSingleResult());
+        } catch (Exception e) {
+            return Optional.empty();
+        }
+    }
+
+
 }

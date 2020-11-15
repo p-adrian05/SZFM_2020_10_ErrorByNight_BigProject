@@ -1,0 +1,26 @@
+<thlogic>
+    <attr sel ="#stylesheetMessages" th:href="@{/css/listPrivateMessages.css}"/>
+    <attr sel="#stylesheetLogin" th:href="@{/css/login.css}"/>
+    <attr sel="#answerPostForm" th:action="@{~/__${T(szfm.errorbynight.util.Mappings).NEW_POST_THEME}__/__${topicName}__/(userToSend =${userNameToSend},offset =${offset})}"/>/>
+    <attr sel="#successDiv" th:if="${result!=''} and ${result != null} and ${result}"/>
+    <attr sel="#errorDiv" th:if="${result!=''} and ${result != null} and !${result}"/>
+    <attr sel="#newAnswerTitle" th:if="${userNameToSend !=null}">
+        <attr sel="#usernameToSend" th:text ="${userNameToSend}"/>
+    </attr>
+    <attr sel="#newPostTitle" th:if="${userNameToSend == null}">
+        <attr sel="#topicName" th:text ="${topicName}"/>
+    </attr>
+
+
+    <attr sel=".card" th:if="${post != null}" >
+    <attr sel=".senderProfileLink" th:text="${post.user.username}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${post.user.username})}"/>
+    <attr sel=".receiverProfileLink" th:if="${post.parentPost != null}" th:text="${post.parentPost.user.username}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${post.parentPost.user.username})}"/>
+    <attr sel=".postNumberReceiver" th:if="${post.parentPost != null}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName},offset=${post.parentPostOffset},range=1)}"/>
+    <attr sel=".postNumberAuthor" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName},offset=${offset},range=1)}"/>
+        <attr sel=".postNumberAuthorValue" th:text="${offset}"/>
+    <attr sel=".postNumberReceiverValue " th:if="${post.parentPost != null}" th:text="${post.parentPostOffset}"/>
+    <attr sel=".timestamp" th:text="${post.timestamp}"/>
+    <attr sel=".messageContent" th:text="${post.content}"/>
+    <attr sel=".profileImage" th:src="@{~/__${T(szfm.errorbynight.util.Mappings).IMAGES}__/__${post.user.userData.profileImg}__}"/>
+    </attr>
+</thlogic>

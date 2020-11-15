@@ -1,0 +1,20 @@
+@import "pageNavigator.css";
+@import "listPrivateMessages.css";
+#header {
+    display: flex;
+    flex-direction: column;
+}
+#header-container {
+    display: flex;
+    justify-content: center;
+}
+.navigators-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--background2-color);
+    border-radius: 0.5rem;
+}

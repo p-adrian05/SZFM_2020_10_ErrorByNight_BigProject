@@ -45,7 +45,7 @@ public class PostController {
             int postsAmount = forumService.getTopicPostsCount(topicName);
             pagesOffsets = UtilService.getPageOffsets(postsAmount, range);
         }
-        model.addAttribute("posts", forumService.getPostsByCategoryName(topicName, offset, range));
+        model.addAttribute("posts", forumService.getPostsByTopicName(topicName, offset, range));
         model.addAttribute("pagesOffsets", pagesOffsets);
         model.addAttribute("offset", offset);
         model.addAttribute("range", range);
@@ -65,7 +65,7 @@ public class PostController {
                           @RequestParam(value = "offset", defaultValue = "0") int offset, Model model) {
         Post answerToPost = null;
         if (offset != 0) {
-            answerToPost = forumService.getPostsByCategoryName(topicName, offset, 1).get(0);
+            answerToPost = forumService.getPostsByTopicName(topicName, offset, 1).get(0);
             model.addAttribute("userNameToSend", userNameToSend);
         }
 
@@ -89,7 +89,7 @@ public class PostController {
             return "postAnswerForm";
         }
         if (offset != 0) {
-            parentPost = forumService.getPostsByCategoryName(topicName, offset, 1).get(0);
+            parentPost = forumService.getPostsByTopicName(topicName, offset, 1).get(0);
             model.addAttribute("post", parentPost);
             model.addAttribute("userNameToSend", userNameToSend);
         }

@@ -1,0 +1,74 @@
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main">
+<head>
+    <link id="stylesheetLogin" type="text/css" rel="stylesheet" href="../static/css/login.css" />
+    <link id="stylesheetMessages" type="text/css" rel="stylesheet" href="../static/css/listPosts.css" />
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div id="form_container">
+            <form id="answerPostForm" action="#" method="post">
+                <h2 id="newAnswerTitle">Send answer to <span id="usernameToSend"></span></h2>
+                <h2 id="newPostTitle">Send new post to <span id="topicName"></span></h2>
+                <label for="message">Message</label>
+                <div class="form-group">
+            <textarea
+                    rows="10"
+                    cols="80"
+                    id="message"
+                    name="message"
+                    placeholder="Enter message"
+            ></textarea>
+                </div>
+                <div class="button-group">
+                    <input type="submit" value="Send" class="btn" />
+                </div>
+                <div id="errorDiv" class="alert alert-danger">
+                    Failed to send answer!
+                </div>
+                <div id="successDiv" class="alert alert-success">Answer sent!</div>
+            </form>
+            <div class="card" style="margin-top:2rem">
+                <div class="card-header">
+                    <div class="msg-head-users">
+          <span class="msg-head-author">
+            <a href="#" class="postNumberAuthor"><span>(#</span><span class="postNumberAuthorValue"></span><span>)</span></a>
+            <a class ="senderProfileLink"href="/tag/kapu_2.html" target="_blank">test</a>
+          </span>
+                        <span class="fas fa-angle-right fa-fw"></span>
+                        <a href="#" class="postNumberReceiver"><span>(#</span><span class="postNumberReceiverValue"></span><span>)</span></a>
+                        <a class="receiverProfileLink" href="#" target="_blank">test2</a>
+                        </span>
+                    </div>
+                    <ul class="list-inline">
+
+                        <li class="list-inline-item">
+                            <time class="timestamp">2020-02-18 17:45:13</time>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="msg-user">
+                        <img class="profileImage" src="#" style="width: 50px;" alt="" />
+                        <p class="user-title">
+                            <a class ="senderProfileLink"href="#">test</a>
+                        </p>
+                        <!-- <p class="user-class"></p> -->
+                    </div>
+                    <div class="media-body">
+                        </p>
+                        <div class="msg-content">
+                            <p class="messageContent">Message</p>
+                        </div>
+                        <!-- <p class="msg-sign">
+                          <i></i>
+                        </p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

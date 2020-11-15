@@ -1,0 +1,46 @@
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main">
+<head>
+    <link
+            id="stylesheetNewTopic"
+            type="text/css"
+            rel="stylesheet"
+            href="../static/css/newTopic.css"
+    />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
+    <link id="stylesheetPage" type="text/css" rel="stylesheet" href="../static/css/login.css.css" />
+</head>
+<body>
+    <div layout:fragment="content">
+        <div id="form_container">
+            <form id="newTopicForm" action="#" method="post">
+                <h1>New Topic in <span id="categoryName"></span> forum category</h1>
+                <div class="form-group">
+                    <div id="errorDiv" class="alert alert-danger">
+                        Failed to open new topic! Theme name and message cannot be empty!
+                    </div>
+                    <label for="themeName">Theme name</label>
+                    <input
+                            type="text"
+                            class="form-input"
+                            id="themeName"
+                            name="themeName"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="starter-comment">Opening Comment</label>
+                    <textarea
+                            rows="10"
+                            cols="80"
+                            id="starter-comment"
+                            name="starter-comment"
+                    ></textarea>
+                </div>
+                <div class="button-group">
+                    <input type="submit" value="Open Topic" class="btn" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -55,4 +55,8 @@ public class Topic {
         return Objects.equals(id, topic.id) &&
                 Objects.equals(title, topic.title);
     }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title);
+    }
 }

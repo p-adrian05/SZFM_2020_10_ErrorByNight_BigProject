@@ -1,0 +1,25 @@
+<thlogic>
+    <attr sel ="#stylesheetListPosts" th:href="@{/css/listPosts.css}"/>
+    <attr sel="#pageNavigatorJs"  th:src="@{/js/pageNavigator.js}"/>
+    <attr sel="#postListJs"  th:src="@{/js/postList.js}"/>
+    <attr sel=".dropdown-toggle" th:text="'1-'+${range}"/>
+    <attr sel=".add-fav" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME_ADD_FAV}__/__${topicName}__}"/>
+    <attr sel=".dropdown-item" th:each="entry:${pagesOffsets}" th:text="${entry.key}+'-'+${entry.value}"
+          th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName},offset=${entry.key})}">
+    </attr>
+    <attr sel ="#back" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName},offset=${lowerLimitBack})}"/>
+    <attr sel ="#forward" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName},offset=${lowerLimitForward})}"/>
+    <attr sel =".card" th:each="post:${posts}">
+        <attr sel=".senderProfileLink" th:text="${post.user.username}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${post.user.username})}"/>
+        <attr sel=".receiverProfileLink" th:if="${post.parentPost != null}" th:text="${post.parentPost.user.username}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${post.parentPost.user.username})}"/>
+        <attr sel=".postNumberReceiver" th:if="${post.parentPost != null}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName},offset=${post.parentPostOffset},range=1)}"/>
+        <attr sel=".postNumberAuthor" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${topicName})}"/>
+            <attr sel=".postNumberReceiverValue " th:if="${post.parentPost != null}" th:text="${post.parentPostOffset}"/>
+        <attr sel=".timestamp" th:text="${post.timestamp}"/>
+        <attr sel=".messageContent" th:text="${post.content}"/>
+        <attr sel=".profileImage" th:src="@{~/__${T(szfm.errorbynight.util.Mappings).IMAGES}__/__${post.user.userData.profileImg}__}"/>
+        <attr sel=".answer" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).NEW_POST_THEME}__/__${topicName}__/(userToSend =${post.user.username})}"/>
+        <attr sel=".newPost" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).NEW_POST_THEME}__/__${topicName}__}"/>
+    </attr>
+
+</thlogic>

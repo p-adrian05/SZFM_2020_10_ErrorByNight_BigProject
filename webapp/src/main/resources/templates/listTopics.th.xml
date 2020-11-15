@@ -1,0 +1,26 @@
+<thlogic>
+    <attr sel="#stylesheetListTopic" th:href="@{/css/listTopic.css}"/>
+    <attr sel=".forum-item" th:each="data:${topicsAndPostsCount}">
+        <attr sel=".topic-name" th:text="${data.title}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{topicName}(topicName =${data.title})}"/>
+        <attr sel=".founderTime" th:text="${data.timestamp}"/>
+        <attr sel=".posts" th:text="${data.topicCount}"/>
+        <attr sel=".lastActive" th:text="${data.lastActive}"/>
+        <attr sel=".profileImage" th:src="@{~/__${T(szfm.errorbynight.util.Mappings).IMAGES}__/__${data.founderUserProfileImageName}__}"/>
+        <attr sel=".founderName" th:text="${data.founderUsername}"
+        th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${data.founderUsername})}"/>
+    </attr>
+    <attr sel=".dropdown-toggle" th:text="'1-'+${range}"/>
+    <attr sel=".dropdown-item" th:each="entry:${pagesOffsets}" th:text="${entry.key}+'-'+${entry.value}"
+          th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEMES}__/{themeName}(themeName =${themeName},offset=${entry.key})}">
+    </attr>
+    <attr sel ="#back" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEMES}__/{themeName}(themeName =${themeName},offset=${lowerLimitBack})}"/>
+    <attr sel ="#forward" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEMES}__/{themeName}(themeName =${themeName},offset=${lowerLimitForward})}"/>
+    <attr sel="#pageNavigatorJs"  th:src="@{/js/pageNavigator.js}"/>
+    <attr sel="#madeNewTopic" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME_NEW}__/{themeName}(themeName =${themeName})}"/>
+    <attr sel="#newTopicResultTrue" th:if="${result!=''} and ${result}"/>
+    <attr sel="#newTopicResultFalse" th:if="${result!=''} and !${result}"/>
+    <attr sel=".fav-topic" th:each="topicName:${favTopics}">
+        <attr sel=".delete-fav"  th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME_DELETE_FAV}__/{category}(category =${topicName})}"/>
+        <attr sel=".fav-themes-name" th:text="${topicName}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{category}(category =${topicName})}"/>
+    </attr>
+</thlogic>

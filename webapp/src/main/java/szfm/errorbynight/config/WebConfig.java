@@ -8,8 +8,10 @@ import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+import szfm.errorbynight.util.ViewNames;
 
 import java.util.Properties;
 
@@ -38,6 +40,11 @@ public class WebConfig implements WebMvcConfigurer {
         props.put("mail.smtp.starttls.enable", env.getProperty("mail.smtp.starttls.enable"));
         props.put("mail.debug",  env.getProperty("mail.debug"));
         return mailSender;
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName(ViewNames.HOME);
     }
 
 }

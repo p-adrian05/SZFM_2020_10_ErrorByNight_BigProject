@@ -1,0 +1,114 @@
+<html lang="en"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main"
+      xmlns:th="https://www.thymeleaf.org/">
+<head>
+
+    <link
+            id="stylesheetListPosts"
+            type="text/css"
+            rel="stylesheet"
+            href="../static/css/listPosts.css"
+    />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <header id="header-container">
+            <div id="header">
+                <div class="navigators-container">
+                    <a href="#" id="back">Back</a>
+                    <ul id="pagesNumber">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" id="dropdownLink" data-toggle="dropdown" role="button" href="#" aria-expanded="false">
+                                1 <span class="fas fa-chevron-down"></span>
+                            </a>
+                            <ul id="dropdown-items">
+                                <a class="dropdown-item" href="#">1</a>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" id="forward">Forward</a>
+                </div>
+                <div id ="summary">
+                    <div class="card-header">
+                        <span>Topic Summary</span>
+                        <span><a href="#" class="add-fav"><i class="fa fa-star" style="color: gold" aria-hidden="true"></i></a></span>
+                    </div>
+                    <div class="card-body">
+                        <div class="media-body">
+                            <div class="msg-content">
+                                <p class="messageContent">Message</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="messages_container">
+            <ul id="messageList">
+                <li class="card">
+                    <div class="card-header">
+                        <div class="msg-head-users">
+                          <span class="msg-head-author">
+                            <a href="#" class="postNumberAuthor"><span>(#</span><span class="postNumberAuthorValue"></span><span>)</span></a>
+                            <a class ="senderProfileLink"href="#" target="_blank">test</a>
+                          </span>
+                          <span class="fas fa-angle-right fa-fw"></span>
+                          <a href="#" class="postNumberReceiver"><span>(#</span><span class="postNumberReceiverValue"></span><span>)</span></a>
+                          <a class="receiverProfileLink" href="#" target="_blank">test2</a>
+                          <span></span>
+                        </div>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a
+                                        href="#"
+                                        target="_blank"
+                                        class="newPost"
+                                >New</a
+                                >
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                        href="#"
+                                        target="_blank"
+                                        class="answer"
+                                >Answer</a
+                                >
+                            </li>
+                            <li class="list-inline-item">
+                                <time class="timestamp">2020-02-18 17:45:13</time>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="msg-user">
+                            <img class="profileImage" src="#" style="width: 50px;" alt="" />
+                            <p class="user-title">
+                                <a class ="senderProfileLink"href="#">test</a>
+                            </p>
+                            <!-- <p class="user-class"></p> -->
+                        </div>
+                        <div class="media-body">
+                            <p></p>
+                            <div class="msg-content">
+                                <p class="messageContent">Message</p>
+                            <!-- <p class="msg-sign">
+                              <i></i>
+                            </p> -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    <script th:inline="javascript">
+        let offset = [[${offset}]];
+        let range = [[${range}]];
+        let authenticatedUsername = [[${authenticatedUsername}]];
+    </script>
+    <script id="pageNavigatorJs" src=""></script>
+    <script id="postListJs" src=""></script>
+</div>
+</div>
+</body>
+</html>

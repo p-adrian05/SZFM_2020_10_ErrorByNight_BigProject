@@ -39,7 +39,7 @@ public class ForumServiceImpl implements ForumService {
     }
 
     @Override
-    public int getTopicsCount(String themeName) {
+    public int getTopicsCount(String categoryName) {
         Optional<Long> forumCategoryId = forumDao.getCategoryIdByName(categoryName);
         return forumCategoryId.map(aLong -> forumDao.countTopics(aLong).intValue()).orElse(0);
     }
@@ -70,7 +70,7 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public List<Post> getPostsByTopicName(String topicName, int offset, int range) {
-        return forumDao.getPostsByTopicName(topicName, lowerLimit - 1, range);
+        return forumDao.getPostsByTopicName(topicName, offset - 1, range);
     }
 
     @Override
@@ -89,8 +89,7 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public List<ThemeStat> getTopicsAndPostsCount(String categoryName, int offset, int range) {
-        Optional<Long> forumTopicId = forumDao.getTopicIdByName(topicName);
-        return forumTopicId.map(aLong -> forumDao.countTopicPosts(aLong).intValue()).orElse(0);
+       return forumDao.getThemeStat(categoryName, offset - 1, range);
     }
 
     @Override

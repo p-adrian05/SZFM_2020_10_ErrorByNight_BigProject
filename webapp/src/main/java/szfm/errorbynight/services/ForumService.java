@@ -11,7 +11,7 @@ public interface ForumService {
 
     boolean addNewTopic(String categoryName, Topic newTopic, User currentUser);
 
-    int getTopicsCount(String themeName);
+    int getTopicsCount(String categoryName);
     boolean addNewPostToTopic(User currentUser, String topicName, String postMessage);
 
     int getTopicPostsCount(String topicName);

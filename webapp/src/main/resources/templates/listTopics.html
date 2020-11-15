@@ -1,0 +1,85 @@
+<!DOCTYPE html >
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="layouts/loggedInLayout"
+        xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <link id="stylesheetListTopic" type="text/css" rel="stylesheet" href="../static/css/listTopic.css" />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
+    <link id="stylesheetPage" type="text/css" rel="stylesheet" href="../static/css/pageNavigator.css" />
+    <title>Home</title>
+</head>
+<body>
+<div layout:fragment="loggedIn-content-column">
+    <a id="madeNewTopic" class="btn" href="#">Made new Topic</a>
+</div>
+<div layout:fragment="loggedIn-content">
+        <div class="forum-container">
+            <div id="category-list">
+                <div id="newTopicResultTrue" class="alert alert-success">
+                    New topic created!
+                </div>
+                <div id="newTopicResultFalse" class="alert alert-danger">
+                    Failed to open new topic! Try again!
+                </div>
+                <div class="navigators-container">
+                    <a href="#" id="back">Back</a>
+                    <ul id="pagesNumber">
+                        <li class="dropdown">
+                            <a
+                                    class="dropdown-toggle"
+                                    id="dropdownLink"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    href="#"
+                                    aria-expanded="false"
+                            >
+                                1 <span class="fas fa-chevron-down"></span>
+                            </a>
+                            <ul id="dropdown-items">
+                                <a
+                                        class="dropdown-item"
+                                        href="#"
+                                >1</a
+                                >
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" id="forward">Forward</a>
+                </div>
+                <div class="forum-header">
+                    <div class="forums-text"><span>Topics</span></div>
+                    <span>Posts</span>
+                    <span>Topic founder</span>
+                    <span>Last active</span>
+                </div>
+                <ul id="forum-themes">
+                    <li class="forum-item">
+                        <div class="forum-heading">
+                            <h4><a href="#" class="topic-name">Test</a></h4>
+                        </div>
+                        <div class="forum-num">
+                            <span class="posts">234</span>
+                            <div class="founder">
+                                <span class="founderTime">2011-02-25 23:19</span>
+                                <div class="profileInfo">
+                                    <img src="profileimg" style="width: 50px" class="profileImage" />
+                                    <span class="profileName"><a class="founderName" href="#">Name</a></span>
+                                </div>
+                            </div>
+                            <span class="lastActive">2011-02-25 23:19</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <script th:inline="javascript">
+        let offset = [[${offset}]];
+        let range = [[${range}]];
+    </script>
+    <script id="pageNavigatorJs" src=""></script>
+</div>
+</body>
+</html>

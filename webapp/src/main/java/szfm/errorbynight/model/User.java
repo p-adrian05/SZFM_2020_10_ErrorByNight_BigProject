@@ -62,6 +62,14 @@ public class User {
     @OneToOne(mappedBy = "user",fetch = FetchType.LAZY)
     private UserData userData;
 
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_favTopics",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "topic_id")}
+    )
+    private Set<Topic> favTopics = new HashSet<>();
+
     @PrePersist
     protected void onPersist() {
         created = ZonedDateTime.now();
@@ -77,6 +85,19 @@ public class User {
     public void removeRole(Role role){
         this.roles.remove(role);
         role.getUsers().remove(this);
+    }
+
+    public void addFavTopic(Topic topic){
+        if(this.favTopics.contains(topic)){
+            return;
+        }
+        this.favTopics.add(topic);
+    }
+    public void removeFavTopic(Topic topic){
+        if(!this.favTopics.contains(topic)){
+            return;
+        }
+        this.favTopics.remove(topic);
     }
 
     @Override

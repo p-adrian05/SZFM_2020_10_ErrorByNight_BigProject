@@ -59,7 +59,7 @@ public class User {
 
     }
 
-    @OneToOne(mappedBy = "user",fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "user",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private UserData userData;
 
     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)

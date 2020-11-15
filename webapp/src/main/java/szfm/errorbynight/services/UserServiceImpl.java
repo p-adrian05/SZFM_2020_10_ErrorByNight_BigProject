@@ -89,7 +89,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     }
 
     @Override
-    public boolean userActivation(String code) {
+    public boolean activateUser(String code) {
         Optional<User> user = userDao.findByActivation(code);
         if (user.isPresent()) {
             user.get().setEnabled(true);

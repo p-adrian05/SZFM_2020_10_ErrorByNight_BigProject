@@ -14,7 +14,7 @@ public interface UserService {
 
     Optional<User> findByUsername(String username);
 
-    boolean userActivation(String code);
+    boolean activateUser(String code);
 
 //    boolean saveUserData(UserData userData);
 //

@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.services.UserService;
@@ -58,5 +55,12 @@ public class RegistrationController {
         }
         redirectAttributes.addFlashAttribute(AttributeNames.REG_SUCCESS, true);
         return Mappings.REDIRECT_REGISTRATION;
+    }
+
+    @GetMapping(Mappings.ACTIVATION + "/{code}")
+    public String activation(@PathVariable("code") String code, RedirectAttributes redirectAttributes) {
+        boolean result = userService.activateUser(code);
+        redirectAttributes.addFlashAttribute(AttributeNames.ACTIVATION_RESULT, result);
+        return Mappings.REDIRECT_LOGIN;
     }
 }

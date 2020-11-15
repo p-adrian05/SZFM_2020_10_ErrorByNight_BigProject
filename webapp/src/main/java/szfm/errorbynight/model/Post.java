@@ -39,4 +39,12 @@ public class Post {
     private Topic topic;
     @Column()
     private int parentPostOffset;
+
+
+     public Post(String content){
+        this.content = content;
+        this.timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern( "yyyy-MM-dd HH:mm:ss"));
+        this.parentPost = null;
+        this.parentPostOffset = 0;
+    }
 }

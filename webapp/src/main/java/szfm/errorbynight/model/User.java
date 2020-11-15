@@ -72,11 +72,11 @@ public class User {
             return ;
         }
         roles.add(role);
-        //role.getUsers().add(this);
+        role.getUsers().add(this);
     }
     public void removeRole(Role role){
         this.roles.remove(role);
-        //role.getUsers().remove(this);
+        role.getUsers().remove(this);
     }
 
     @Override

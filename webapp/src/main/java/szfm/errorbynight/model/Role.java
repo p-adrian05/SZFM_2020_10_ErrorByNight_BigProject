@@ -24,20 +24,20 @@ public class Role {
     @NaturalId
     private String role;
 
-    //@ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)
-    //private Set<User> users = new HashSet<>();
+    @ManyToMany(mappedBy = "roles",fetch = FetchType.LAZY)
+    private Set<User> users = new HashSet<>();
 
     public Role(String role) {
         this.role = role;
     }
 
-    //public void addUser(User user){
-     //   if (users.contains(user)){
-     //       return ;
-     //   }
-     //   users.add(user);
-     //   user.addRole(this);
-    //}
+    public void addUser(User user){
+        if (users.contains(user)){
+            return ;
+        }
+        users.add(user);
+        user.addRole(this);
+    }
 
     @Override
     public boolean equals(Object o) {

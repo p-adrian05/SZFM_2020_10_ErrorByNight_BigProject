@@ -1,0 +1,6 @@
+<thlogic>
+    <attr sel="#stylesheetNewTopic" th:href="@{/css/newTopic.css}"/>
+    <attr sel="#errorDiv" th:if="${result!=''} and ${result != null} and !${result}"/>
+    <attr sel="#categoryName" th:text ="${categoryName}"/>
+    <attr sel="#newTopicForm" th:action="@{~/__${T(szfm.errorbynight.util.Mappings).THEME_NEW}__/{categoryName}(categoryName =${categoryName})}"/>
+</thlogic>

@@ -109,4 +109,24 @@ public class UserDaoImpl implements UserDao {
     public Integer getMessagesCount(Long senderId, Long receiverId) {
         return 0;
     }
+
+    @Override
+    public List<Message> getNewMessages(Long senderUserId, Long receiverUserIde) {
+        return null;
+    }
+
+    @Override
+    public List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit) {
+        return null;
+    }
+
+    @Override
+    public void sendMessage(Message message) {
+
+    }
+
+    @Override
+    public boolean saveMessages(List<Message> messages) {
+        return false;
+    }
 }

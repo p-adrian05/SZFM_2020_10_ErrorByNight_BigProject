@@ -27,11 +27,11 @@ public interface UserDao extends GenericDao<User> {
 
     Integer getMessagesCount(Long senderUserId, Long receiverUserId);
 
-    //List<Message> getNewMessages(Long senderUserId, Long receiverUserIde);
+    List<Message> getNewMessages(Long senderUserId, Long receiverUserIde);
 
-    //List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit);
+    List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit);
 
-    //void sendMessage(Message message);
+    void sendMessage(Message message);
 
-    //boolean saveMessages(List<Message> messages);
+    boolean saveMessages(List<Message> messages);
 }

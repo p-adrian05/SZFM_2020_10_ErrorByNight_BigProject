@@ -109,7 +109,11 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public Map<String, Integer> getConversationUsernamesAndNewMessageCount(User user, int range, int lowerLimit) {
-        return null;
+      Map<String, Integer> usernameAndNewMessage = new LinkedHashMap<>();
+      userDao.getConversationUsernames(user,lowerLimit,range)
+        .forEach((username)->usernameAndNewMessage.put(username,
+          userDao.countNewMessagesForUser(user.getUsername(),username)));
+      return usernameAndNewMessage;
     }
 
     @Override

@@ -128,7 +128,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public Integer getMessagesCount(Long senderId, Long receiverId) {
-        return null;
+      return userDao.getMessagesCount(senderId, receiverId);
     }
 
     @Override

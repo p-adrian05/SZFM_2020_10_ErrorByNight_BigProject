@@ -119,7 +119,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public List<Message> getMessages(Long userId1, Long userId2, int lowerLimit, int range) {
-        return null;
+      return userDao.getMessagesByLimit(userId1, userId2, lowerLimit - 1, range);
     }
 
     @Override

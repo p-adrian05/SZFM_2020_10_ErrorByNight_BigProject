@@ -16,6 +16,8 @@ import szfm.errorbynight.util.UtilService;
 
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -97,6 +99,46 @@ public class UserServiceImpl implements UserDetailsService, UserService{
             userDao.save(user.get());
             return true;
         }
+        return false;
+    }
+
+    @Override
+    public boolean sendMessage(String usernameTo, User userFrom, String message) {
+        return false;
+    }
+
+    @Override
+    public Map<String, Integer> getConversationUsernamesAndNewMessageCount(User user, int range, int lowerLimit) {
+        return null;
+    }
+
+    @Override
+    public List<String> getConversationUsernames(User user, int lowerLimit, int range) {
+        return null;
+    }
+
+    @Override
+    public List<Message> getMessages(Long userId1, Long userId2, int lowerLimit, int range) {
+        return null;
+    }
+
+    @Override
+    public Integer getMessagesCount(Long senderId, Long receiverId) {
+        return null;
+    }
+
+    @Override
+    public Map<Message, Integer> getNewMessagesAndPlace(Long senderId, Long receiverId) {
+        return null;
+    }
+
+    @Override
+    public List<Message> getNewMessages(Long senderId, Long receiverId) {
+        return null;
+    }
+
+    @Override
+    public boolean readMessages(List<Message> messages) {
         return false;
     }
 }

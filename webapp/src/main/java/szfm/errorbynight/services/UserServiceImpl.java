@@ -109,7 +109,11 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public Map<String, Integer> getConversationUsernamesAndNewMessageCount(User user, int range, int lowerLimit) {
-        return null;
+      Map<String, Integer> usernameAndNewMessage = new LinkedHashMap<>();
+      userDao.getConversationUsernames(user,lowerLimit,range)
+        .forEach((username)->usernameAndNewMessage.put(username,
+          userDao.countNewMessagesForUser(user.getUsername(),username)));
+      return usernameAndNewMessage;
     }
 
     @Override
@@ -119,12 +123,12 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public List<Message> getMessages(Long userId1, Long userId2, int lowerLimit, int range) {
-        return null;
+      return userDao.getMessagesByLimit(userId1, userId2, lowerLimit - 1, range);
     }
 
     @Override
     public Integer getMessagesCount(Long senderId, Long receiverId) {
-        return null;
+      return userDao.getMessagesCount(senderId, receiverId);
     }
 
     @Override
@@ -134,7 +138,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public List<Message> getNewMessages(Long senderId, Long receiverId) {
-        return null;
+      return userDao.getNewMessages(senderId,receiverId);
     }
 
     @Override

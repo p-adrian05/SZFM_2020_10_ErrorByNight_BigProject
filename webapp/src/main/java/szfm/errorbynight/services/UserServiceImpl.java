@@ -134,7 +134,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public List<Message> getNewMessages(Long senderId, Long receiverId) {
-        return null;
+      return userDao.getNewMessages(senderId,receiverId);
     }
 
     @Override

@@ -1,0 +1,62 @@
+@import "pageNavigator.css";
+.card a {
+  color: var(--dark-color);
+}
+#messages_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.card-header {
+  display: flex;
+}
+.list-inline {
+  display: flex;
+}
+.list-inline li {
+  margin-left: 1rem;
+}
+.card {
+  width: 40rem;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.card-header a {
+  color: var(--background-color);
+}
+.card-body {
+  display: flex;
+  border: 1px solid var(--dark-color);
+  border-radius: 1rem;
+  background-color: var(--background2-color);
+}
+.msg-user {
+  margin: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.media-body {
+  width: 100%;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  .card {
+    width: 25rem;
+  }
+}
+@media (max-width: 400px) {
+  .card {
+    width: 20rem;
+  }
+}

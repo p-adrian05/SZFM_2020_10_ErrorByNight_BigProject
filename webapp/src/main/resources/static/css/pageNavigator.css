@@ -1,0 +1,35 @@
+.navigators-container a{
+    color: var(--dark-color);
+    margin-right: .5rem;
+}
+.navigators-container{
+    display: flex;
+    justify-content: center;
+    margin-right: 30rem;
+    padding-top:1rem;
+}
+#pagesNumber ul{
+    display: none;
+}
+#pagesNumber{
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+#pagesNumber li:hover ul{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--green-color);
+    padding-left:0rem;
+    padding-right:0rem;
+    border-radius: .2rem;
+    color:var(--background-color);
+
+}
+#pagesNumber .dropdown, #pagesNumber .dropdown a{
+    background: var(--green-color);
+    padding-left:.5rem;
+    padding-right:.5rem;
+    border-radius: .2rem;
+    color:var(--background-color);
+}

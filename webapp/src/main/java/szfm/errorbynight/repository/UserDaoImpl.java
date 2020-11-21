@@ -112,7 +112,18 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<Message> getNewMessages(Long senderUserId, Long receiverUserIde) {
-        return new LinkedList<>();
+        List<Message> messages = new LinkedList<>();
+        try {
+            messages = entityManager.createQuery("SELECT m FROM Message m WHERE m.messageDetails.sender_Id=:senderId AND m.messageDetails.receiver_Id =:receiverId" +
+                    " AND m.status = FALSE ORDER BY m.timestamp DESC", Message.class)
+                    .setParameter("senderId", senderUserId)
+                    .setParameter("receiverId", receiverUserIde)
+                    .getResultList();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return messages;
+        }
+        return messages;
     }
 
     @Override

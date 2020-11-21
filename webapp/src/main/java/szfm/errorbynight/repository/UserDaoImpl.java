@@ -127,8 +127,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public int countNewMessagesForUser(String username1, String username2) {
-        return 0;
+    public int countNewMessagesForUser(String senderName,String receiverName) {
+         int count;
+        try {
+            count = ((Number) entityManager.createNativeQuery("SELECT COUNT(um.MESSAGE_ID) FROM USER_MESSAGES um join USERS u " +
+                    "                        on RECEIVER_ID = u.ID join USERS u2 " +
+                    "                            on SENDER_ID = u2.ID " +
+                    "                    join MESSAGES m on um.MESSAGE_ID = m.ID " +
+                    "                         WHERE (u.USERNAME =:username1 AND u2.USERNAME =:username2) " +
+                    "                    AND m.status = FALSE")
+                    .setParameter("username1", receiverName)
+                    .setParameter("username2", senderName)
+                    .getSingleResult()).intValue();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return 0;
+        }
+        return count;
     }
 
     @Override

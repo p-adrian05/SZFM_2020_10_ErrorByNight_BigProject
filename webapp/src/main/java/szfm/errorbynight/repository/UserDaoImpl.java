@@ -1,12 +1,17 @@
 package szfm.errorbynight.repository;
 
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import szfm.errorbynight.model.*;
+import szfm.errorbynight.util.ThemeStat;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Tuple;
 import javax.transaction.Transactional;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -117,7 +122,17 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Integer getMessagesCount(Long senderId, Long receiverId) {
-        return 0;
+        Long count;
+        try {
+            count = entityManager.createQuery("SELECT COUNT(me.messageId) FROM MessageDetails me WHERE (me.sender_Id = :userId1 OR " +
+                    "me.receiver_Id =: userId1) AND (me.sender_Id = :userId2 OR me.receiver_Id =: userId2)", Long.class)
+                    .setParameter("userId1", senderId)
+                    .setParameter("userId2", receiverId)
+                    .getSingleResult();
+        } catch (Exception e) {
+            return 0;
+        }
+        return count.intValue();
     }
 
     @Override

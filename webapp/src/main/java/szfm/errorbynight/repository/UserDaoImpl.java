@@ -107,7 +107,32 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<String> getConversationUsernames(User user, int lowerLimit, int range) {
-        return new LinkedList<>();
+        Set<String> conversationUsernames = new LinkedHashSet<>();
+
+        try{
+            List<Tuple> messageDetails =
+                    entityManager.createNativeQuery("SELECT u.USERNAME as user1, u2.USERNAME as user2 FROM USER_MESSAGES um join USERS u" +
+                            "                        on RECEIVER_ID = u.ID join USERS u2 " +
+                            "                            on SENDER_ID = u2.ID " +
+                            "                         WHERE (u.USERNAME =:username OR u2.USERNAME =:username) " +
+                            "                        group by u.USERNAME, u2.USERNAME", Tuple.class)
+                            .setParameter("username", user.getUsername())
+                            .getResultList();
+            if (messageDetails != null) {
+                messageDetails.forEach(messageDetail -> {
+                    if (messageDetail.get(0).equals(user.getUsername())) {
+                        conversationUsernames.add(String.valueOf(messageDetail.get(1)));
+                    } else if(messageDetail.get(1).equals(user.getUsername())) {
+                        conversationUsernames.add(String.valueOf(messageDetail.get(0)));
+                    }
+                });
+            }
+        }catch (Exception e){
+            log.error(e.getMessage());
+            return new LinkedList<>();
+        }
+
+        return conversationUsernames.stream().skip(lowerLimit-1).limit(range).collect(Collectors.toList());
     }
 
     @Override

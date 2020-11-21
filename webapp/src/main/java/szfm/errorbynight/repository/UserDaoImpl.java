@@ -1,12 +1,17 @@
 package szfm.errorbynight.repository;
 
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import szfm.errorbynight.model.*;
+import szfm.errorbynight.util.ThemeStat;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Tuple;
 import javax.transaction.Transactional;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -96,8 +101,29 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public void sendMessage(Message message) {
+        entityManager.persist(message);
+    }
+
+    @Override
     public List<String> getConversationUsernames(User user, int lowerLimit, int range) {
         return new LinkedList<>();
+    }
+
+    @Override
+    public List<Message> getNewMessages(Long senderUserId, Long receiverUserIde) {
+        List<Message> messages = new LinkedList<>();
+        try {
+            messages = entityManager.createQuery("SELECT m FROM Message m WHERE m.messageDetails.sender_Id=:senderId AND m.messageDetails.receiver_Id =:receiverId" +
+                    " AND m.status = FALSE ORDER BY m.timestamp DESC", Message.class)
+                    .setParameter("senderId", senderUserId)
+                    .setParameter("receiverId", receiverUserIde)
+                    .getResultList();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return messages;
+        }
+        return messages;
     }
 
     @Override
@@ -107,26 +133,67 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Integer getMessagesCount(Long senderId, Long receiverId) {
-        return 0;
+        Long count;
+        try {
+            count = entityManager.createQuery("SELECT COUNT(me.messageIdg) FROM MessageDetails me WHERE (me.sender_Id = :userId1 OR " +
+                    "me.receiver_Id =: userId1) AND (me.sender_Id = :userId2 OR me.receiver_Id =: userId2)", Long.class)
+                    .setParameter("userId1", senderId)
+                    .setParameter("userId2", receiverId)
+                    .getSingleResult();
+        } catch (Exception e) {
+            return 0;
+        }
+        return count.intValue();
     }
 
     @Override
-    public List<Message> getNewMessages(Long senderUserId, Long receiverUserIde) {
-        return null;
+    public List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int range) {
+        List<Message> messages = new LinkedList<>();
+        try {
+            List<Tuple> data = entityManager.createNativeQuery("SELECT me.id,me.messageContent,me.TIMESTAMP,me.STATUS,u.USERNAME as senderUsername, " +
+                    "     u2.USERNAME as receiverUsername, ud.PROFILEIMG as senderUserData," +
+                    "     ud2.PROFILEIMG as receiverUserData " +
+                    "FROM MESSAGES me " +
+                    "    join USER_MESSAGES um " +
+                    "        on me.ID = um.MESSAGE_ID " +
+                    "    join USERS u " +
+                    "        on u.ID = SENDER_ID " +
+                    "    join USERS u2 " +
+                    "        on u2.ID = RECEIVER_ID " +
+                    "    join USERDATA ud " +
+                    "        on ud.USERID = SENDER_ID " +
+                    "    join USERDATA ud2 " +
+                    "        on ud2.USERID = RECEIVER_ID " +
+                    "            where " +
+                    "(sender_Id =:userId1 OR receiver_Id =:userId1) " +
+                    "              AND (sender_Id =:userId2 OR receiver_Id =:userId2) " +
+                    "ORDER BY me.timestamp",Tuple.class)
+                    .setParameter("userId1", userId1)
+                    .setParameter("userId2", userId2)
+                    .setFirstResult(minLimit)
+                    .setMaxResults(range)
+                    .getResultList();
+            data.forEach((tuple) -> messages.add(
+                    Message.builder()
+                            .id(Long.valueOf((String.valueOf(tuple.get(0)))))
+                            .messageContent(String.valueOf(tuple.get(1)))
+                            .timestamp(String.valueOf(tuple.get(2)))
+                            .status((Boolean) tuple.get(3))
+                            .senderUsername(String.valueOf(tuple.get(4)))
+                            .receiverUsername(String.valueOf(tuple.get(5)))
+                            .senderUserData(String.valueOf(tuple.get(6)))
+                            .receiverUserData(String.valueOf(tuple.get(7)))
+                            .build()
+            ));
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            return new LinkedList<>();
+        }
+        return messages;
     }
 
     @Override
-    public List<Message> getMessagesByLimit(Long userId1, Long userId2, int minLimit, int maxLimit) {
-        return null;
-    }
-
-    @Override
-    public void sendMessage(Message message) {
-
-    }
-
-    @Override
-    public boolean saveMessages(List<Message> messages) {
-        return false;
+    public boolean madeReadedMessages(List<Message> messages) {
+        return true;
     }
 }

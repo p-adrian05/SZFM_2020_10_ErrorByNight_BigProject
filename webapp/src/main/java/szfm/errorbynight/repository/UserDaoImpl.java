@@ -236,4 +236,15 @@ public class UserDaoImpl implements UserDao {
     public boolean madeReadedMessages(List<Message> messages) {
         return true;
     }
+
+
+      @Override
+    public boolean saveMessages(List<Message> messages) {
+        try {
+            messages.forEach(message -> entityManager.merge(message));
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
 }

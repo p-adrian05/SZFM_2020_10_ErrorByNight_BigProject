@@ -143,7 +143,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public List<String> getConversationUsernames(User user, int lowerLimit, int range) {
-        return null;
+        return userDao.getConversationUsernames(user,lowerLimit,range);
     }
 
     @Override
@@ -158,7 +158,23 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public Map<Message, Integer> getNewMessagesAndPlace(Long senderId, Long receiverId) {
-        return null;
+        List<Message> allMessages = getMessages(senderId, receiverId,1,Integer.MAX_VALUE);
+        List<Message> newMessages = getNewMessages(senderId, receiverId);
+        Map<Message, Integer> messageAndLocateNumber = new LinkedHashMap<>();
+        int count = 0;
+        if (!allMessages.isEmpty() && !newMessages.isEmpty()) {
+            for (Message newMessage : newMessages) {
+                for (Message message : allMessages) {
+                    count++;
+                    if (message.getId().equals(newMessage.getId())) {
+                        messageAndLocateNumber.put(newMessage, count);
+                        count = 0;
+                        break;
+                    }
+                }
+            }
+        }
+        return messageAndLocateNumber;
     }
 
     @Override

@@ -1,0 +1,32 @@
+.settings-link {
+  color: var(--dark-color);
+  font-weight: bold;
+  margin: 0.5rem;
+  border: 1px var(--dark-color) solid;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--background-color);
+}
+#settings-section {
+  display: flex;
+  flex-direction: column;
+  border: 1px var(--dark-color) solid;
+  border-radius: 1rem;
+  background-color: var(--dark-color);
+  margin-top: 2rem;
+}
+.settings_container {
+  display: flex;
+  justify-content: space-around;
+}
+.settings-link:hover {
+  background-color: var(--dark-color);
+  color: var(--background-color);
+  transition: ease-in 0.3s;
+}
+
+@media (max-width: 400px) {
+  .settings_container {
+    justify-content: space-around;
+  }
+}

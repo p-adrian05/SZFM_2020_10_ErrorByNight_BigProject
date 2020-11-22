@@ -1,0 +1,7 @@
+<thlogic>
+    <attr sel ="#stylesheetPM" th:href="@{/css/login.css}"/>
+    <attr sel="#usernameToSend" th:text ="${userToSend}"/>
+    <attr sel="#messageForm" th:action="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).PRIVATE_MESSAGE}__/{user}(user=${userToSend})}"/>
+    <attr sel="#successDiv" th:if="${result!=''} and ${result != null} and ${result}"/>
+    <attr sel="#errorDiv" th:if="${result!=''} and ${result != null} and !${result}"/>
+</thlogic>

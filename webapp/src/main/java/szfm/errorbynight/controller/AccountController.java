@@ -64,4 +64,32 @@ public class AccountController {
         }
     }
 
+    @GetMapping(Mappings.SETTINGS_USERDATA)
+    public String userdata(Authentication authentication, Model model) {
+        if (authentication != null) {
+            model.addAttribute("userdata", ((User) session.getAttribute("currentUser")).getUserData());
+        }
+        return ViewNames.USERDATA;
+    }
+    @PostMapping(Mappings.SETTINGS_USERDATA)
+    public String processUserdata(@ModelAttribute("userdata") UserData userData, Model model,
+                                  @RequestParam("profileImgFile") MultipartFile profileImgFile) {
+        if (!Objects.equals(profileImgFile.getOriginalFilename(), "")) {
+            String extension = environment.getProperty("user.profile.img.extension");
+//            try {
+//                String imageName = userData.getUserId() + extension;
+//                storageService.store(profileImgFile,imageName);
+//                userData.setProfileImg(imageName);
+//            } catch (FileUploadException e) {
+//                model.addAttribute("imgError", e.getMessage());
+//                return ViewNames.USERDATA;
+//            }
+        }
+        log.info(userData.getProfileImg());
+        ((User) session.getAttribute("currentUser")).setUserData(userData);
+        boolean result = userService.saveUserData(userData);
+        model.addAttribute("saveResult", result);
+        return ViewNames.USERDATA;
+    }
+
 }

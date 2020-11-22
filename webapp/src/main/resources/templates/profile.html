@@ -1,0 +1,33 @@
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main">
+  <head>
+    <link id="stylesheetPM" type="text/css" rel="stylesheet" href="../static/css/login.css" />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
+  </head>
+  <body>
+  <div layout:fragment="content">
+    <div class="container">
+      <div id="form_container">
+        <form id="messageForm" action="#" method="post">
+          <h2>Send private message to <span id="usernameToSend"></span></h2>
+          <label for="message">Message</label>
+          <div class="form-group">
+            <textarea
+              rows="10"
+              cols="80"
+              id="message"
+              name="message"
+              placeholder="Enter message"
+            ></textarea>
+          </div>
+          <div class="button-group">
+            <input type="submit" value="Send" class="btn" />
+          </div>
+          <div id="errorDiv" class="alert alert-danger">Failed to send message!</div>
+          <div id="successDiv" class="alert alert-success">Message sent!</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<html lang="en"  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main"
+xmlns:th="https://www.thymeleaf.org/">
+  <head>
+
+    <link
+      id="stylesheetListPrivateMessages"
+      type="text/css"
+      rel="stylesheet"
+      href="../static/css/listPrivateMessages.css"
+    />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
+  </head>
+  <body>
+  <div layout:fragment="content">
+    <div class="container">
+        <div class="navigators-container">
+          <a href="#" id="back">Back</a>
+          <ul id="pagesNumber">
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dropdownLink" data-toggle="dropdown" role="button" href="#" aria-expanded="false">
+                1 <span class="fas fa-chevron-down"></span>
+              </a>
+              <ul id="dropdown-items">
+                <a class="dropdown-item" href="#">1</a>
+              </ul>
+            </li>
+          </ul>
+          <a href="#" id="forward">Forward</a>
+        </div>
+      <div id="messages_container">
+        <ul id="messageList" >
+          <li class="card" >
+              <div class="card-header">
+                <div class="msg-head-users">
+                  <span class="msg-head-author">
+                    <a class ="senderProfileLink"href="$" target="_blank" >Sender</a>
+                  </span>
+                  <span class="fas fa-angle-right fa-fw"></span>
+                  <span class="msg-head-replied">
+                    <a class="receiverProfileLink" href="$" target="_blank">Receiver</a>
+                  </span>
+                </div>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a
+                      href="#"
+                      target="_blank"
+                      id="answer"
+                      >Answer</a
+                    >
+                  </li>
+                  <li class="list-inline-item">
+                    <time class="timestamp" >2020-02-18 17:45:13</time>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="msg-user">
+                  <img class="profileImage" src="/images/user.jpg" alt="profile_img" />
+                  <p class="user-title">
+                    <a class ="senderProfileLink" href="$" target="_blank" >Sender</a>
+                  </p>
+                  <!-- <p class="user-class"></p> -->
+                </div>
+                <div class="media-body">
+                  </p>
+                  <div class="msg-content">
+                    <p class="messageContent">Message</p>
+                  </div>
+                  <!-- <p class="msg-sign">
+                    <i></i>
+                  </p> -->
+                </div>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script th:inline="javascript">
+      let offset = [[${offset}]];
+      let newMessagesTimestamp = [[${newMessagesTimestamp}]];
+    </script>
+    <script id="pageNavigatorJs" src=""></script>
+    <script id="newMessageJs" src=""></script>
+  </div>
+  </body>
+</html>

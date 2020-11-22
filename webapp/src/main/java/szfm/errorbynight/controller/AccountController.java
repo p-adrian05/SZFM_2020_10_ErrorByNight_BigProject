@@ -128,5 +128,48 @@ public class AccountController {
         return "privateMessages";
     }
 
+    @GetMapping(Mappings.LIST_MESSAGES + "/{conversationPartnerName}")
+    public String listMessages(@PathVariable("conversationPartnerName") String username,
+                               @RequestParam(value = "offset", defaultValue = "0") int offset, Model model) {
+        Long senderId = userService.getUserIdByName(username);
+        User currentUser = ((User) session.getAttribute("currentUser"));
+        int range = environment.getProperty("application.message.user.range", Integer.class);
+        int allMessagesCount = userService.getMessagesCount(senderId, senderId);
+
+        List<Message> messages = new LinkedList<>();
+        Map<Message, Integer> newMessagesNumber;
+        List<String> newMessagesTimestamp = new LinkedList<>();
+        Map<Integer, Integer> pagesOffsets = UtilService.getPageOffsets(allMessagesCount, range);
+        if (offset == 0) {
+            List<Integer> minOffsets = new LinkedList<>();
+            for (Map.Entry<Integer, Integer> entry : pagesOffsets.entrySet()) {
+                minOffsets.add(entry.getKey());
+            }
+            if (userService.getNewMessages(senderId,currentUser.getId()).size()>0) {
+                newMessagesNumber = userService.getNewMessagesAndPlace(senderId, currentUser.getId());
+                for (Map.Entry<Message, Integer> entry : newMessagesNumber.entrySet()) {
+                    newMessagesTimestamp.add(entry.getKey().getTimestamp());
+                    messages.add(entry.getKey());
+                }
+                List<Integer> newMessagesPlace = new LinkedList<>(newMessagesNumber.values());
+                offset = UtilService.calculateOffset(minOffsets, newMessagesPlace.get(newMessagesPlace.size() - 1));
+                userService.readMessages(messages);
+            } else {
+                offset = minOffsets.get(minOffsets.size() - 1);
+            }
+        }
+        messages = userService.getMessages(currentUser.getId(), senderId, offset, range);
+        model.addAttribute("messages", messages);
+        model.addAttribute("lowerLimitBack", offset - range);
+        model.addAttribute("lowerLimitForward", offset + range);
+        model.addAttribute("conversationPartnerName", username);
+        model.addAttribute("pagesOffsets", pagesOffsets);
+        model.addAttribute("range", range);
+        model.addAttribute("allMessagesCount", allMessagesCount);
+        model.addAttribute("offset", offset);
+        model.addAttribute("newMessagesTimestamp", newMessagesTimestamp);
+        return "listPrivateMessages";
+    }
+
 
 }

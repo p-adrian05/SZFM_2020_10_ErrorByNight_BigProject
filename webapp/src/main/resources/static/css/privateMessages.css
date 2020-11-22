@@ -1,0 +1,47 @@
+@import "pageNavigator.css";
+table,td a,h1{
+  color:var(--dark-color);
+}
+
+td,
+th {
+  padding: 1rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  text-align: center;
+  border-radius: .4rem;
+}
+.table-container{
+  display: flex;
+  flex-direction: column;
+}
+.listBody {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+table {
+  background-color: var(--dark-color);
+  padding:3rem;
+  border-radius: 1rem;
+}
+tr {
+  background-color: var(--background-color);
+}
+
+@media (max-width: 700px) {
+  td,
+  th {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .table-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}

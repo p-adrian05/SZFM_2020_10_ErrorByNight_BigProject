@@ -1,0 +1,19 @@
+<thlogic>
+    <attr sel ="#stylesheetListPrivateMessages" th:href="@{/css/listPrivateMessages.css}"/>
+    <attr sel="#pageNavigatorJs"  th:src="@{/js/pageNavigator.js}"/>
+    <attr sel="#newMessageJs"  th:src="@{/js/privateMessage.js}"/>
+    <attr sel=".dropdown-toggle" th:text="'1-'+${range}"/>
+    <attr sel=".dropdown-item" th:each="entry:${pagesOffsets}" th:text="${entry.key}+'-'+${entry.value}"
+          th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).LIST_MESSAGES}__/{username}(username =${conversationPartnerName},offset=${entry.key})}">
+    </attr>
+    <attr sel ="#back" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).LIST_MESSAGES}__/{username}(username =${conversationPartnerName},offset=${lowerLimitBack})}"/>
+    <attr sel ="#forward" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).LIST_MESSAGES}__/{username}(username =${conversationPartnerName},offset=${lowerLimitForward})}"/>
+    <attr sel =".card" th:each="message:${messages}">
+        <attr sel=".senderProfileLink" th:text="${message.senderUsername}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${message.senderUsername})}"/>
+        <attr sel=".receiverProfileLink" th:text="${message.receiverUsername}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT_PROFILE}__/{username}(username =${message.receiverUsername})}"/>
+        <attr sel=".timestamp" th:text="${message.timestamp}"/>
+        <attr sel=".messageContent" th:text="${message.messageContent}"/>
+        <attr sel=".profileImage" th:src="@{~/__${T(szfm.errorbynight.util.Mappings).IMAGES}__/__${message.senderUserData}__}"/>
+    </attr>
+    <attr sel="#answer" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).PRIVATE_MESSAGE}__/{user}(user=${conversationPartnerName})}"/>
+</thlogic>

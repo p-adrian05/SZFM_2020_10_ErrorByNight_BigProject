@@ -6,11 +6,13 @@ import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 import szfm.errorbynight.model.Message;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
@@ -43,6 +45,23 @@ public class AccountController {
             return "redirect:/" + Mappings.ACCOUNT + "/" + Mappings.SETTINGS_USERDATA;
         }
         return "";
+    }
+
+    @GetMapping(Mappings.PROFILE + "/{user}")
+    public String profile(@PathVariable("user") String username, Model model) {
+        Optional<User> user = Optional.ofNullable((User) session.getAttribute("currentUser"));
+        if (user.isPresent() && username.equals(user.get().getUsername())) {
+            model.addAttribute("user", user.get());
+            return ViewNames.PROFILE;
+        } else {
+            user = userService.findByUsername(username);
+            if (user.isPresent()) {
+                model.addAttribute("user", user.get());
+                return ViewNames.PROFILE;
+            } else {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND,"User not found");
+            }
+        }
     }
 
 }

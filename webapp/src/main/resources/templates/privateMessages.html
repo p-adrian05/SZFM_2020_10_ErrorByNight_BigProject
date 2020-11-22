@@ -1,0 +1,64 @@
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layouts/main"
+      xmlns:th="https://www.thymeleaf.org/">
+  <head>
+    <link
+      id="stylesheetPrivateMessages"
+      type="text/css"
+      rel="stylesheet"
+      href="../static/css/privateMessages.css"
+    />
+    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
+    <link
+            id="stylesheetNavigator"
+            type="text/css"
+            rel="stylesheet"
+            href="../static/css/pageNavigator.css"
+    />
+  </head>
+  <body>
+  <div layout:fragment="content">
+    <div class="container">
+      <h1>Private messages</h1>
+      <div class="listBody">
+        <div class="table-container">
+          <div class="navigators-container">
+            <a href="#" id="back">Back</a>
+            <ul id="pagesNumber">
+              <li class="dropdown">
+                <a class="dropdown-toggle" id="dropdownLink" data-toggle="dropdown" role="button" href="#" aria-expanded="false">
+                  1 <span class="fas fa-chevron-down"></span>
+                </a>
+                <ul id="dropdown-items">
+                  <a class="dropdown-item" href="#">1</a>
+                </ul>
+              </li>
+            </ul>
+            <a href="#" id="forward">Forward</a>
+          </div>
+          <div class="table">
+            <table>
+              <thead>
+              <th>Conversations</th>
+              <th>New</th>
+              </thead>
+              <tbody>
+              <tr id="messageRow">
+                <td id="profileData"><a href="#" class="profileLink">username</a></td>
+                <td id="amountData"><span class="newAmount">0</span> new</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script th:inline="javascript">
+      let offset = [[${offset}]];
+      let newMessagesTimestamp = [[${newMessagesTimestamp}]];
+    </script>
+    <script id="pageNavigatorJs" src=""></script>
+    <script id="newMessageJs" src=""></script>
+  </div>
+  </body>
+</html>

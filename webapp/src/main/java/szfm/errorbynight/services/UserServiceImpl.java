@@ -105,6 +105,16 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     }
 
     @Override
+    public boolean saveUserData(UserData userData) {
+        try {
+            userDao.saveUserData(userData);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
     public boolean sendMessage(String usernameTo, User userFrom, String message) {
         return false;
     }
@@ -146,5 +156,11 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     @Override
     public boolean readMessages(List<Message> messages) {
         return false;
+    }
+
+    @Override
+    public Long getUserIdByName(String username) {
+        Optional<Long> userId = userDao.getIdByUsername(username);
+        return userId.orElse(0L);
     }
 }

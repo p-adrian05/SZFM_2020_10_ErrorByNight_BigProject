@@ -17,7 +17,7 @@ public interface UserService {
 
     boolean activateUser(String code);
 
-    //boolean saveUserData(UserData userData);
+    boolean saveUserData(UserData userData);
 
     boolean sendMessage(String usernameTo, User userFrom, String message);
      Map<String,Integer> getConversationUsernamesAndNewMessageCount(User user,int range,int lowerLimit);
@@ -32,5 +32,5 @@ public interface UserService {
 
     boolean readMessages(List<Message> messages);
 
-    //Long getUserIdByName(String username);
+    Long getUserIdByName(String username);
 }

@@ -1,0 +1,67 @@
+#form_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+h1,
+label {
+  color: var(--dark-color);
+}
+.button-group {
+  text-align: center;
+}
+input[type="text"],
+input[type="email"] {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid var(--dark-color);
+  width: 55%;
+}
+.form-group {
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#profileImage {
+  width: 70px;
+}
+#profileImg {
+  align-self: flex-end;
+}
+#imgGroup {
+  display: grid;
+  grid-template-rows: 2fr 2fr;
+  grid-template-columns: 2fr;
+  justify-content: center;
+}
+.button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  grid-column-start: 2;
+  margin-top: 1rem;
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 400px) {
+  input[type="text"],
+  input[type="email"] {
+    width: 60%;
+  }
+  .form-group {
+    width: 20rem;
+    flex-direction: column;
+  }
+  .button-group {
+    display: block;
+  }
+  .alert {
+    width: 50%;
+  }
+}

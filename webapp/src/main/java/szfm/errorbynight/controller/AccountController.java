@@ -92,4 +92,24 @@ public class AccountController {
         return ViewNames.USERDATA;
     }
 
+    @GetMapping(Mappings.PRIVATE_MESSAGE + "/{usernameTo}")
+    public String sendPrivateMessage(@PathVariable("usernameTo") String usernameTo, Authentication authentication, Model model) {
+        if (authentication != null) {
+            model.addAttribute("userToSend", usernameTo);
+        }
+        return "privateMessageForm";
+    }
+
+    @PostMapping(Mappings.PRIVATE_MESSAGE + "/{usernameTo}")
+    public String processPrivateMessage(@PathVariable("usernameTo") String usernameTo,
+                                        @RequestParam("message") String message,
+                                        Model model) {
+        boolean result = userService.sendMessage(usernameTo, (User) session.getAttribute("currentUser"), message);
+        log.info(message);
+        model.addAttribute("result", result);
+        model.addAttribute("userToSend", usernameTo);
+        return "privateMessageForm";
+    }
+
+
 }

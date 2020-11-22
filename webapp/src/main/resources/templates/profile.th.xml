@@ -1,0 +1,11 @@
+<thlogic>
+    <attr sel = "#username" th:text ="${user.username}"/>
+    <attr sel = "#publicEmail" th:text ="${user.userData.publicEmail}"/>
+    <attr sel = "#role" th:each="role: ${user.roles}" th:text="${role.role}"/>
+    <attr sel = "#registered" th:text ="${user.created}"/>
+    <attr sel = "#fullName" th:text ="${user.userData.fullName}"/>
+    <attr sel = "#city" th:text ="${user.userData.city}"/>
+    <attr sel = "#profileImg" th:src="@{~/__${T(szfm.errorbynight.util.Mappings).IMAGES}__/__${user.userData.profileImg}__}"/>
+    <attr sel = "#lastLogin" th:text ="${user.lastLogin}"/>
+    <attr sel = "#privateMessage" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).PRIVATE_MESSAGE}__/{user}(user=${user.username})}"/>
+</thlogic>

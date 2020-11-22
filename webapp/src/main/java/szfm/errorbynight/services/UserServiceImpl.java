@@ -7,10 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import szfm.errorbynight.model.Message;
-import szfm.errorbynight.model.Role;
-import szfm.errorbynight.model.User;
-import szfm.errorbynight.model.UserData;
+import szfm.errorbynight.model.*;
 import szfm.errorbynight.repository.RoleDao;
 import szfm.errorbynight.repository.UserDao;
 import szfm.errorbynight.util.UtilService;
@@ -116,7 +113,23 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public boolean sendMessage(String usernameTo, User userFrom, String message) {
-        return false;
+        if (userFrom.getUsername().equals(usernameTo) || message == null || message.equals("")) {
+            return false;
+        }
+        try {
+            Optional<Long> userTo = userDao.getIdByUsername(usernameTo);
+            if (userTo.isPresent()) {
+                Message messageEntity = new Message(message);
+                MessageDetails messageDetails = new MessageDetails(userFrom.getId(), userTo.get());
+                messageEntity.setMessageDetails(messageDetails);
+                messageDetails.setMessage(messageEntity);
+                userDao.sendMessage(messageEntity);
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -155,7 +168,10 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public boolean readMessages(List<Message> messages) {
-        return false;
+        for (Message message : messages) {
+            message.setStatus(true);
+        }
+        return userDao.saveMessages(messages);
     }
 
     @Override

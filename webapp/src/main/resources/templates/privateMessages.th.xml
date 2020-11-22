@@ -1,0 +1,18 @@
+<thlogic>
+    <attr sel="#stylesheetPrivateMessages" th:href="@{/css/privateMessages.css}"/>
+    <attr sel="#pageNavigatorJs"  th:src="@{/js/pageNavigator.js}"/>
+    <attr sel=".dropdown-toggle" th:text="'1-'+${range}"/>
+    <attr sel=".dropdown-item" th:each="entry:${pagesOffsets}" th:text="${entry.key}+'-'+${entry.value}"
+          th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).MESSAGES}__/(offset=${entry.key})}">
+    </attr>
+    <attr sel ="#back" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).MESSAGES}__/(offset=${lowerLimitBack})}"/>
+    <attr sel ="#forward" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).MESSAGES}__/(offset=${lowerLimitForward})}"/>
+    <attr sel = "#messageRow" th:each="entry:${usernamesAndNewMessage}">
+        <attr sel="#profileData">
+            <attr sel =".profileLink" th:text="${entry.key}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).LIST_MESSAGES}__/{username}(username =${entry.key})}" />
+        </attr>
+        <attr sel ="#amountData">
+            <attr sel=".newAmount" th:text="${entry.value}"/>
+        </attr>
+    </attr>
+</thlogic>

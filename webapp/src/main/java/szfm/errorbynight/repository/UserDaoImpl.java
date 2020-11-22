@@ -232,12 +232,6 @@ public class UserDaoImpl implements UserDao {
         return messages;
     }
 
-    @Override
-    public boolean madeReadedMessages(List<Message> messages) {
-        return true;
-    }
-
-
       @Override
     public boolean saveMessages(List<Message> messages) {
         try {

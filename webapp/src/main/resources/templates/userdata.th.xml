@@ -1,0 +1,13 @@
+<thlogic>
+    <attr sel="#stylesheetUserdata" th:href="@{/css/userdata.css}"/>
+    <attr sel="#userDataForm" th:object ="${userdata}" th:action ="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).SETTINGS_USERDATA}__}"/>
+    <attr sel="#profileImage" th:src="@{~/__${T(szfm.errorbynight.util.Mappings).IMAGES}__/__${userdata.profileImg}__}"/>
+    <attr sel ="#city" th:field = "*{city}"/>
+    <attr sel ="#publicEmail" th:field = "*{publicEmail}"/>
+    <attr sel ="#fullName" th:field = "*{fullName}"/>
+    <attr sel ="#userId" th:field = "*{userId}"/>
+    <attr sel ="#profileImageName" th:field = "*{profileImg}"/>
+    <attr sel ="#saveResultTrue" th:if="${saveResult != null} and ${saveResult}"/>"
+    <attr sel ="#saveResultFalse" th:if="${saveResult != null} and !${saveResult}"/>
+    <attr sel ="#imgError" th:if="${imgError != null}" th:text="${imgError}"/>
+</thlogic>

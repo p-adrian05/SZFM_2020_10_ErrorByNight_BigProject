@@ -7,15 +7,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import szfm.errorbynight.model.Role;
-import szfm.errorbynight.model.User;
-import szfm.errorbynight.model.UserData;
+import szfm.errorbynight.model.*;
 import szfm.errorbynight.repository.RoleDao;
 import szfm.errorbynight.repository.UserDao;
 import szfm.errorbynight.util.UtilService;
 
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -103,8 +102,34 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     }
 
     @Override
+    public boolean saveUserData(UserData userData) {
+        try {
+            userDao.saveUserData(userData);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
     public boolean sendMessage(String usernameTo, User userFrom, String message) {
-        return false;
+        if (userFrom.getUsername().equals(usernameTo) || message == null || message.equals("")) {
+            return false;
+        }
+        try {
+            Optional<Long> userTo = userDao.getIdByUsername(usernameTo);
+            if (userTo.isPresent()) {
+                Message messageEntity = new Message(message);
+                MessageDetails messageDetails = new MessageDetails(userFrom.getId(), userTo.get());
+                messageEntity.setMessageDetails(messageDetails);
+                messageDetails.setMessage(messageEntity);
+                userDao.sendMessage(messageEntity);
+            }
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -118,7 +143,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public List<String> getConversationUsernames(User user, int lowerLimit, int range) {
-        return null;
+        return userDao.getConversationUsernames(user,lowerLimit,range);
     }
 
     @Override
@@ -133,7 +158,23 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public Map<Message, Integer> getNewMessagesAndPlace(Long senderId, Long receiverId) {
-        return null;
+        List<Message> allMessages = getMessages(senderId, receiverId,1,Integer.MAX_VALUE);
+        List<Message> newMessages = getNewMessages(senderId, receiverId);
+        Map<Message, Integer> messageAndLocateNumber = new LinkedHashMap<>();
+        int count = 0;
+        if (!allMessages.isEmpty() && !newMessages.isEmpty()) {
+            for (Message newMessage : newMessages) {
+                for (Message message : allMessages) {
+                    count++;
+                    if (message.getId().equals(newMessage.getId())) {
+                        messageAndLocateNumber.put(newMessage, count);
+                        count = 0;
+                        break;
+                    }
+                }
+            }
+        }
+        return messageAndLocateNumber;
     }
 
     @Override
@@ -143,6 +184,15 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Override
     public boolean readMessages(List<Message> messages) {
-        return false;
+        for (Message message : messages) {
+            message.setStatus(true);
+        }
+        return userDao.saveMessages(messages);
+    }
+
+    @Override
+    public Long getUserIdByName(String username) {
+        Optional<Long> userId = userDao.getIdByUsername(username);
+        return userId.orElse(0L);
     }
 }

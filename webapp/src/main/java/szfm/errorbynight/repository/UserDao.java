@@ -1,5 +1,6 @@
 package szfm.errorbynight.repository;
 
+import szfm.errorbynight.model.Message;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
 

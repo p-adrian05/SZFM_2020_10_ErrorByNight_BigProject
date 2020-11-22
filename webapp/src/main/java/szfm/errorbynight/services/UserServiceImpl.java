@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import szfm.errorbynight.model.Message;
 import szfm.errorbynight.model.Role;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
@@ -16,6 +17,7 @@ import szfm.errorbynight.util.UtilService;
 
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

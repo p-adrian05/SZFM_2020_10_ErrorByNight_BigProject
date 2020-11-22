@@ -1,0 +1,8 @@
+<thlogic>
+    <attr sel="#stylesheetSettings_layout" th:href="@{/css/settings_layout.css}"/>
+
+    <attr sel="#userdata" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).SETTINGS_USERDATA}__}"/>
+    <attr sel="#changePassword" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).SETTINGS_CHANGE_PASSWORD}__}"/>
+    <attr sel="#changeUsername" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).SETTINGS_CHANGE_USERNAME}__}"/>
+    <attr sel="#changeEmail" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).ACCOUNT}__/__${T(szfm.errorbynight.util.Mappings).SETTINGS_CHANGE_EMAIL}__}"/>
+</thlogic>

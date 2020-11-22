@@ -110,6 +110,23 @@ public class AccountController {
         model.addAttribute("userToSend", usernameTo);
         return "privateMessageForm";
     }
+    @GetMapping(value = Mappings.MESSAGES)
+    public String messagesMainPage(@RequestParam(value = "offset", defaultValue = "1") int offset,
+                                   Model model) {
+
+        int range = environment.getProperty("application.message.range", Integer.class);
+        Map<String, Integer> usernamesAndNewMessage = userService
+                .getConversationUsernamesAndNewMessageCount(((User) session.getAttribute("currentUser")), offset, range);
+        model.addAttribute("usernamesAndNewMessage", usernamesAndNewMessage);
+        model.addAttribute("lowerLimitBack", offset - range);
+        model.addAttribute("lowerLimitForward", offset + range);
+        model.addAttribute("pagesOffsets",
+                UtilService.getPageOffsets(userService.getConversationUsernames(((User) session.getAttribute("currentUser")),
+                        1, Integer.MAX_VALUE).size(),range));
+        model.addAttribute("range", range);
+        model.addAttribute("offset", offset);
+        return "privateMessages";
+    }
 
 
 }

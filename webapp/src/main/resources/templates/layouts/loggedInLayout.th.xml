@@ -2,6 +2,6 @@
     <attr sel="#stylesheetLoggedIn" th:href="@{/css/loggedIn.css}"/>
     <attr sel=".fav-topic" th:each="topicName:${favTopics}">
         <attr sel=".delete-fav"  th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME_DELETE_FAV}__/{category}(category =${topicName})}"/>
-        <attr sel=".fav-themes-name" th:text="${topicName}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEMES}__/{category}(category =${topicName})}"/>
+        <attr sel=".fav-themes-name" th:text="${topicName}" th:href="@{~/__${T(szfm.errorbynight.util.Mappings).THEME}__/{category}(category =${topicName})}"/>
     </attr>
 </thlogic>

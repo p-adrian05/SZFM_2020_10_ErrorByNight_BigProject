@@ -116,7 +116,8 @@ public class AccountController {
 
         int range = environment.getProperty("application.message.range", Integer.class);
         Map<String, Integer> usernamesAndNewMessage = userService
-                .getConversationUsernamesAndNewMessageCount(((User) session.getAttribute("currentUser")), offset, range);
+                .getConversationUsernamesAndNewMessageCount(((User) session.getAttribute("currentUser")), range,offset);
+        System.out.println(usernamesAndNewMessage.size());
         model.addAttribute("usernamesAndNewMessage", usernamesAndNewMessage);
         model.addAttribute("lowerLimitBack", offset - range);
         model.addAttribute("lowerLimitForward", offset + range);

@@ -153,7 +153,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int countNewMessagesForUser(String senderName,String receiverName) {
-         int count;
+        int count;
         try {
             count = ((Number) entityManager.createNativeQuery("SELECT COUNT(um.MESSAGE_ID) FROM USER_MESSAGES um join USERS u " +
                     "                        on RECEIVER_ID = u.ID join USERS u2 " +
@@ -175,7 +175,7 @@ public class UserDaoImpl implements UserDao {
     public Integer getMessagesCount(Long senderId, Long receiverId) {
         Long count;
         try {
-            count = entityManager.createQuery("SELECT COUNT(me.messageIdg) FROM MessageDetails me WHERE (me.sender_Id = :userId1 OR " +
+            count = entityManager.createQuery("SELECT COUNT(me.messageId) FROM MessageDetails me WHERE (me.sender_Id = :userId1 OR " +
                     "me.receiver_Id =: userId1) AND (me.sender_Id = :userId2 OR me.receiver_Id =: userId2)", Long.class)
                     .setParameter("userId1", senderId)
                     .setParameter("userId2", receiverId)

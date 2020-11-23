@@ -1,33 +1,51 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="layouts/main">
-  <head>
-    <link id="stylesheetPM" type="text/css" rel="stylesheet" href="../static/css/login.css" />
-    <link id="stylesheetMain" type="text/css" rel="stylesheet" href="../static/css/utils.css" />
-  </head>
-  <body>
-  <div layout:fragment="content">
-    <div class="container">
-      <div id="form_container">
-        <form id="messageForm" action="#" method="post">
-          <h2>Send private message to <span id="usernameToSend"></span></h2>
-          <label for="message">Message</label>
-          <div class="form-group">
-            <textarea
-              rows="10"
-              cols="80"
-              id="message"
-              name="message"
-              placeholder="Enter message"
-            ></textarea>
-          </div>
-          <div class="button-group">
-            <input type="submit" value="Send" class="btn" />
-          </div>
-          <div id="errorDiv" class="alert alert-danger">Failed to send message!</div>
-          <div id="successDiv" class="alert alert-success">Message sent!</div>
-        </form>
-      </div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="container">
+    <table>
+      <tr>
+        <th>Username</th>
+        <td id="username"></td>
+      </tr>
+      <tr>
+        <th>Public Email</th>
+        <td id="publicEmail"></td>
+      </tr>
+      <tr>
+        <th>Role</th>
+        <td id="role"></td>
+      </tr>
+      <tr>
+        <th>Full name</th>
+        <td id="fullName"></td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td id="city"></td>
+      </tr>
+      <tr>
+        <th>Profile Image</th>
+        <td><img id="profileImg" style="width: 100px" src="/user.jpg" alt="profile_image"/> </td>
+      </tr>
+      <tr>
+        <th>Registered</th>
+        <td id="registered"></td>
+      </tr>
+      <tr>
+        <th>Last Login</th>
+        <td id="lastLogin"></td>
+      </tr>
+      <tr>
+        <td><a style="color:darkgreen" href="#" id="privateMessage">Private Message</a></td>
+      </tr>
+    </table>
   </div>
-  </body>
+</div>
+</body>
 </html>

@@ -24,7 +24,7 @@ public interface UserDao extends GenericDao<User> {
 
     void saveUserData(UserData entity);
 
-    int countNewMessagesForUser(String username1, String username2);
+    int countNewMessagesForUser(String receiverName,String senderName);
 
     Integer getMessagesCount(Long senderUserId, Long receiverUserId);
 

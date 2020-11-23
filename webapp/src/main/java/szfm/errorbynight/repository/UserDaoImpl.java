@@ -152,7 +152,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public int countNewMessagesForUser(String senderName,String receiverName) {
+    public int countNewMessagesForUser(String receiverName,String senderName) {
         int count;
         try {
             count = ((Number) entityManager.createNativeQuery("SELECT COUNT(um.MESSAGE_ID) FROM USER_MESSAGES um join USERS u " +

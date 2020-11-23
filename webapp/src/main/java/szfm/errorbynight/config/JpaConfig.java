@@ -28,22 +28,13 @@ public class JpaConfig {
     private Environment env;
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setPackagesToScan("szfm.errorbynight.model");
-        emf.setDataSource(createDataSource());
+        emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(createJpaVendorAdapter());
         emf.setJpaProperties(createHibernateProperties());
         return emf;
-    }
-
-    private DataSource createDataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
-        dataSource.setUrl(env.getProperty("jdbc.url"));
-        dataSource.setUsername(env.getProperty("jdbc.username"));
-        dataSource.setPassword(env.getProperty("jdbc.password"));
-        return dataSource;
     }
 
     private JpaVendorAdapter createJpaVendorAdapter() {

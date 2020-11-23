@@ -135,7 +135,7 @@ public class AccountController {
         Long senderId = userService.getUserIdByName(username);
         User currentUser = ((User) session.getAttribute("currentUser"));
         int range = environment.getProperty("application.message.user.range", Integer.class);
-        int allMessagesCount = userService.getMessagesCount(senderId, senderId);
+        int allMessagesCount = userService.getMessagesCount(senderId, currentUser.getId());
 
         List<Message> messages = new LinkedList<>();
         Map<Message, Integer> newMessagesNumber;

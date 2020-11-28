@@ -137,5 +137,17 @@ class ForumDaoImplTest {
         }
     }
 
+    @Test
+    void getFavTopics() {
+        List<Topic> topics = forumDao.getFavTopics(22l);
+        if(topics.size() == 0 ){
+            fail("no data");
+        }else{
+            assertEquals(2,topics.size());
+            assertEquals("testTopic",topics.get(0).getTitle());
+            assertEquals("testTopic2",topics.get(1).getTitle());
+        }
+    }
+
 
 }

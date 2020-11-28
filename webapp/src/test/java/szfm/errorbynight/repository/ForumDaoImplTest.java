@@ -113,4 +113,17 @@ class ForumDaoImplTest {
     }
 
 
+     @Test
+    void getPostsByTopicName() {
+        List<Post> posts = forumDao.getPostsByTopicName("testTopic2",0,3);
+        assertEquals(2, posts.size());
+        posts = forumDao.getPostsByTopicName("testTopic2",1,3);
+        assertEquals(1, posts.size());
+        posts = forumDao.getPostsByTopicName("testTopic2",-1,3);
+        assertEquals(0, posts.size());
+        posts = forumDao.getPostsByTopicName("testTopic2",2,3);
+        assertEquals(0, posts.size());
+    }
+
+
 }

@@ -46,4 +46,18 @@ class ForumDaoImplTest {
             }
         });
     }
+
+     @Test
+    void getThemeStat() {
+        List<ThemeStat> themeStats = forumDao.getThemeStat("testCategory",0,3);
+        assertEquals(2,themeStats.get(0).getTopicCount());
+        assertEquals(1,themeStats.get(1).getTopicCount());
+        assertEquals(2, themeStats.size());
+        themeStats = forumDao.getThemeStat("testCategory",1,3);
+        assertEquals(1, themeStats.size());
+        themeStats = forumDao.getThemeStat("testCategory",-1,3);
+        assertEquals(0, themeStats.size());
+        themeStats = forumDao.getThemeStat("testCategory",2,3);
+        assertEquals(0, themeStats.size());
+    }
 }

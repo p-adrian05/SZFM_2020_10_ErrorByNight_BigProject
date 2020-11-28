@@ -60,4 +60,14 @@ class ForumDaoImplTest {
         themeStats = forumDao.getThemeStat("testCategory",2,3);
         assertEquals(0, themeStats.size());
     }
+
+        @Test
+    void getTopicByName() {
+        Optional<Topic> topic = forumDao.getTopicByName("testTopic");
+        if(topic.isPresent()){
+            assertEquals("testTopic",topic.get().getTitle());
+        }else {
+            fail("no data");
+        }
+    }
 }

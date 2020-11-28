@@ -80,4 +80,16 @@ class ForumDaoImplTest {
           fail("no data");
       }
     }
+
+    @Test
+    void countTopics() {
+        Optional<Long> categoryId =  forumDao.getCategoryIdByName("testCategory");
+        if(categoryId.isPresent()){
+            assertEquals(1,categoryId.get().intValue());
+            assertEquals(2,forumDao.countTopics(categoryId.get()).intValue());
+        }else{
+            fail("no data");
+        }
+    }
+
 }

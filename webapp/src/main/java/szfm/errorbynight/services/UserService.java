@@ -3,6 +3,7 @@ package szfm.errorbynight.services;
 import szfm.errorbynight.model.Message;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
+import szfm.errorbynight.util.InvalidUserToRegisterException;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 public interface UserService {
 
-    void registerUser(User user) throws SQLException;
+    void registerUser(User user) throws InvalidUserToRegisterException;
 
     Optional<User> findByUsername(String username);
 

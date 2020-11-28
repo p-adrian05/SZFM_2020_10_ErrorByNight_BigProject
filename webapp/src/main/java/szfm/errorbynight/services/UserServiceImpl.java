@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import szfm.errorbynight.model.*;
 import szfm.errorbynight.repository.RoleDao;
 import szfm.errorbynight.repository.UserDao;
+import szfm.errorbynight.util.InvalidUserToRegisterException;
 import szfm.errorbynight.util.UtilService;
 
 import javax.servlet.http.HttpSession;
@@ -58,15 +59,8 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     }
 
     @Override
-    public void registerUser(User userToRegister) throws SQLException {
-        Optional<Long> userIdByUsername = userDao.getIdByUsername(userToRegister.getUsername());
-        Optional<Long> userIdByEmail = userDao.getIdByEmail(userToRegister.getEmail());
-        if (userIdByUsername.isPresent()) {
-            throw new SQLException("Username is taken.");
-        }
-        if (userIdByEmail.isPresent()) {
-            throw new SQLException("Email is taken.");
-        }
+    public void registerUser(User userToRegister) throws InvalidUserToRegisterException {
+        validateNewUser(userToRegister);
         Optional<Role> userRole = roleDao.findByRole(USER_ROLE);
         if (userRole.isPresent()) {
             userToRegister.addRole(userRole.get());
@@ -82,6 +76,17 @@ public class UserServiceImpl implements UserDetailsService, UserService{
         userToRegister.setPassword(passwordEncoder.encode(userToRegister.getPassword()));
         userDao.add(userToRegister);
         emailService.sendMessage(userToRegister.getEmail(), userToRegister.getUsername(), key);
+    }
+
+    public void validateNewUser(User user) throws InvalidUserToRegisterException {
+        Optional<Long> userIdByUsername = userDao.getIdByUsername(user.getUsername());
+        Optional<Long> userIdByEmail = userDao.getIdByEmail(user.getEmail());
+        if (userIdByUsername.isPresent()) {
+            throw new InvalidUserToRegisterException("Username is taken.");
+        }
+        if (userIdByEmail.isPresent()) {
+            throw new InvalidUserToRegisterException("Email is taken.");
+        }
     }
 
     @Override

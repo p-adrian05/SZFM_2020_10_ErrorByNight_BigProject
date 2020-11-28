@@ -102,5 +102,15 @@ class ForumDaoImplTest {
         }
     }
 
+    @Test
+    void getTopicIdByName() {
+        Optional<Long> topicId =  forumDao.getTopicIdByName("testTopic2");
+        if(topicId.isPresent()){
+            assertEquals(2,topicId.get().intValue());
+        }else{
+            fail("no data");
+        }
+    }
+
 
 }

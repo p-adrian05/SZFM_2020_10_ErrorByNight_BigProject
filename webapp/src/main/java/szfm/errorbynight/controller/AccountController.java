@@ -39,6 +39,9 @@ public class AccountController {
     @Autowired
     private HttpSession session;
 
+    @Autowired
+    private StorageService storageService;
+
     @GetMapping(Mappings.SETTINGS)
     public String settings(Authentication authentication) {
         if (authentication != null) {
@@ -76,14 +79,14 @@ public class AccountController {
                                   @RequestParam("profileImgFile") MultipartFile profileImgFile) {
         if (!Objects.equals(profileImgFile.getOriginalFilename(), "")) {
             String extension = environment.getProperty("user.profile.img.extension");
-//            try {
-//                String imageName = userData.getUserId() + extension;
-//                storageService.store(profileImgFile,imageName);
-//                userData.setProfileImg(imageName);
-//            } catch (FileUploadException e) {
-//                model.addAttribute("imgError", e.getMessage());
-//                return ViewNames.USERDATA;
-//            }
+            try {
+                String imageName = userData.getUserId() + extension;
+                storageService.store(profileImgFile,imageName);
+                userData.setProfileImg(imageName);
+            } catch (FileUploadException e) {
+                model.addAttribute("imgError", e.getMessage());
+                return ViewNames.USERDATA;
+            }
         }
         log.info(userData.getProfileImg());
         ((User) session.getAttribute("currentUser")).setUserData(userData);

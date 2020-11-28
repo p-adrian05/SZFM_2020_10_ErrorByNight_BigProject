@@ -92,4 +92,15 @@ class ForumDaoImplTest {
         }
     }
 
+     @Test
+    void countTopicPosts() {
+        Optional<Topic> topic = forumDao.getTopicByName("testTopic2");
+        if(topic.isPresent()){
+            assertEquals(2,forumDao.countTopicPosts(topic.get().getId()).intValue());
+        }else {
+            fail("no data");
+        }
+    }
+
+
 }

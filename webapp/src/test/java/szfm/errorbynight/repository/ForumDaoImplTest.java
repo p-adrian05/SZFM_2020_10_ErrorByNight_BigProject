@@ -36,4 +36,14 @@ class ForumDaoImplTest {
              fail("no data");
          }
     }
+
+    @Test
+    void getCategoriesAndTopicsCount() {
+        Map<ForumCategory,Integer> data = forumDao.getCategoriesAndTopicsCount();
+        data.forEach((key,value)-> {
+            if(key.getTitle().equals("testCategory")){
+                assertEquals(2,value.intValue());
+            }
+        });
+    }
 }

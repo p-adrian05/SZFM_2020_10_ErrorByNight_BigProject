@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.services.UserService;
 import szfm.errorbynight.util.AttributeNames;
+import szfm.errorbynight.util.InvalidUserToRegisterException;
 import szfm.errorbynight.util.Mappings;
 import szfm.errorbynight.util.ViewNames;
 import szfm.errorbynight.validation.RegistrationForm;
@@ -47,7 +48,7 @@ public class RegistrationController {
             try {
 
                 userService.registerUser(new User(form.getUsername(), form.getEmail(), form.getPassword()));
-            } catch (SQLException e) {
+            } catch (InvalidUserToRegisterException e) {
                 model.addAttribute(AttributeNames.SQL_ERROR, e.getMessage());
                 log.info(e.getMessage());
                 return ViewNames.REGISTRATION;

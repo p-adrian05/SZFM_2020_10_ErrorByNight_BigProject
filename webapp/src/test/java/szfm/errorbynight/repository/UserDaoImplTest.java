@@ -37,4 +37,15 @@ class UserDaoImplTest {
             fail("no data");
         }
     }
+
+    @Test
+    void getIdByUsername() {
+        Optional<User> found = userDao.findByUsername(username);
+        Optional<Long> id = userDao.getIdByUsername(username);
+        if(found.isPresent() && id.isPresent()){
+            assertEquals(id.get(),found.get().getId());
+        }else{
+            fail("no data");
+        }
+    }
 }

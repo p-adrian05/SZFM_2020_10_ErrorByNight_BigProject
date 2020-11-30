@@ -30,6 +30,7 @@ class RoleDaoImplTest {
 
     @Test
     void findAll() {
+      assertTrue(roleDao.findAll().get().size()>0);
     }
 
     @Test

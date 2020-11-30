@@ -132,4 +132,14 @@ class UserDaoImplTest {
         }
 
     }
+
+    @Test
+    void getMessagesCount() {
+        Optional<User> user1 = userDao.findByUsername(username);
+        Optional<User> user2 = userDao.findByUsername("adrian2");
+        if(user1.isPresent() && user2.isPresent()){
+            int count = userDao.getMessagesCount(user1.get().getId(),user2.get().getId());
+            assertEquals(2,count);
+        }
+    }
 }

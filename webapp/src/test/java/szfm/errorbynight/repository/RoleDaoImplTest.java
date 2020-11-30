@@ -24,6 +24,8 @@ class RoleDaoImplTest {
 
     @Test
     void findById() {
+      Role role = roleDao.findByRole("USER").get();
+      assertEquals(role.getRole(),roleDao.findById(role.getId()).get().getRole());
     }
 
     @Test

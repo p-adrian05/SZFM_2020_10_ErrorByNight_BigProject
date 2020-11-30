@@ -94,4 +94,16 @@ class UserDaoImplTest {
             fail("no data");
         }
     }
+
+    @Test
+    void getConversationUsernames() {
+        Optional<User> found = userDao.findByUsername(username);
+        if(found.isPresent()){
+            List<String> usernames = userDao.getConversationUsernames(found.get(),1,Integer.MAX_VALUE);
+            assertTrue(usernames.size()>0);
+            assertEquals("adrian2",usernames.get(0));
+        }else{
+            fail("no data");
+        }
+    }
 }

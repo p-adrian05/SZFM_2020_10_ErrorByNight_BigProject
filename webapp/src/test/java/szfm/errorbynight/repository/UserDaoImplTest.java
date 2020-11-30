@@ -28,4 +28,13 @@ class UserDaoImplTest {
     private static final String email = "adrian@gmail.com";
     private static final String activation = "12er";
 
+    @Test
+    void findByUsername() {
+        Optional<User> found = userDao.findByUsername(username);
+        if(found.isPresent()){
+            assertEquals(username,found.get().getUsername());
+        }else{
+            fail("no data");
+        }
+    }
 }

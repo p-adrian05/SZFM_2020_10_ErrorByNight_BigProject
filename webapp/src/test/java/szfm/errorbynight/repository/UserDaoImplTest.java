@@ -126,7 +126,7 @@ class UserDaoImplTest {
         Optional<User> user2 = userDao.findByUsername("adrian2");
         if(user1.isPresent() && user2.isPresent()){
             int count = userDao.countNewMessagesForUser(user1.get().getUsername(),user2.get().getUsername());
-            assertEquals(1, count);
+            assertEquals(0, count);
         }else{
             fail("no data");
         }

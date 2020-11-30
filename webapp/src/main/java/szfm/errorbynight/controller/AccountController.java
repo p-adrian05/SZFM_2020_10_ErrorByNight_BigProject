@@ -16,6 +16,7 @@ import org.springframework.web.server.ResponseStatusException;
 import szfm.errorbynight.model.Message;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.model.UserData;
+import szfm.errorbynight.services.StorageService;
 import szfm.errorbynight.services.UserService;
 import szfm.errorbynight.util.Mappings;
 import szfm.errorbynight.util.UtilService;

@@ -55,7 +55,7 @@ public class StorageServiceImpl implements StorageService {
   public Resource loadAsResource(String filename) {
     Resource resource = null;
     try{
-      Path file = load(filename);
+      Path file = loadPath(filename);
       resource = new UrlResource(file.toUri());
       if(resource.exists() || resource.isReadable()){
       return resource;

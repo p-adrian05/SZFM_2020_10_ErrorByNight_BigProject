@@ -1,9 +1,16 @@
 package szfm.errorbynight.repository;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
+import szfm.errorbynight.WebMain;
+import szfm.errorbynight.config.TestDataSource;
+import szfm.errorbynight.model.Role;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {WebMain.class, TestDataSource.class})
 @ActiveProfiles("test")
@@ -31,13 +38,5 @@ class RoleDaoImplTest {
     @Test
     void findAll() {
       assertTrue(roleDao.findAll().get().size()>0);
-    }
-
-    @Test
-    void remove() {
-    }
-
-    @Test
-    void save() {
     }
 }

@@ -15,6 +15,7 @@ import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.server.ResponseStatusException;
 import szfm.errorbynight.model.User;
 import szfm.errorbynight.services.ForumService;
+import szfm.errorbynight.services.StorageService;
 import szfm.errorbynight.util.AttributeNames;
 import szfm.errorbynight.util.Mappings;
 import szfm.errorbynight.util.ViewNames;

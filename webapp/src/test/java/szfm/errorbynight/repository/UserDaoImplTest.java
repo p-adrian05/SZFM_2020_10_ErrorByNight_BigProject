@@ -69,4 +69,19 @@ class UserDaoImplTest {
             fail("no data");
         }
     }
+
+    @Test
+    void findById() {
+        Optional<User> found = userDao.findByUsername(username);
+        if(found.isPresent()){
+            Optional<User> foundById = userDao.findById(found.get().getId());
+            if(foundById.isPresent()){
+                assertEquals(found.get(),foundById.get());
+            }else{
+                fail("no data");
+            }
+        }else{
+            fail("no data");
+        }
+    }
 }

@@ -7,11 +7,14 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.env.Environment;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.tomcat.util.http.fileupload.FileUploadException;
+import szfm.errorbynight.util.UtilService;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 @Service
 @Slf4j
@@ -33,8 +36,16 @@ public class StorageServiceImpl implements StorageService {
   }
 
   @Override
-  public void store(MultipartFile file, String imageName) {
-
+  public void store(MultipartFile file, String imageName) throws FileUploadException {
+    try{
+      if(!file.isEmpty()){
+        UtilService.validateUploadedProfileImage(file);
+        Files.copy(file.getInputStream(),this.rootLocation.resolve(imageName), StandardCopyOption.REPLACE_EXISTING);
+      }
+    }
+    catch (IOException e){
+      throw new FileUploadException(e.getMessage());
+    }
   }
 
   @Override

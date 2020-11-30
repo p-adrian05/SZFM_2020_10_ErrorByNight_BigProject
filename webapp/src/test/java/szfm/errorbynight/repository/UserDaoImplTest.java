@@ -84,4 +84,14 @@ class UserDaoImplTest {
             fail("no data");
         }
     }
+
+    @Test
+    void findAll() {
+        Optional<List<User>> users = userDao.findAll();
+        if(users.isPresent()){
+            assertEquals(2,users.get().size());
+        }else{
+            fail("no data");
+        }
+    }
 }

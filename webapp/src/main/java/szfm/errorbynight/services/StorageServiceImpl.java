@@ -69,6 +69,6 @@ public class StorageServiceImpl implements StorageService {
 
   @Override
   public Path loadPath(String fileName) {
-
+    return rootLocation.resolve(fileName);
   }
 }

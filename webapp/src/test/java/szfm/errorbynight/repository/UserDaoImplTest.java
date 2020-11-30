@@ -106,4 +106,17 @@ class UserDaoImplTest {
             fail("no data");
         }
     }
+
+    @Test
+    void getNewMessages() {
+        Optional<User> user1 = userDao.findByUsername(username);
+        Optional<User> user2 = userDao.findByUsername("adrian2");
+        if(user1.isPresent() && user2.isPresent()){
+            List<Message> messages = userDao.getNewMessages(user1.get().getId(),user2.get().getId());
+            assertEquals("Hello hello", messages.get(0).getMessageContent());
+        }else{
+            fail("no data");
+        }
+
+    }
 }

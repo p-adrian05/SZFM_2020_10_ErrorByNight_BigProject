@@ -1,0 +1,31 @@
+package szfm.errorbynight.repository;
+
+import org.junit.jupiter.api.*;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit4.SpringRunner;
+import szfm.errorbynight.WebMain;
+import szfm.errorbynight.config.TestDataSource;
+import szfm.errorbynight.model.Message;
+import szfm.errorbynight.model.User;
+
+import java.util.*;
+
+import static org.junit.Assert.*;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {WebMain.class, TestDataSource.class})
+@ActiveProfiles("test")
+class UserDaoImplTest {
+
+    @Autowired
+    private UserDao userDao;
+
+    private static final String username = "adrian";
+    private static final String email = "adrian@gmail.com";
+    private static final String activation = "12er";
+
+}

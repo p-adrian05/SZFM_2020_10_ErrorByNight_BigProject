@@ -48,4 +48,15 @@ class UserDaoImplTest {
             fail("no data");
         }
     }
+
+    @Test
+    void getIdByEmail() {
+        Optional<User> found = userDao.findByUsername(username);
+        Optional<Long> id = userDao.getIdByEmail(email);
+        if(found.isPresent() && id.isPresent()){
+            assertEquals(id.get(),found.get().getId());
+        }else{
+            fail("no data");
+        }
+    }
 }

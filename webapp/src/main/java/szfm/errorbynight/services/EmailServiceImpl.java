@@ -29,7 +29,7 @@ public class EmailServiceImpl implements EmailService{
     }
 
     @Override
-    public void sendMessage(String email,String username,String activationCode) {
+    public boolean sendMessage(String email,String username,String activationCode) {
         SimpleMailMessage mailMessage;
         try{
             mailMessage = new SimpleMailMessage();
@@ -40,9 +40,10 @@ public class EmailServiceImpl implements EmailService{
                     "\n Click here for the activation: "
                     +env.getProperty("host.name")+"/"+ Mappings.REGISTRATION+"/"+Mappings.ACTIVATION+"/"+activationCode);
             javaMailSender.send(mailMessage);
-
+            return true;
         }catch (Exception e){
             log.error("Error to sent email: "+email+" "+e.getMessage());
+            return false;
         }
     }
 }

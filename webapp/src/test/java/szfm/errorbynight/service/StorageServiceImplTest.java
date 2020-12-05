@@ -23,4 +23,9 @@ class StorageServiceImplTest {
         assertDoesNotThrow(()->storageService.loadAsResource("default_profile_img.png"));
     }
 
+    @Test
+    void load() {
+        assertEquals("user-images\\default_profile_img",storageService.load("default_profile_img").toString());
+    }
+
 }

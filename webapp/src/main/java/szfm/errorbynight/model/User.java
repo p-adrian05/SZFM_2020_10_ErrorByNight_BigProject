@@ -1,9 +1,6 @@
 package szfm.errorbynight.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -18,6 +15,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @Builder
+@AllArgsConstructor
 @Table(name = "users")
 public class User {
 

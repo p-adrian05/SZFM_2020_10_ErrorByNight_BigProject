@@ -114,12 +114,7 @@ A rendszer tervezési mintája a MVC (Model-View-Controller) a Spring keretrends
     - Controller osztályok.
     - Felhasználó űrlapok helyes működése bejelentkezés, regisztráció és adatok megváltoztatás esetén, hibás adat megadása esetén elvárt működés.
     - Felhasználói felület, megjelenés.
-# 13. Telepítési terv
-A telepítést ügyfelünk végzi saját webszervereire és saját adatbázisukhoz kapcsolva.
-# 14. Karbantartási terv
-&nbsp;&nbsp;&nbsp;Az alkalmazáshoz jelenlegi és jövőbeli problémamentes használata érdekében folyamatos
-frissítést biztosítunk az átadás utáni fél évben ingyenesen.   
-&nbsp;&nbsp;&nbsp;Az új verziók két hetente kerülnek kiadásra, ide tartoznak az egyszerű hibák javítása, optimalizáció, új funkciók bevezetése vagy javítása felhasználói visszajelzések alapján. Kritikus, optimális működést befolyásoló hibák esetén azonnali, mielőbbi működőképes verzió kiadása történik.
+
 
 ## 1. DAO réteg tesztelése 
 
@@ -137,3 +132,11 @@ A tesztelés során megbizonyosodni az osztályok függvényeinek helyes működ
 
 ### Összegzés:
 Összesen 25 egységteszt került elkészítésre, átlagosan 80%-os metódus lefedettséggel. Minden tesztelhető függvény le lett tesztelve és a tesztek hiba nélkül lefutottak.
+
+# 13. Telepítési terv
+A telepítést ügyfelünk végzi saját webszervereire és saját adatbázisukhoz kapcsolva.
+# 14. Karbantartási terv
+&nbsp;&nbsp;&nbsp;Az alkalmazáshoz jelenlegi és jövőbeli problémamentes használata érdekében folyamatos
+frissítést biztosítunk az átadás utáni fél évben ingyenesen.   
+&nbsp;&nbsp;&nbsp;Az új verziók két hetente kerülnek kiadásra, ide tartoznak az egyszerű hibák javítása, optimalizáció, új funkciók bevezetése vagy javítása felhasználói visszajelzések alapján. Kritikus, optimális működést befolyásoló hibák esetén azonnali, mielőbbi működőképes verzió kiadása történik.
+

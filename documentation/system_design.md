@@ -36,14 +36,14 @@ A projekt leadási határideje 2020.12.07.
   * Témákat olvasni
   * Regisztrálni: felhasználónév, email cím és jelszó megadásával történik
   * Bejelentkezni: felhasználónév, jelszó megadásával
- 
+
  Bejelentkezés után a felhasználó képes:
   * A megnyitott témákhoz hozzászólást írni
   * Privát üzeneteket küldeni és fogadni
   * Felhasználói adatok módosítására
   * Kilépésre
-  
- Az admin képes a fórumon: 
+
+ Az admin képes a fórumon:
   * Új témákat létrehozni
   * Adatok törlésére: hozzászólások, témák törlése
 
@@ -64,7 +64,7 @@ Az alkalmazás ügyfelünk saját szerverén lesz tárolva és saját adatbázis
 
 ### Fejlesztési környezet
 - #### Frontend:
-  - Visual Studio Code 
+  - Visual Studio Code
   - Google Chrome
   - Thymeleaf template engine
 - #### Backend
@@ -116,13 +116,13 @@ A rendszer tervezési mintája a MVC (Model-View-Controller) a Spring keretrends
     - Felhasználói felület, megjelenés.
 
 
-## 1. DAO réteg tesztelése 
+## 1. DAO réteg tesztelése
 
 ### Tesztelési környezet:
 Memóriában tárolt H2 adatbázissal történik a DAO osztályok tesztelése. Create.sql fájlban található az adatbázis létrehozásához szükséges DDL utasítások. Init.sql fájlban található az adatbázis példa adattal feltöltendő DML parancsok. A tesztelés JUnit5 keretrendszerrel, test profile létrehozásával történik.
 
 ### Tesztelendő osztályok:
-  - ForumDao 
+  - ForumDao
   - UserDao
   - RoleDao  
 osztályok implementációja.
@@ -133,10 +133,28 @@ A tesztelés során megbizonyosodni az osztályok függvényeinek helyes működ
 ### Összegzés:
 Összesen 25 egységteszt került elkészítésre, átlagosan 80%-os metódus lefedettséggel. Minden tesztelhető függvény le lett tesztelve és a tesztek hiba nélkül lefutottak.
 
+## 3. Controller réteg tesztelése
+
+### Tesztelési környezet:
+A tesztelés manuálisan történt google chrome és postman segítségével.
+
+### Tesztelendő osztályok:
+  - AccountController
+  - HomeController
+  - PostController  
+  - TopicController
+  - RegistrationController
+
+### Tesztelés célja:
+A tesztelés során megbizonyosodni, hogy a Controller osztályok minden kérésre a megfelelő választ adják vissza html oldal formájában.
+
+### Összegzés:
+A klienstől érkezett HTTP kérések nagy része hibátlanul történt megválaszolásra, apróbb hibák javításra kerültek.
+
+
 # 13. Telepítési terv
 A telepítést ügyfelünk végzi saját webszervereire és saját adatbázisukhoz kapcsolva.
 # 14. Karbantartási terv
 &nbsp;&nbsp;&nbsp;Az alkalmazáshoz jelenlegi és jövőbeli problémamentes használata érdekében folyamatos
 frissítést biztosítunk az átadás utáni fél évben ingyenesen.   
 &nbsp;&nbsp;&nbsp;Az új verziók két hetente kerülnek kiadásra, ide tartoznak az egyszerű hibák javítása, optimalizáció, új funkciók bevezetése vagy javítása felhasználói visszajelzések alapján. Kritikus, optimális működést befolyásoló hibák esetén azonnali, mielőbbi működőképes verzió kiadása történik.
-

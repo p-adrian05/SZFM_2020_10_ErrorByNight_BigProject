@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.ResourceAccessException;
+import szfm.errorbynight.services.StorageService;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,7 +26,7 @@ class StorageServiceImplTest {
 
     @Test
     void load() {
-        assertEquals("user-images\\default_profile_img",storageService.load("default_profile_img").toString());
+        assertEquals("user-images\\default_profile_img",storageService.loadPath("default_profile_img").toString());
     }
 
 }

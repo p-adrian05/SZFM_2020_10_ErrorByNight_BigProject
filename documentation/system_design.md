@@ -120,3 +120,20 @@ A telepítést ügyfelünk végzi saját webszervereire és saját adatbázisukh
 &nbsp;&nbsp;&nbsp;Az alkalmazáshoz jelenlegi és jövőbeli problémamentes használata érdekében folyamatos
 frissítést biztosítunk az átadás utáni fél évben ingyenesen.   
 &nbsp;&nbsp;&nbsp;Az új verziók két hetente kerülnek kiadásra, ide tartoznak az egyszerű hibák javítása, optimalizáció, új funkciók bevezetése vagy javítása felhasználói visszajelzések alapján. Kritikus, optimális működést befolyásoló hibák esetén azonnali, mielőbbi működőképes verzió kiadása történik.
+
+## 1. DAO réteg tesztelése 
+
+### Tesztelési környezet:
+Memóriában tárolt H2 adatbázissal történik a DAO osztályok tesztelése. Create.sql fájlban található az adatbázis létrehozásához szükséges DDL utasítások. Init.sql fájlban található az adatbázis példa adattal feltöltendő DML parancsok. A tesztelés JUnit5 keretrendszerrel, test profile létrehozásával történik.
+
+### Tesztelendő osztályok:
+  - ForumDao 
+  - UserDao
+  - RoleDao  
+osztályok implementációja.
+
+### Tesztelés célja:
+A tesztelés során megbizonyosodni az osztályok függvényeinek helyes működéséről, a megfeleő sql utasítások végrehajtása és a kívánt adat a megfelelő objektumba csomagolva visszaadása.
+
+### Összegzés:
+Összesen 25 egységteszt került elkészítésre, átlagosan 80%-os metódus lefedettséggel. Minden tesztelhető függvény le lett tesztelve és a tesztek hiba nélkül lefutottak.

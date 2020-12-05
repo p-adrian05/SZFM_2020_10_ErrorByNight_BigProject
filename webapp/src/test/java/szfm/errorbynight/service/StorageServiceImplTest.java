@@ -12,5 +12,15 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 class StorageServiceImplTest {
-	
+
+	@Autowired
+    private StorageService storageService;
+
+    @Test
+    void loadAsResource() {
+        assertThrows(ResourceAccessException.class,()->storageService.loadAsResource("default_img.png"));
+        assertThrows(ResourceAccessException.class,()->storageService.loadAsResource("default_profile_img"));
+        assertDoesNotThrow(()->storageService.loadAsResource("default_profile_img.png"));
+    }
+
 }

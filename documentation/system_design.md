@@ -151,6 +151,47 @@ A tesztelés során megbizonyosodni, hogy a Controller osztályok minden kérés
 ### Összegzés:
 A klienstől érkezett HTTP kérések nagy része hibátlanul történt megválaszolásra, apróbb hibák javításra kerültek.
 
+## 4. Felhasználói felület tesztelése
+
+### Tesztelési környezet:
+A tesztelés manuálisan történt google chrome segítségével.
+
+### Tesztelendő osztályok:
+Bejelentkezés, regisztrációs, privát üzenetek, profil, kategóriák, topikok, posztok megjelenítésére szolgáló html oldalak és a hozzá tartózó kevés javascript.
+
+### Tesztelés célja:
+A tesztelés során megbizonyosodni, hogy a html oldalak a kívánt módon néznek ki és reagálnak. 
+
+### Összegzés:
+- Bejelentkezés
+  - Ha az adatbázisban megtalálható a megadott felhasználónév-jelszó páros, akkor sikeres bejelentkezés történik,  
+   ellenkező esetben hibaüzenet kerül kiküldésre.
+  - Sikeres bejelentkezést követően a főoldalra kerülés.
+- Regisztráció:
+  - Megadott felhasználónév nem kerül elfogadásra, ha az már megtalálható az adatbázisban, ekkor hibaüzenet: A felhasználónév foglalt.
+  - Megadott email cím csak akkor kerül elfogadásra, ha valid a formátuma és nem található meg az adatbázisban még. ELlenkező
+   esetben, hibaüzenet: Az email cím foglalt, illetve invalid email cím.
+  - Jelszó esetén ha megfelel az alábbi kritériumoknak: Legalább egy kis betű szerepel, nincs szóköz, tartalmaz legalább egy 
+     speciális karaktert, tartalmaz legalább egy nagy betűt és minimum 8 karakter hosszúságú. Ebben az esetben elfogadásra kerül a jelszó, ellenkező esetben hibaüzenet a megsértett kritériummal. 
+  - Jelszó megerősítése a már egyszer elfogadott és megadott jeszóval. Nem egyezés esetén hibaüzenet.
+- Privát üzenetek küldése
+    - Egy felhasználó profilján a privát üzenet küldése linken keresztül történik. Ha az üzenet üres, nem kerül elküldés, ellenkező esetben megjelenik az üzenetek menüpontban a párbeszéd.
+    - Saját magának nem küldhet a felhasználó üzenetet.
+- Privát üzenetek listázása
+   - Lapozható párbeszédek előre hátra működik, a gomb letiltásra kerül ha elérte a minumum vagy maximum oldalszámot.
+- Felhasználói profil 
+   - Megjelennek a regisztráció során az adatok, illetve az opcionáis adatok is. Privát üzenet link is megjelenik, amire rákattintva 
+    üzenet küldési oldalra kerül.
+- Főoldalon a forumok nevei kerülnek listázásra, és hogy hány témát tartalmaznak. Bejelentkezéskor a jobb oldalon a kedvenc topikok lista is megjelenik, ha nincs ilyen akkor üres a lista.
+- Témák listázása:
+  - Lapozható listában jelennek meg a témák, a gomb letiltásra kerül ha elérte a minumum vagy maximum oldalszámot.
+  - Témák nevei, hány posztot tartalmaz, ki indította, mikor és mi az utolsó aktivitás időpontja jelennek meg,
+  - Bejelentkezés esetén megjelenik a kedvenc topikok listája és egy új topik létrehozására egy gomb. Ha a felhasználó nincs bejelentkezve, akkor ezek nem jelennek meg a jobb oldalon. Az új topik létrehozása gombra kattintva, egy űrlap jelenik meg ahol megadható a topik neve és egy nyitó hozzászólás tartalma. Üres név és üzenet esetén nem nyitható meg az új topik. Sikeres megnyitsá után megjelenik a listában.
+- Téma hozzászólások: 
+  - Egy téma megnyitásakor lapozható hozzászólások jelennek meg időredni sorrendben, ahol látható melyik felhasználó kinek küldte az adott hozzászólást, mikor. Az új hosszászólás linkre kattintva megjelenik egy űrlap, ahol megadható az üzenet tartalma, üres üzenetet nem lehet küldeni, sikeres küldés után megjelenik a hosszászólások között, a lista legvégén. Válasz gombra kattintva ugyanez történik csak látható az űrlap alatt az a hozzászólás amelyikre válaszolunk. 
+- Felhasználói beállítások:
+  - Lehetőség van saját profilképet feltölteni, 0.5MB-nál nagyobb képet fogad el, ebben az esetben hibaüzenet kerül kiírásra. A képek formátuma jpeg,png,jpg,gif lehet, ellenkező esetben hibaüzenet kerül kiírásra.
+  - További adatokra nincs megszorítás.
 
 # 13. Telepítési terv
 A telepítést ügyfelünk végzi saját webszervereire és saját adatbázisukhoz kapcsolva.

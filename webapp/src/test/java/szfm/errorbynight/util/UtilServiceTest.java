@@ -31,4 +31,10 @@ class UtilServiceTest {
         assertThrows(FileUploadException.class,()->UtilService.validateUploadedProfileImage(image2));
     }
 
+    @Test
+    void generateKey() {
+        String key = UtilService.generateKey();
+        assertEquals(key.length(), 16);
+    }
+
 }

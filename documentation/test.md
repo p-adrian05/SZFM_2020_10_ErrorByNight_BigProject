@@ -98,3 +98,34 @@
     - Elvégzett művelet: Meghívjuk a függvényt.
     - Elvárt eredemény: Megkapjuk az összes kategóriát és a hozzátartozó topikok számát.
     - Helyes működés: Igen
+- ## 3. Teszt
+    - Tárgy: Adatbázis - countTopics
+    - Elvégzett művelet: Átadunk egy Forum entity Id-ját.
+    - Elvárt eredemény: Megkapjuk az topikok számát.
+    - Helyes működés: Igen
+- ## 4. Teszt
+    - Tárgy: Adatbázis - getFavTopics
+    - Elvégzett művelet: Átadunk egy felhasználónevet.
+    - Elvárt eredemény: Megkapjuk a felhasználóhoz tartozó kedvenc témákat.
+    - Helyes működés: Igen
+- ## 5. Teszt
+    - Tárgy: Adatbázis - getNewMessages
+    - Elvégzett művelet: Átadunk egy felhasználónevet.
+    - Elvárt eredemény: Megkapjuk a felhasználóhoz tartozó új üzeneteket.
+    - Helyes működés: Igen
+- ## 6. Teszt
+    - Tárgy: Adatbázis - getMessagesCount
+    - Elvégzett művelet: Átadunk egy felhasználónevet.
+    - Elvárt eredemény: Megkapjuk a felhasználóhoz tartozó üzenetek számát.
+    - Helyes működés: Igen
+- ## 7. Teszt
+    - Tárgy: Adatbázis - getMessages
+    - Elvégzett művelet: Átadunk egy felhasználónevet.
+    - Elvárt eredemény: Megkapjuk a felhasználóhoz tartozó üzeneteket.
+    - Helyes működés: Igen
+- ## 8. Teszt
+    - Tárgy: Adatbázis - getPostsByTopicName
+    - Elvégzett művelet: Átadunk egy topik nevét
+    - Elvárt eredemény: Megkapjuk a topikhoz tartozó posztokat.
+    - Helyes működés: Igen  
+    

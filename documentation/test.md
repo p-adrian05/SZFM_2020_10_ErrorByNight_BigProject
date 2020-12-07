@@ -1,0 +1,100 @@
+#### Frontend
+
+- ## 1. Teszt
+  - Tárgy: Bejelentkezés regisztrált felhasználóval
+  - Elvégzett művelet: felhasználó név jelszó beírása
+  - Elvárt eredemény: Sikeres bejelentkezés történt
+  - Helyes működés: Igen
+- ## 2. Teszt
+  - Tárgy: Bejelentkezés nem regisztrált felhasználóval
+  - Elvégzett művelet: felhasználó, név jelszó beírása
+  - Elvárt eredemény: Sikertelen bejelentkezés, hibaüzenet kerül kiküldésre.
+  - Helyes működés: Igen
+- ## 3. Teszt
+  - Tárgy: Regisztráció nem regisztrált felhasználónév és emaillel
+  - Elvégzett művelet: felhasználó név,jelszó, email megadása
+  - Elvárt eredemény: Sikeres regisztráció történt
+  - Helyes működés: Igen
+- ## 4. Teszt
+  - Tárgy: Regisztráció már regisztrált felhasználónévvel
+  - Elvégzett művelet: felhasználó név,jelszó, email megadása
+  - Elvárt eredemény: Sikertelen regisztráció történt
+  - Helyes működés: Igen
+- ## 5. Teszt
+  - Tárgy: Regisztráció már regisztrált email címmel
+  - Elvégzett művelet: felhasználó név,jelszó, email megadása
+  - Elvárt eredemény: Sikertelen regisztráció történt
+  - Helyes működés: Igen
+- ## 6. Teszt
+  - Tárgy: Privát üzenetek küldése
+  - Elvégzett művelet: Üres üzenet megadása
+  - Elvárt eredemény: Sikertelen üzenet küldése
+  - Helyes működés: Igen
+- ## 7. Teszt
+  - Tárgy: Privát üzenetek küldése
+  - Elvégzett művelet: Nem üres üzenet megadása
+  - Elvárt eredemény: Sikeres üzenet küldése
+  - Helyes működés: Igen
+- ## 8. Teszt
+  - Tárgy: Privát üzenetek listázása
+  - Elvégzett művelet: Párbeszédek lapoozása.
+  - Elvárt eredemény: A gomb letiltásra kerül ha elérte a minumum vagy maximum oldalszámot.
+  - Helyes működés: Igen
+- ## 9. Teszt
+    - Tárgy: Felhasználói profil 
+    - Elvégzett művelet: Profil linkre kattintunk. 
+    - Elvárt eredemény: Regisztráció során az adatok, illetve az opcionáis adatok is megjelennek.
+    - Helyes működés: Igen
+- ## 10. Teszt
+    - Tárgy: Főoldalon megjelenése nem bejelentkezve
+    - Elvégzett művelet: Főoldal linkre kattintunk.
+    - Elvárt eredemény: Forumok nevei kerülnek listázásra, és hogy hány témát tartalmaznak. 
+    - Helyes működés: Igen
+- ## 11. Teszt
+    - Tárgy: Főoldalon megjelenése bejelentkezve
+    - Elvégzett művelet: Főoldal linkre kattintunk.
+    - Elvárt eredemény:  Forumok nevei kerülnek listázásra, és hogy hány témát tartalmaznak, 
+        megjelenik a kedvenc topikok listája és egy új topik létrehozására egy gomb. 
+    - Helyes működés: Igen
+- ## 12. Teszt
+    - Tárgy: Új téma kiírása
+    - Elvégzett művelet: Új téma kiírása gombra kattintunk, megadunk egy üres nevet.
+    - Elvárt eredemény: Hibaüzenet kerül kiírása, üres nevű téma nem lehet.
+    - Helyes működés: Igen
+- ## 13. Teszt
+    - Tárgy: Új téma kiírása
+    - Elvégzett művelet: Új téma kiírása gombra kattintunk, megadunk egy üres nyitó kommentet.
+    - Elvárt eredemény: Hibaüzenet kerül kiírása, egy üres nyitó komment nem lehet.
+    - Helyes működés: Igen
+- ## 14. Teszt
+    - Tárgy: Téma hozzászólások megjelenítése
+    - Elvégzett művelet: Egy témára kattintunk.
+    - Elvárt eredemény: Listában jelennek meg a hozzászólások.
+    - Helyes működés: Igen
+- ## 15. Teszt
+    - Tárgy: Kedven téma hozzáadása
+    - Elvégzett művelet: Egy csillag alakú linkre kattintunk egy témánál.
+    - Elvárt eredemény: Főoldalra ugrás történik, ahol megjelenik egy listában a kedven téma.
+    - Helyes működés: Igen
+- ## 16. Teszt
+    - Tárgy: Téma hozzászólás írása.
+    - Elvégzett művelet: Egy témánál új hozzászólás linkre kattintunk és nem adunk meg üzetenet.
+    - Elvárt eredemény: Hibaüzenet kerül kiírása, egy üres komment nem lehet.
+    - Helyes működés: Igen
+- ## 17. Teszt
+    - Tárgy: Téma hozzászólás írása.
+    - Elvégzett művelet: Egy témánál új hozzászólás linkre kattintunk és üzentetet adunk meg.
+    - Elvárt eredemény: Sikeresen elküldésre kerül az üzenet.
+    - Helyes működés: Igen
+
+#### Backend
+- ## 1. Teszt
+    - Tárgy: Adatbázis - getCategoryByName
+    - Elvégzett művelet: Megadunk egy kategória nevet.
+    - Elvárt eredemény: Megkapjuk a Category entitást a megadott névvel.
+    - Helyes működés: Igen
+- ## 2. Teszt
+    - Tárgy: Adatbázis - getCategoriesAndTopicsCount
+    - Elvégzett művelet: Meghívjuk a függvényt.
+    - Elvárt eredemény: Megkapjuk az összes kategóriát és a hozzátartozó topikok számát.
+    - Helyes működés: Igen

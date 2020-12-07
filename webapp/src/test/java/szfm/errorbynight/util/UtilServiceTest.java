@@ -37,4 +37,16 @@ class UtilServiceTest {
         assertEquals(key.length(), 16);
     }
 
+    @Test
+    void testGetPageOffsets() {
+        int messageCount = 10;
+        int range = 3;
+       Map<Integer,Integer> offsets = new LinkedHashMap<>();
+       offsets.put(1,3);
+       offsets.put(4,6);
+       offsets.put(7,9);
+       offsets.put(10,10);
+       assertEquals(offsets.toString(),UtilService.getPageOffsets(messageCount,range).toString());
+    }
+
 }

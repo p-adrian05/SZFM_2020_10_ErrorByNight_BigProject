@@ -133,6 +133,25 @@ A tesztelés során megbizonyosodni az osztályok függvényeinek helyes működ
 ### Összegzés:
 Összesen 25 egységteszt került elkészítésre, átlagosan 80%-os metódus lefedettséggel. Minden tesztelhető függvény le lett tesztelve és a tesztek hiba nélkül lefutottak.
 
+## 2. Service réteg tesztelése
+
+### Tesztelési környezet:
+A tesztelés JUnit5 keretrendszerrel, test profile létrehozásával történik, a Mockolást a Spring keretrendszer biztosítja, amely a DAO osztályok implementációját hivatott kiváltani.
+
+### Tesztelendő osztályok:
+  - EmailService 
+  - ForumService
+  - StorageService  
+  - UserService
+  - UtilService
+osztályok implementációja.
+
+### Tesztelés célja:
+A tesztelés során megbizonyosodni az osztályok függvényeinek helyes működéséről, az üzleti logika megfelelő implementációja felől.
+
+### Összegzés:
+Összesen 28 egységteszt került elkészítésre, átlagosan 90%-os metódus lefedettséggel. Minden tesztelhető függvény le lett tesztelve és a tesztek hiba nélkül lefutottak.
+
 ## 3. Controller réteg tesztelése
 
 ### Tesztelési környezet:

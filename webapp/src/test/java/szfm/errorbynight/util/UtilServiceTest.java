@@ -49,4 +49,32 @@ class UtilServiceTest {
        assertEquals(offsets.toString(),UtilService.getPageOffsets(messageCount,range).toString());
     }
 
+    @Test
+    void testCalculateOffsets() {
+        int messageCount = 16;
+        int range = 3;
+        List<Integer> minOffsets = new LinkedList<>();
+        Map<Integer,Integer> pageOffsets = UtilService.getPageOffsets(messageCount,range);
+        for(Map.Entry<Integer,Integer> entry: pageOffsets.entrySet()){
+            minOffsets.add(entry.getKey());
+        }
+        assertEquals(1,(UtilService.calculateOffset(minOffsets,1)));
+        assertEquals(1,(UtilService.calculateOffset(minOffsets,2)));
+        assertEquals(1,(UtilService.calculateOffset(minOffsets,3)));
+        assertEquals(4,(UtilService.calculateOffset(minOffsets,4)));
+        assertEquals(4,(UtilService.calculateOffset(minOffsets,5)));
+        assertEquals(4,(UtilService.calculateOffset(minOffsets,6)));
+        assertEquals(7,(UtilService.calculateOffset(minOffsets,7)));
+        assertEquals(7,(UtilService.calculateOffset(minOffsets,8)));
+        assertEquals(7,(UtilService.calculateOffset(minOffsets,9)));
+        assertEquals(10,(UtilService.calculateOffset(minOffsets,10)));
+        assertEquals(10,(UtilService.calculateOffset(minOffsets,11)));
+        assertEquals(10,(UtilService.calculateOffset(minOffsets,12)));
+        assertEquals(13,(UtilService.calculateOffset(minOffsets,13)));
+        assertEquals(13,(UtilService.calculateOffset(minOffsets,14)));
+        assertEquals(13,(UtilService.calculateOffset(minOffsets,15)));
+        assertEquals(16,(UtilService.calculateOffset(minOffsets,16)));
+        assertEquals(16,(UtilService.calculateOffset(minOffsets,20)));
+    }
+
 }

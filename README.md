@@ -9,4 +9,7 @@ Building the project requires JDK 11 or later and [Apache Maven](https://maven.a
 ## Commands in webapp folder
 
 - mvn package
-- java -jar -Dspring.profiles.active=prod ./target/webshopForum-1.0.jar
+- java -jar -Dspring.profiles.active=prod ./target/webapp-1.0.jar
+
+## In browser
+- http://localhost:8080/

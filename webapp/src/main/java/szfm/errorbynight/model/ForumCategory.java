@@ -1,16 +1,15 @@
 package szfm.errorbynight.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
-@Getter
-@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 @Table(name="forum_categories")
 public class ForumCategory {
 
